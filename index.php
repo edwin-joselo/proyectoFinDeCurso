@@ -12,6 +12,7 @@
 <body>
     <button id="btnRegistro">Registro</button>
 
+    <p>pruebaaaa</p>
     <script src="./javascript/funciones.js"></script>
 </body>
 </html>
