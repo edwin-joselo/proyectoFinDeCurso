@@ -5,14 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./javascript/sweetalert2.all.min.js"></script>
-    <link rel="stylesheet" href="./css/sweetalert2.min.css">
-
+    <script src="./javascript/sweetalert2.js"></script>
+    <link rel="stylesheet" href="./css/sweetalert2.css">
+    <link rel="stylesheet" href="./css/estilo.css">
 </head>
 <body>
     <button id="btnRegistro">Registro</button>
 
-    <p>pruebaaaa</p> 
     <script src="./javascript/funciones.js"></script>
 </body>
 </html>
