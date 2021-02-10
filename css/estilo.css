@@ -1,0 +1,13 @@
+.formulario-registro {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+}
+
+.formulario-registro label {
+    text-align: right;
+}
+
+.swal2-modal {
+    background-color: white;
+}
