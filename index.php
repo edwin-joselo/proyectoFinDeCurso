@@ -11,14 +11,10 @@
     <link rel="stylesheet" href="./css/dark.css">
 </head>
 <body>
-    <h1>Titulo 1</h1>
-    
-    <h2>Titulo 2</h2>
     <button id="btnRegistro">Registro</button>
 
     <button id="btnLogin">Iniciar sesión</button>
 
-    <p>Prueba</p>
 
     <script src="./javascript/funciones.js"></script>
     <script src="./javascript/funcionesLogin.js"></script>
