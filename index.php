@@ -10,8 +10,14 @@
     <link rel="stylesheet" href="./css/estilo.css">
 </head>
 <body>
+edwin
     edwin v1
     
+    main
+    
+    
+    hola
+ main
     <button id="btnRegistro">Registro</button>
 
     edwin
