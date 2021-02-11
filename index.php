@@ -13,6 +13,7 @@
 <body>
     <h1>Titulo 1</h1>
     
+    <h2>Titulo 2</h2>
     <button id="btnRegistro">Registro</button>
 
     <button id="btnLogin">Iniciar sesión</button>
