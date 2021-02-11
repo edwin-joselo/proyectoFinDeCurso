@@ -10,7 +10,7 @@ function mostrarFormularioRegistro() {
     Swal.fire({
         title: 'Insertar un nuevo usuario',
         html: `
-            <form action="" class="formulario-registro" id="formularioRegistro">
+            <form action="" class="formulario-registro">
                 <input type="hidden" value="insertar" name="tipo_operacion"/>
                 <label>DNI: </label>
                 <input type="text" name="dni" />
@@ -41,29 +41,16 @@ function mostrarFormularioRegistro() {
             </form>
         `,
         showCancelButton: true,
-        confirmButtonColor: 'green',
-        cancelButtonColor: 'darkred',
+        // confirmButtonColor: 'green',
+        // cancelButtonColor: 'darkred',
         confirmButtonText: 'Aceptar'
-    }).then(async (result) => {
+    }).then((result) => {
         if (result.isConfirmed) {
-            const datos = document.querySelector('#formularioRegistro');
-            console.log(datos);
-            const datos_insertar = new FormData(datos);
-            var url = './php/operaciones.php';
-
-            try {
-                const response = await fetch(url, { method: 'post', body: datos_insertar });
-                const data = await response.json();
-                console.log(data);
-            } catch (e) {
-                console.error(e.message);
-            }
-
-            // Swal.fire(
-            //     'Añadido!',
-            //     'Your file has been deleted.',
-            //     'success'
-            // )
+            Swal.fire(
+                'Añadido!',
+                'Your file has been deleted.',
+                'success'
+            )
         } else {
             Swal.fire(
                 'Cancelado!',
