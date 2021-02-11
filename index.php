@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/dark.css">
 </head>
 <body>
+    <h2>Titulo github</h2>
     <button id="btnRegistro">Registro</button>
 
     <button id="btnLogin">Iniciar sesión</button>
