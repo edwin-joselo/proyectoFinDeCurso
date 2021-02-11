@@ -8,10 +8,14 @@
     <script src="./javascript/sweetalert2.js"></script>
     <link rel="stylesheet" href="./css/sweetalert2.css">
     <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./node_modules/@sweetalert2/theme-dark/dark.css">
 </head>
 <body>
     <button id="btnRegistro">Registro</button>
 
+    <button id="btnLogin">Iniciar sesión</button>
+
     <script src="./javascript/funciones.js"></script>
+    <script src="./javascript/funcionesLogin.js"></script>
 </body>
 </html>

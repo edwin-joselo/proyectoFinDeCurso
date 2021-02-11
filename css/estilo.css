@@ -1,10 +1,10 @@
-.formulario-registro {
+.formulario-registro, .formulario-login {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 1rem;
 }
 
-.formulario-registro label {
+.formulario-registro label, .formulario-login {
     text-align: right;
 }
 
