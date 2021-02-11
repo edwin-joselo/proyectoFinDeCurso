@@ -12,6 +12,8 @@
 <body>
     <button id="btnRegistro">Registro</button>
 
+    edwin
+
     <script src="./javascript/funciones.js"></script>
 </body>
 </html>
