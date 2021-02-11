@@ -12,6 +12,8 @@
 <body>
     main
     
+    
+    hola
     <button id="btnRegistro">Registro</button>
 
     edwin
