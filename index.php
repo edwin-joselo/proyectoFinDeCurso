@@ -8,7 +8,7 @@
     <script src="./javascript/sweetalert2.js"></script>
     <link rel="stylesheet" href="./css/sweetalert2.css">
     <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="stylesheet" href="./node_modules/@sweetalert2/theme-dark/dark.css">
+    <link rel="stylesheet" href="./css/dark.css">
 </head>
 <body>
     <button id="btnRegistro">Registro</button>
