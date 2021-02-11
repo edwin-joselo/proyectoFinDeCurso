@@ -20,8 +20,7 @@ function mostrarFormularioInicio() {
             </form>
         `,
         showCancelButton: true,
-        // confirmButtonColor: 'green',
-        // cancelButtonColor: 'darkred',
+    
         confirmButtonText: 'Aceptar'
     }).then((result) => {
         if (result.isConfirmed) {
