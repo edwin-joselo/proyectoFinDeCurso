@@ -13,6 +13,8 @@
 <body>
     <h1>Titulo 1</h1>
     
+    <p>Prueba para borrar</p>
+    
     <h2>Titulo 2</h2>
     <button id="btnRegistro">Registro</button>
 
