@@ -11,10 +11,13 @@
     <link rel="stylesheet" href="./css/dark.css">
 </head>
 <body>
-    <h2>Titulo github</h2>
+    <h1>Titulo 1</h1>
+    
     <button id="btnRegistro">Registro</button>
 
     <button id="btnLogin">Iniciar sesión</button>
+
+
 
     <script src="./javascript/funciones.js"></script>
     <script src="./javascript/funcionesLogin.js"></script>
