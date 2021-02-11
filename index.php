@@ -20,7 +20,7 @@
 
     <button id="btnLogin">Iniciar sesión</button>
 
-
+    <p>Prueba</p>
 
     <script src="./javascript/funciones.js"></script>
     <script src="./javascript/funcionesLogin.js"></script>
