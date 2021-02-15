@@ -25,10 +25,10 @@ function mostrarFormularioRegistro() {
                 <input type="date" name="fecha_nacimiento" />
 
                 <label>Teléfono: </label>
-                <input type="text" name="telefono" />
+                <input type="number" name="telefono" />
 
                 <label>Email: </label>
-                <input type="email" name="email" />
+                <input type="text" name="email" />
 
                 <label>Contraseña: </label>
                 <input type="text" name="contrasenia" />
@@ -44,26 +44,37 @@ function mostrarFormularioRegistro() {
         confirmButtonColor: 'green',
         cancelButtonColor: 'darkred',
         confirmButtonText: 'Aceptar'
-    }).then(async (result) => {
+    }).then(result => {
         if (result.isConfirmed) {
             const datos = document.querySelector('#formularioRegistro');
-            console.log(datos);
             const datos_insertar = new FormData(datos);
             var url = './php/operaciones.php';
 
-            try {
-                const response = await fetch(url, { method: 'post', body: datos_insertar });
-                const data = await response.json();
-                console.log(data);
-            } catch (e) {
-                console.error(e.message);
-            }
+            // try {
+            //     const response = await fetch(url, { method: 'post', body: datos_insertar });
+            //     const data = await response.json();
+            //     console.log(data);
+            // } catch (e) {
+            //     console.error(e.message);
+            // }
 
-            // Swal.fire(
-            //     'Añadido!',
-            //     'Your file has been deleted.',
-            //     'success'
-            // )
+            fetch(url, {
+                method: 'post',
+                body: datos_insertar
+            })
+                .then(data => data.json())
+                .then(data => {
+                    console.log('Exito', data);
+                    Swal.fire(
+                        'Añadido!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                })
+                .catch((e) => {
+                    console.log(e.message)
+                })
+
         } else {
             Swal.fire(
                 'Cancelado!',

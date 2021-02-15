@@ -12,7 +12,19 @@
 <body>
     <button id="btnRegistro">Registro</button>
 
-    edwin
+    <?php
+    require_once 'bd/conexion.php';
+    require_once 'php/consultasBD.php';
+    $sentencia = new consultas();
+    $mostrardatos=$sentencia->selectPersonas();
+    foreach($mostrardatos as $res){
+        echo '<p>'.$res['dni'].'</p>';
+        echo '<p>'.$res['nombre'].'</p>';
+        echo '<p>'.$res['apellidos'].'</p>';
+        echo '<p>'.$res['fecha_nacimiento'].'</p>';
+        echo '<p>'.$res['telefono'].'</p>';
+    }
+    ?>
 
     <script src="./javascript/funciones.js"></script>
 </body>
