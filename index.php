@@ -12,8 +12,6 @@
 </head>
 <body>
     <button id="btnRegistro">Registro</button>
-
-<<<<<<< HEAD
     <?php
     require_once 'bd/conexion.php';
     require_once 'php/consultasBD.php';
@@ -27,10 +25,8 @@
         echo '<p>'.$res['telefono'].'</p>';
     }
     ?>
-=======
-    <button id="btnLogin">Iniciar sesión</button>
 
->>>>>>> e30208a285e20d7adb18caebc05a2ce9b4c168cd
+    <button id="btnLogin">Iniciar sesión</button>
 
     <script src="./javascript/funciones.js"></script>
     <script src="./javascript/funcionesLogin.js"></script>
