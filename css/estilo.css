@@ -4,8 +4,16 @@
     gap: 1rem;
 }
 
-.formulario-registro label, .formulario-login {
+.formulario-registro label, .formulario-login label {
     text-align: right;
+}
+
+.formulario-login input {
+    width: 100px;
+}
+
+.formulario-login label {
+    margin-left: 3rem;
 }
 
 .swal2-modal {

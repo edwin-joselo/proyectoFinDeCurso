@@ -44,6 +44,26 @@ class consultas extends bdconexion {
         }
 
     }
+
+    public function comprobarLogin($usuario, $contrasenia){
+        $sql = bdconexion::abrir_conexion_PDO()->prepare("SELECT dni FROM personas WHERE dni = '$usuario' AND contrasenia='$contrasenia'");
+        if($sql->execute()) {
+            $resultado = $sql->fetch();
+            if($resultado != null){
+                session_start();
+                $_SESSION['usuario'] = $usuario;
+            }else {
+                $sql = bdconexion::abrir_conexion_PDO()->prepare("SELECT usuario FROM policias WHERE usuario = '$usuario' AND contrasenia='$contrasenia'");
+                if($sql->execute()) {
+                    $resultado = $sql->fetch();
+                    if($resultado != null){
+                        session_start();
+                        $_SESSION['usuario'] = $usuario;
+                    }
+                }
+            }
+        }
+    }
 }
 
 ?>

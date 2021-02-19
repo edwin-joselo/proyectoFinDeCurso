@@ -1,3 +1,8 @@
+<?php
+    session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,5 +13,11 @@
 </head>
 <body>
     <h1>Pagina principal</h1>
+    <?php
+        echo $_SESSION['usuario'];
+    ?>
+
+
+    
 </body>
 </html>

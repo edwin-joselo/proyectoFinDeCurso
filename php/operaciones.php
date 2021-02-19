@@ -34,7 +34,29 @@ switch ($tipo_operacion) {
         break;
         
     case 'loguear':
-        echo json_encode('le he dado en insertar');
+
+        $usuario = $_POST['usuario'];
+        $contrasenia = $_POST['contrasenia'];
+
+        $consultas = new consultas();
+
+        $errores = [];
+        if(empty($usuario)){
+            $errores = 'Usuario vacío';
+        }
+
+        if(empty($contrasenia)){
+            $errores = 'Contraseña vacía';
+        }
+
+        if($errores){
+            echo json_encode($errores);
+
+        } else {
+
+            $ejecutar = $consultas->comprobarLogin($usuario, $contrasenia);
+            echo json_encode($ejecutar);
+        }
         
         break;
             
