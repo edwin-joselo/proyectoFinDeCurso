@@ -11,7 +11,25 @@
     <link rel="stylesheet" href="./css/dark.css">
 </head>
 <body>
+    <header>
+        <img src="./imagenes/escudo-policial.png" alt="">
+        <nav>
+            <ul id="menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a id="btnRegistro" href="#">Registrarse</a></li>
+                <li><a id="btnLogin" href="#">Iniciar Sesión</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main></main>
+    <aside></aside>
+    <footer></footer>
+
     <button id="btnRegistro">Registro</button>
+
+
     <?php
     require_once 'bd/conexion.php';
     require_once 'php/consultasBD.php';
