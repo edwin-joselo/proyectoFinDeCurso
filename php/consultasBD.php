@@ -52,6 +52,8 @@ class consultas extends bdconexion {
             if($resultado != null){
                 session_start();
                 $_SESSION['usuario'] = $usuario;
+                $resultado = self::selectPersonas();
+                return $resultado;
             }else {
                 $sql = bdconexion::abrir_conexion_PDO()->prepare("SELECT usuario FROM policias WHERE usuario = '$usuario' AND contrasenia='$contrasenia'");
                 if($sql->execute()) {
@@ -59,6 +61,8 @@ class consultas extends bdconexion {
                     if($resultado != null){
                         session_start();
                         $_SESSION['usuario'] = $usuario;
+                        $resultado = self::selectPersonas();
+                        return $resultado;
                     }
                 }
             }

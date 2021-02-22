@@ -36,15 +36,19 @@ function mostrarFormularioInicio() {
                 .then(data => data.json())
                 .then(data => {
                     console.log('Exito', data);
-                    Swal.fire({
-                        title: 'Recibido',
-                        text: 'Comprobando datos...',
-                        type: 'success',
-                        timer: 2000,
-                        showConfirmButton: false
-                    })
-                    .then(function(){
-                        window.location.href = 'principal.php';
+                    if(data){
+                        Swal.fire({
+                            title: 'Recibido',
+                            text: 'Comprobando datos...',
+                            type: 'success',
+                            timer: 5000,
+                            showConfirmButton: false
+                        })
+                        .then(function(){
+                            window.location.href = 'principal.php';
+                        })
+                    }else{
+                        exit();
                     }
                 })
                 .catch((e) => {

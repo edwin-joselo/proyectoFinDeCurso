@@ -1,5 +1,10 @@
 <?php
     session_start();
+
+    if (isset($_POST['cerrar'])){
+        session_unset();
+        header("Location: index.php");
+    }
 ?>
 
 
@@ -17,7 +22,9 @@
         echo $_SESSION['usuario'];
     ?>
 
-
+    <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST" >
+            <input type="submit" name="cerrar" value="ELIMINAR SESION"/>
+    </form>
     
 </body>
 </html>
