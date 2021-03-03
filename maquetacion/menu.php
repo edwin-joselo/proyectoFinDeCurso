@@ -6,4 +6,5 @@
         <li><a id="btnLogin" href="#">Iniciar Sesión</a></li>
         <li><a href="#">Contacto</a></li>
     </ul>
+    <p>Esta pagina consiste en un proyecto.</p>
 </nav>
