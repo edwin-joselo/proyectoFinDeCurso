@@ -7,46 +7,62 @@
     <title>Document</title>
     <script src="./javascript/sweetalert2.js"></script>
     <link rel="stylesheet" href="./css/sweetalert2.css">
-    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/movil.css">
+    <link rel="stylesheet" href="./css/tablet.css">
+    <link rel="stylesheet" href="./css/monitor.css">
     <link rel="stylesheet" href="./css/dark.css">
 </head>
 <body>
-    <header>
-        <img src="./imagenes/escudo-policial.png" alt="">
-        <nav>
-            <ul id="menu">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Sobre nosotros</a></li>
-                <li><a id="btnRegistro" href="#">Registrarse</a></li>
-                <li><a id="btnLogin" href="#">Iniciar Sesión</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main></main>
-    <aside></aside>
-    <footer></footer>
-
-    <button id="btnRegistro">Registro</button>
-
 
     <?php
-    require_once 'bd/conexion.php';
-    require_once 'php/consultasBD.php';
-    $sentencia = new consultas();
-    $mostrardatos=$sentencia->selectPersonas();
-    foreach($mostrardatos as $res){
-        echo '<p>'.$res['dni'].'</p>';
-        echo '<p>'.$res['nombre'].'</p>';
-        echo '<p>'.$res['apellidos'].'</p>';
-        echo '<p>'.$res['fecha_nacimiento'].'</p>';
-        echo '<p>'.$res['telefono'].'</p>';
-    }
+    echo '<div class="cabecera">';
+    include_once './maquetacion/cabecera.php';
+    include_once './maquetacion/menu.php';
+    echo '</div>';
+    include_once './maquetacion/principal.php';
+    include_once './maquetacion/pie.php';
     ?>
 
-    <button id="btnLogin">Iniciar sesión</button>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfulz2jpJ3DGJQRHy-cpOjARGoGIUSLY8&callback=initMap">
+    </script>
+    <!-- <script src="./javascript/js.js"></script> -->
+    <script>
+        function initMap() {
+            //Ponemos el mapa
+            let centerPosition = { lat: 37.664289902583164, lng: -1.6965250818394138 };
+            let schoolPosition = { lat: 37.664289902583164, lng: -1.6965250818394138 };
 
-    <script src="./javascript/funciones.js"></script>
-    <script src="./javascript/funcionesLogin.js"></script>
+            let map = new google.maps.Map(
+                tagDivMap,
+                {
+                    center: centerPosition,
+                    scrollwheel: false,
+                    zoom: 16,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+            );
+
+            //Creamos un marcador
+            let markerSchool = new google.maps.Marker({
+                position: schoolPosition,
+                map: map
+            });
+
+            let markerTrainStation = new google.maps.Marker({
+                position: new google.maps.LatLng(37.672091, -1.696290),
+                map: map
+            });
+
+            let panorama = new google.maps.StreetViewPanorama(
+                tagDivPanorama,
+                {
+                    position: schoolPosition,
+                    pov: { heading: 150, pitch: 10 }
+                }
+            );
+        }
+    </script>
 </body>
 </html>

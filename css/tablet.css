@@ -1,0 +1,7 @@
+
+/* Tablet */
+@media all and (min-width: 451px) and (max-width: 900px){
+    body {
+        background-color: green;
+    }
+}
