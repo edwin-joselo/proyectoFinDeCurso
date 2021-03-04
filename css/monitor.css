@@ -1,0 +1,114 @@
+/* Monitor */
+@media all and (min-width: 901px) {
+    body {
+        min-height: 100vh;
+        background-repeat: no-repeat;
+        display: grid;
+        grid-template: 
+            "header" auto
+            "nav"    auto
+            "main"   1fr
+            "footer" auto
+            / 1fr
+        ;
+    }
+    
+    .cabecera {
+        background-image: url(../imagenes/policia-nacional.png);
+        height: 100%;
+        width: 100%;
+    }
+
+    header {
+        grid-area: header;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+    }
+
+    header > div {
+        margin: 0 1rem;
+    }
+
+    header > div:nth-child(1) {
+        align-self: center;
+    }
+
+    header > div:nth-child(2) > img {
+        height: 30px;
+        width: 30px;
+    }
+
+    nav {
+        grid-area: nav;
+        /* background-color: rgba(red, green, blue, alpha); */
+        background-color: rgba(73, 64, 64, 0.5);
+    }
+
+    nav > ul {
+        display: flex;
+        justify-content: center;
+    }
+    
+    li {
+        margin: 0 1rem;
+        list-style: none;
+    }
+
+    a {
+        font-size: 1.3rem;
+        color: white;
+        text-decoration: none;
+    }
+
+    #menu li a {
+        text-decoration: none;
+        float: left;
+        padding: 10px;
+        color: #fff;
+    }
+
+    main {
+        grid-area: main;
+        background-color: rgba(73, 64, 64, 0.5);
+    }
+
+    footer {
+        grid-area: footer;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        /* position: relative; */
+    }
+
+    footer > a{
+        background-color: white;
+    }
+
+    .contenedor-direccion {
+        display: flex;
+        justify-content: center;
+    }
+
+    #tagDivMap {
+        /* width: 75%;
+        height: 75%; */
+        height: 500px;
+        width: 500px;
+    }
+
+    #tagDivPanorama {
+        width: 200px; 
+        height: 200px; 
+        position: absolute; 
+        top: 100px;
+        left: 100px; 
+        border: red solid 5px;
+    }
+
+    /* footer >  {
+
+    } */
+}

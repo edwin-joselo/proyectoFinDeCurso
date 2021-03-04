@@ -1,0 +1,6 @@
+/* Móvil */
+@media all and (max-width: 450px) {
+    body {
+        background-color: red;
+    }
+}

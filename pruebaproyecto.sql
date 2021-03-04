@@ -1,33 +1,49 @@
+DROP DATABASE IF EXISTS pruebaproyecto;  
+
 CREATE DATABASE pruebaproyecto;
 
 USE pruebaproyecto;
 
 -- crear las tablas
 CREATE TABLE policias(
-    usuario varchar(100) PRIMARY KEY,
+    num_placa varchar(7) PRIMARY KEY,
     contrasenia varchar(32)
 );
-
 
 -- usuarios
 CREATE TABLE personas(
     dni varchar(9) PRIMARY KEY,
     nombre varchar(100),
     apellidos varchar(100),
+    fecha_nacimiento varchar(100)
+);
+
+CREATE TABLE usuarios(
+    dni varchar(9) PRIMARY KEY,
+    nombre varchar(100),
+    apellidos varchar(100),
     fecha_nacimiento varchar(100),
     telefono int(9),
     email varchar(100),
-    contrasenia varchar(100),
-    foto varchar(100)
+    contrasenia varchar(100)
+);
+
+CREATE TABLE denuncias_previas(
+    cod int(100) PRIMARY KEY AUTO_INCREMENT,
+    dni varchar(9),
+    descripcion text,
+    foto longblob,
+    fecha_delito date,
+    aprobado varchar(2)
 );
 
 CREATE TABLE denuncias(
-    cod int(100) PRIMARY KEY AUTO_INCREMENT,
+    cod int(100) PRIMARY KEY,
     fecha date,
-    aprobado varchar(2),
     dni_denunciante varchar(9),
     dni_denunciado varchar(9),
-    delito varchar(6)
+    delito varchar(6),
+    num_placa_policia varchar(7)
 );
 
 CREATE TABLE delitos(
@@ -37,8 +53,19 @@ CREATE TABLE delitos(
 
 
 -- agregar claves foráneas
+ALTER TABLE denuncias_previas
+ADD CONSTRAINT FOREIGN KEY (dni) REFERENCES usuarios(dni);
+
 ALTER TABLE denuncias
-ADD CONSTRAINT FOREIGN KEY (dni_denunciante) REFERENCES personas(dni),
+ADD CONSTRAINT FOREIGN KEY (dni_denunciante) REFERENCES denuncias_previas(dni),
 ADD CONSTRAINT FOREIGN KEY (dni_denunciado) REFERENCES personas(dni),
-ADD CONSTRAINT FOREIGN KEY (delito) REFERENCES delitos(cod);
+ADD CONSTRAINT FOREIGN KEY (delito) REFERENCES delitos(cod),
+ADD CONSTRAINT FOREIGN KEY (num_placa_policia) REFERENCES policias(num_placa),
+ADD CONSTRAINT FOREIGN KEY (cod) REFERENCES denuncias_previas(cod);
+
+ALTER TABLE personas
+ADD CONSTRAINT FOREIGN KEY (dni) REFERENCES usuarios(dni);
+
+-- agregar policia
+INSERT INTO policias(num_placa, contrasenia) VALUES ('123456A', 'admin');
 
