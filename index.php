@@ -43,25 +43,6 @@
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 }
             );
-
-            //Creamos un marcador
-            let markerSchool = new google.maps.Marker({
-                position: schoolPosition,
-                map: map
-            });
-
-            let markerTrainStation = new google.maps.Marker({
-                position: new google.maps.LatLng(37.672091, -1.696290),
-                map: map
-            });
-
-            let panorama = new google.maps.StreetViewPanorama(
-                tagDivPanorama,
-                {
-                    position: schoolPosition,
-                    pov: { heading: 150, pitch: 10 }
-                }
-            );
         }
     </script>
 </body>
