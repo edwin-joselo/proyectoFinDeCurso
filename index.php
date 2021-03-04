@@ -14,23 +14,6 @@
     <link rel="stylesheet" href="./css/dark.css">
 </head>
 <body>
-<<<<<<< HEAD
-    <button id="btnRegistro">Registro</button>
-    <?php
-    require_once 'bd/conexion.php';
-    require_once 'php/consultasBD.php';
-    $sentencia = new consultas();
-    $mostrardatos=$sentencia->selectPersonas();
-    foreach($mostrardatos as $res){
-        echo '<p>'.$res['dni'].'</p>';
-        echo '<p>'.$res['nombre'].'</p>';
-        echo '<p>'.$res['apellidos'].'</p>';
-        echo '<p>'.$res['fecha_nacimiento'].'</p>';
-        echo '<p>'.$res['telefono'].'</p>';
-    }
-    ?>
-=======
->>>>>>> ceae30cb30f3699a6e67293a7a688231ba26db12
 
     <?php
     echo '<div class="cabecera">';
@@ -41,10 +24,6 @@
     include_once './maquetacion/index/pie.php';
     ?>
 
-<<<<<<< HEAD
-    <script src="./javascript/funciones.js"></script>
-    <script src="./javascript/funcionesLogin.js"></script>
-=======
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfulz2jpJ3DGJQRHy-cpOjARGoGIUSLY8&callback=initMap">
     </script>
@@ -66,6 +45,5 @@
             );
         }
     </script>
->>>>>>> ceae30cb30f3699a6e67293a7a688231ba26db12
 </body>
 </html>
