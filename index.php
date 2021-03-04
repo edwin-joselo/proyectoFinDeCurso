@@ -17,11 +17,11 @@
 
     <?php
     echo '<div class="cabecera">';
-    include_once './maquetacion/cabecera.php';
-    include_once './maquetacion/menu.php';
+    include_once './maquetacion/index/cabecera.php';
+    include_once './maquetacion/index/menu.php';
     echo '</div>';
-    include_once './maquetacion/principal.php';
-    include_once './maquetacion/pie.php';
+    include_once './maquetacion/index/principal.php';
+    include_once './maquetacion/index/pie.php';
     ?>
 
     <script async defer
