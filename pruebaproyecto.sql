@@ -61,7 +61,9 @@ ADD CONSTRAINT FOREIGN KEY (num_placa_policia) REFERENCES policias(num_placa),
 ADD CONSTRAINT FOREIGN KEY (cod) REFERENCES denuncias_previas(cod);
 
 ALTER TABLE denuncias_previas
-ADD CONSTRAINT FOREIGN KEY (dni) REFERENCES personas(dni);
+ADD CONSTRAINT FOREIGN KEY (dni) REFERENCES personas(dni),
+ADD CONSTRAINT FOREIGN KEY (dni) REFERENCES usuarios(dni);
+
 
 --agregar policia
 INSERT INTO policias(num_placa, contrasenia) VALUES ('123456A', 'admin');
