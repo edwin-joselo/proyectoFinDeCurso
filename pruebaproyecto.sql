@@ -53,6 +53,10 @@ CREATE TABLE delitos(
 
 
 -- agregar claves foráneas
+ALTER TABLE denuncias_previas
+ADD CONSTRAINT FOREIGN KEY (dni) REFERENCES personas(dni),
+ADD CONSTRAINT FOREIGN KEY (dni) REFERENCES usuarios(dni);
+
 ALTER TABLE denuncias
 ADD CONSTRAINT FOREIGN KEY (dni_denunciante) REFERENCES denuncias_previas(dni),
 ADD CONSTRAINT FOREIGN KEY (dni_denunciado) REFERENCES personas(dni),
@@ -60,8 +64,7 @@ ADD CONSTRAINT FOREIGN KEY (delito) REFERENCES delitos(cod),
 ADD CONSTRAINT FOREIGN KEY (num_placa_policia) REFERENCES policias(num_placa),
 ADD CONSTRAINT FOREIGN KEY (cod) REFERENCES denuncias_previas(cod);
 
-ALTER TABLE denuncias_previas
-ADD CONSTRAINT FOREIGN KEY (dni) REFERENCES personas(dni);
+
 
 --agregar policia
 INSERT INTO policias(num_placa, contrasenia) VALUES ('123456A', 'admin');
