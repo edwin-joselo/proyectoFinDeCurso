@@ -45,13 +45,23 @@
         background-color: rgba(73, 64, 64, 0.5);
     }
 
+    nav > h1 {
+        font-size: 3rem;
+        text-align: center;
+        padding: 2rem 0;
+    }
+    
+    nav > hr {
+        margin: 0 15%;
+    }
+
     nav > ul {
         display: flex;
         justify-content: center;
     }
     
     li {
-        margin: 0 1rem;
+        margin: 0.5rem 1rem;
         list-style: none;
     }
 
@@ -70,7 +80,8 @@
 
     main {
         grid-area: main;
-        background-color: rgba(73, 64, 64, 0.5);
+        color: black;
+        background-color: rgba(168, 162, 162, 0.5);
     }
 
     footer {
@@ -107,8 +118,4 @@
         left: 100px; 
         border: red solid 5px;
     }
-
-    /* footer >  {
-
-    } */
 }
