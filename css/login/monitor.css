@@ -1,0 +1,182 @@
+/* Monitor */
+@media all and (min-width: 901px) {
+    body {
+        min-height: 100vh;
+        background-repeat: no-repeat;
+        display: grid;
+        grid-template: 
+            "header" auto
+            "main"   1fr
+            / 1fr
+        ;
+    }
+    
+    .cabecera {
+        background-image: url(../imagenes/policia-nacional.png);
+        height: 100%;
+        width: 100%;
+    }
+
+    header {
+        grid-area: header;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+    }
+
+    header > div {
+        margin: 0 1rem;
+    }
+
+    header > div:nth-child(1) {
+        align-self: center;
+    }
+
+    header > div:nth-child(2) > img {
+        height: 30px;
+        width: 30px;
+    }
+
+    main {
+        grid-area: main;
+        /* background-color: rgba(168, 162, 162, 0.5); */
+        background-image: url(../../imagenes/policia-nacional.png);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main > form {
+        background-color: black;
+        margin: 1rem;
+        padding: 1rem;
+        /* height: 50%; */
+        width: 40%;
+        height: fit-content;
+        min-width: 25rem;
+        border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    main > form > div > h1 {
+        text-align: center;
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    hr {
+        border-color: rgb(97, 87, 89);
+    }
+
+    main > form > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 1rem;
+    }
+
+    main > form > div > p, main > form > div > input{
+        text-align: center;
+        background-color: black;
+        color: white;
+        margin: 0.5rem;
+    }
+
+    input[type="text"], input[type="password"] {
+        /* margin-top: 4rem; */
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: solid 2px white;
+        /* background-color: white; */
+        /* background-color: rgba(168, 162, 162, 0.5); */
+        color: white;
+        font-size: 1.2rem;
+        outline: none;
+        border-radius: 1rem;
+        padding: 0.3rem;
+    }
+
+    input[type="submit"] {
+        background-color: white;
+        color: black;
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        padding: 0.7rem 3rem;
+        border: none;
+        border-radius: 4rem;
+    } 
+
+    a {
+        color: burlywood;
+    }
+
+
+    /* body {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom right, blue, orange);
+}
+
+form {
+    width: 40%;
+    height: fit-content;
+    min-width: 25rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: orange;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 2rem;
+    user-select: none;
+}
+
+.titulo {
+    font-size: 2rem;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-left: 1rem;
+    font-size: 1.2 rem;
+    position: relative;
+    top: -1.5rem;
+}
+
+input[type="text"] {
+    margin-top: 4rem;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: solid 2px orange;
+    background-color: transparent;
+    color: orange;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+input[type="text"]:focus + label {
+    top: -3rem
+}
+
+input[type="text"]:focus {
+    color: green;
+}
+
+input[type="button"] {
+    background-color: orange;
+    color: darkblue;
+    margin-top: 4rem;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 1rem;
+} */
+}
