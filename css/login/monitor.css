@@ -45,11 +45,9 @@
         justify-content: center;
         align-items: center;
         position: relative;
-    }
+    }    
 
-    
-
-    main > svg, .imagen-flecha-atras {
+    main > svg {
         position: absolute;
         /* background-image: url(../../imagenes/flecha-atras.svg); */
         width: 50px;
