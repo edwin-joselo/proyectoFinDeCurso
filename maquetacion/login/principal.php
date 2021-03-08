@@ -1,4 +1,4 @@
-<main>
+<main class="main-login">
     <form action="<?php ?>" method="post">
         <div>
             <h1>Iniciar sesión</h1>

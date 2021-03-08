@@ -1,4 +1,4 @@
-<nav>
+<nav class="nav-index">
     <h1>POLICIA NACIONAL</h1>
     <hr>
     <ul id="menu">

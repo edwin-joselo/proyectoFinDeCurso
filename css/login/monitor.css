@@ -47,8 +47,8 @@
     }
 
     main > form {
-        /* background-color: black; */
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgb(84, 101, 199);
+        /* background-color: rgba(19, 30, 53, 0.8); */
         margin: 1rem;
         padding: 1rem;
         /* height: 50%; */
@@ -80,7 +80,7 @@
 
     main > form > div > p, main > form > div > input{
         text-align: center;
-        background-color: black;
+        /* background-color: black; */
         color: white;
         margin: 0.5rem;
     }
@@ -91,9 +91,10 @@
         width: 100%;
         border: none;
         border-bottom: solid 2px white;
+        background-color: transparent;
         /* background-color: white; */
-        /* background-color: rgba(168, 162, 162, 0.5); */
-        color: white;
+        background-color: rgba(168, 162, 162, 0.5);
+        /* color: white; */
         font-size: 1.2rem;
         outline: none;
         border-radius: 1rem;
@@ -114,70 +115,4 @@
         color: burlywood;
     }
 
-
-    /* body {
-    width: 100vw;
-    height: 100vh;
-    background-image: linear-gradient(to bottom right, blue, orange);
-}
-
-form {
-    width: 40%;
-    height: fit-content;
-    min-width: 25rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: orange;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    padding: 2rem;
-    border-radius: 2rem;
-    user-select: none;
-}
-
-.titulo {
-    font-size: 2rem;
-    text-align: center;
-}
-
-label {
-    display: block;
-    margin-left: 1rem;
-    font-size: 1.2 rem;
-    position: relative;
-    top: -1.5rem;
-}
-
-input[type="text"] {
-    margin-top: 4rem;
-    display: block;
-    width: 100%;
-    border: none;
-    border-bottom: solid 2px orange;
-    background-color: transparent;
-    color: orange;
-    font-size: 1.2rem;
-    outline: none;
-}
-
-input[type="text"]:focus + label {
-    top: -3rem
-}
-
-input[type="text"]:focus {
-    color: green;
-}
-
-input[type="button"] {
-    background-color: orange;
-    color: darkblue;
-    margin-top: 4rem;
-    font-size: 1.2rem;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 1rem;
-} */
 }
