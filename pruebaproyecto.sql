@@ -11,12 +11,6 @@ CREATE TABLE policias(
 );
 
 -- usuarios
-CREATE TABLE personas(
-    dni varchar(9) PRIMARY KEY,
-    nombre varchar(100),
-    apellidos varchar(100),
-    fecha_nacimiento varchar(100)
-);
 
 CREATE TABLE usuarios(
     dni varchar(9) PRIMARY KEY,
@@ -58,7 +52,6 @@ ADD CONSTRAINT FOREIGN KEY (dni) REFERENCES usuarios(dni);
 
 ALTER TABLE denuncias
 ADD CONSTRAINT FOREIGN KEY (dni_denunciante) REFERENCES denuncias_previas(dni),
-ADD CONSTRAINT FOREIGN KEY (dni_denunciado) REFERENCES personas(dni),
 ADD CONSTRAINT FOREIGN KEY (delito) REFERENCES delitos(cod),
 ADD CONSTRAINT FOREIGN KEY (num_placa_policia) REFERENCES policias(num_placa),
 ADD CONSTRAINT FOREIGN KEY (cod) REFERENCES denuncias_previas(cod);
