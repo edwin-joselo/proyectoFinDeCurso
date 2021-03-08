@@ -42,7 +42,7 @@
     nav {
         grid-area: nav;
         /* background-color: rgba(red, green, blue, alpha); */
-        background-color: rgba(30, 58, 80, 0.4);
+        /* background-color: rgba(64, 68, 73, 0.5); */
         border-bottom: solid 1px rgba(73, 64, 64, 0.5);
     }
 
@@ -61,8 +61,37 @@
         justify-content: center;
     }
 
+    li {
+        margin: 0.5rem 1rem;
+        list-style: none;
+    }
+
+    a {
+        font-size: 1.3rem;
+        color: white;
+        text-decoration: none;
+    }
+
+    /* #menu{
+        display: flex;
+        background-color: rgba(64, 68, 73, 0.5);
+    } */
+
+    #menu li a {
+        text-decoration: none;
+        float: left;
+        padding: 10px;
+        color: #fff;
+    }
+
+    #menu > li > a {
+        font-weight: bold;
+       
+    }
+
     #menu > li > a:hover {
         background-color: rgba(61, 98, 167, 0.603);
+        border-radius: 1.5rem;
     }
     
     .presentacion > ul > li {
@@ -76,24 +105,6 @@
 
     .presentacion > h3 {
         margin-top: 1rem;
-    }
-
-    li {
-        margin: 0.5rem 1rem;
-        list-style: none;
-    }
-
-    a {
-        font-size: 1.3rem;
-        color: white;
-        text-decoration: none;
-    }
-
-    #menu li a {
-        text-decoration: none;
-        float: left;
-        padding: 10px;
-        color: #fff;
     }
 
     main {
