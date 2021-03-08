@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/movil.css">
     <link rel="stylesheet" href="./css/tablet.css">
-    <link rel="stylesheet" href="./css/monitor.css">
+    <link rel="stylesheet" href="./css/index/monitor.css">
     <link rel="stylesheet" href="./css/dark.css">
 </head>
 <body>
