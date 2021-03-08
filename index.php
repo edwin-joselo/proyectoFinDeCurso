@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./javascript/sweetalert2.js"></script>
-    <link rel="stylesheet" href="./css/sweetalert2.css">
+    <link rel="stylesheet" href="./css/sweetalert2/sweetalert2.css">
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/movil.css">
     <link rel="stylesheet" href="./css/tablet.css">
     <link rel="stylesheet" href="./css/index/monitor.css">
-    <link rel="stylesheet" href="./css/dark.css">
+    <link rel="stylesheet" href="./css/sweetalert2/dark.css">
 </head>
 <body>
 
