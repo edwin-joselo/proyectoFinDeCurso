@@ -1,4 +1,5 @@
-<main class="main-login">
+<main>
+    <div class="imagen-flecha-atras"></div>
     <form action="<?php ?>" method="post">
         <div>
             <h1>Iniciar sesión</h1>
