@@ -47,7 +47,8 @@
     }
 
     main > form {
-        background-color: black;
+        /* background-color: black; */
+        background-color: rgba(0, 0, 0, 0.8);
         margin: 1rem;
         padding: 1rem;
         /* height: 50%; */
