@@ -18,13 +18,4 @@
             <p><label for="">¿No tienes una cuenta?</label><a href="">Registrate</a></p>
         </div>
     </form>
-
-    <!-- <form> 
-        <div class="titulo">Registro de usuarios</div>
-
-        <input type="text" name="" id="eInputUsuario">
-        <label for="eInputUsuario">Usuario</label>
-
-        <input type="button" value="Validar">
-    </form> -->
 </main>
