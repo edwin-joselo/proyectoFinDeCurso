@@ -15,5 +15,6 @@
     include_once './maquetacion/login/principal.php';
     ?>
 
+    <script src="./javascript/login.js"></script>
 </body>
 </html>
