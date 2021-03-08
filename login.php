@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="./css/login/monitor.css">
 </head>
 <body>
+
     <?php 
     include_once './maquetacion/login/cabecera.php';
     include_once './maquetacion/login/principal.php';
     ?>
+
 </body>
 </html>
