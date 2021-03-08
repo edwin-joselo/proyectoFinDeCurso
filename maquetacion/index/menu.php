@@ -15,8 +15,8 @@
         <h3>¿Cómo presentar una denuncia?</h3>
         <p>Hay que seguir los siguientes pasos:</p>
         <ul>
-            <li>Registrarse en esta página en caso de que no tengamos una cuenta</li>
-            <li>Una vez tenemos una sesión iniciada, hacer click en la opción "poner denuncia" que aparecerá en el menú</li>
+            <li>Registrarse en esta página en caso de que no tengamos una cuenta.</li>
+            <li>Una vez tenemos una sesión iniciada, hacer click en la opción "poner denuncia" que aparecerá en el menú.</li>
             <li>Rellenar los datos del formulario (con la posibilidad de subir fotos).</li>
             <li>Enviar la denuncia y esperar.</li>
             <li>Se le enviará un correo cuando su denuncia sea aceptada.</li>
