@@ -47,7 +47,7 @@
         position: relative;
     }    
 
-    main > svg {
+    main > a > svg {
         position: absolute;
         /* background-image: url(../../imagenes/flecha-atras.svg); */
         width: 50px;
