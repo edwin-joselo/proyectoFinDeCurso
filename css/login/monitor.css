@@ -89,6 +89,7 @@
 
     main > form > div > p {
         font-size: 1.4rem;
+        background-color: transparent;
     }
 
     main > form > div > p, main > form > div > input{
