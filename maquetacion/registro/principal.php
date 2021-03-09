@@ -10,31 +10,31 @@
             <hr>
         </div>
         <div>
-            <p for="">DNI: </p>
-            <input type="text" name="email" placeholder="Introduce tu email">
+            <p>DNI: </p>
+            <input type="text" name="email" placeholder="Introduce tu dni">
         </div>
         <div>
-            <p for="">Nombre: </p>
-            <input type="password" name="contrasenia" placeholder="Introduce tu contraseña">
+            <p>Nombre: </p>
+            <input type="password" name="contrasenia" placeholder="Introduce tu nombre">
         </div>
         <div>
-            <p for="">Apellidos: </p>
-            <input type="password" name="contrasenia" placeholder="Introduce tu contraseña">
+            <p>Apellidos: </p>
+            <input type="password" name="contrasenia" placeholder="Introduce tus apellidos">
         </div>
         <div>
-            <p for="">Fecha de nacimiento: </p>
-            <input type="password" name="contrasenia" placeholder="Introduce tu contraseña">
+            <p>Fecha de nacimiento: </p>
+            <input type="password" name="contrasenia" placeholder="Introduce tu fecha de nacimiento">
         </div>
         <div>
-            <p for="">Teléfono: </p>
-            <input type="password" name="contrasenia" placeholder="Introduce tu contraseña">
+            <p>Teléfono: </p>
+            <input type="password" name="contrasenia" placeholder="Introduce tu telefono">
         </div>
         <div>
-            <p for="">Email: </p>
-            <input type="password" name="contrasenia" placeholder="Introduce tu contraseña">
+            <p>Email: </p>
+            <input type="password" name="contrasenia" placeholder="Introduce tu email">
         </div>
         <div>
-            <p for="">Contraseña: </p>
+            <p>Contraseña: </p>
             <input type="password" name="contrasenia" placeholder="Introduce tu contraseña">
         </div>
         <input type="submit" name="registrarse" value="Registrarse"/>
