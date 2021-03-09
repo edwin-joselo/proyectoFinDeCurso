@@ -14,6 +14,7 @@
     include_once './maquetacion/registro/cabecera.php';
     include_once './maquetacion/registro/principal.php';
     ?>
+    
     <script src="./javascript/login.js"></script>
 </body>
 </html>
