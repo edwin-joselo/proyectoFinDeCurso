@@ -1,12 +1,10 @@
 <?php
 
-class bdconexion {
-
-    protected function abrir_conexion_PDO() {
+    function abrir_conexion_PDO() {
         //opciones
         $opciones = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
         //conexion
-        $conexion = new PDO('mysql:host=localhost;dbname=pruebaproyecto', 'proyecto', 'proyecto', $opciones);
+        $conexion = new PDO('mysql:host=localhost;dbname=pruebaproyecto', 'admin', 'admin', $opciones);
         //Compruebo errores en la conexion
         
         $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -14,7 +12,7 @@ class bdconexion {
     }
     //No hace falta cerrar la conexion manualmente en PDO
 
-    protected function calcular_max($id, $tabla, $consulta){
+    function calcular_max($id, $tabla, $consulta){
         //Consulta de tipo SELECT  
         $sql = 'SELECT MAX('.$id.') FROM '.$tabla; 
         $consulta->prepare($sql);
@@ -26,4 +24,3 @@ class bdconexion {
             return $max_cod+=1;
         }
     }
-}

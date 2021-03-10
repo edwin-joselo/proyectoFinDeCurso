@@ -1,3 +1,22 @@
+<?php 
+    require_once './bd/conexion.php';
+    require_once './bd/consultas.php';
+    require_once './php/funciones.php';
+
+    $conexion = abrir_conexion_PDO();
+
+    $errores = [];
+
+    if(isset($_POST['registrarse'])){
+        $errores = comprobar_errores_registro($_POST['dni'], $_POST['nombre'], $_POST['apellidos'], $_POST['fecha_nacimiento'], $_POST['telefono'], $_POST['email'], $_POST['contrasenia'], $_POST['repetir_contrasenia'], $errores);
+
+        if(!$errores){
+            insertar_usuario($conexion);
+        } 
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

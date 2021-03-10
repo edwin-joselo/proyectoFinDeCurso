@@ -11,35 +11,35 @@
         </div>
         <div>
             <p>DNI: </p>
-            <input type="text" name="email" placeholder="Introduce tu dni">
+            <input type="text" name="dni" placeholder="Introduce tu dni" <?php mostrar_value('dni') ?>>
         </div>
         <div>
             <p>Nombre: </p>
-            <input type="password" name="contrasenia" placeholder="Introduce tu nombre">
+            <input type="text" name="nombre" placeholder="Introduce tu nombre" <?php mostrar_value('nombre') ?>>
         </div>
         <div>
             <p>Apellidos: </p>
-            <input type="password" name="contrasenia" placeholder="Introduce tus apellidos">
+            <input type="text" name="apellidos" placeholder="Introduce tus apellidos" <?php mostrar_value('apellidos') ?>>
         </div>
         <div>
             <p>Fecha de nacimiento: </p>
-            <input type="password" name="contrasenia" placeholder="Introduce tu fecha de nacimiento">
+            <input type="text" name="fecha_nacimiento" placeholder="Introduce tu fecha de nacimiento" <?php mostrar_value('fecha_nacimiento') ?>>
         </div>
         <div>
             <p>Teléfono: </p>
-            <input type="password" name="contrasenia" placeholder="Introduce tu telefono">
+            <input type="text" name="telefono" placeholder="Introduce tu telefono" <?php mostrar_value('telefono') ?>>
         </div>
         <div>
             <p>Email: </p>
-            <input type="password" name="contrasenia" placeholder="Introduce tu email">
+            <input type="text" name="email" placeholder="Introduce tu email" <?php mostrar_value('email') ?>>
         </div>
         <div>
             <p>Contraseña: </p>
-            <input type="password" name="contrasenia" placeholder="Introduce tu contraseña">
+            <input type="password" name="contrasenia" placeholder="Introduce tu contraseña" <?php mostrar_value('contrasenia') ?>>
         </div>
         <div>
             <p>Repetir Contraseña: </p>
-            <input type="password" name="contrasenia" placeholder="Repite tu contraseña">
+            <input type="password" name="repetir_contrasenia" placeholder="Repite tu contraseña" <?php mostrar_value('repetir_contrasenia') ?>>
         </div>
         <input type="submit" name="registrarse" value="Registrarse"/>
     </form>
