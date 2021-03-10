@@ -4,6 +4,10 @@ CREATE DATABASE pruebaproyecto;
 
 USE pruebaproyecto;
 
+DROP USER IF EXISTS 'admin'; 
+
+CREATE USER 'admin' IDENTIFIED BY 'admin';
+
 -- crear las tablas
 CREATE TABLE policias(
     num_placa varchar(7) PRIMARY KEY,
