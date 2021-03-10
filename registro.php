@@ -30,8 +30,9 @@
 </head>
 <body>
     <?php
-    include_once './maquetacion/registro/cabecera.php';
+    include_once './maquetacion/index/cabecera.php';
     include_once './maquetacion/registro/principal.php';
+    include_once './maquetacion/index/pie.php';
     ?>
     
     <script src="./javascript/login.js"></script>
