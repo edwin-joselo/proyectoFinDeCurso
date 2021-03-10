@@ -9,8 +9,10 @@
             <h1>Sobre nosotros</h1>
             <hr>
         </div>
-        <div>
-            
+        <h2>Contexto: </h2>
+        <div class="contexto">
+            <p>Esto es una página web creada como proyecto de fin de curso de DAW.</p>
+            <p>El proyecto ha sido creado por Edwin y Pedro.</p>
         </div>
         <h2>Dirección:</h2>
         <div class="contenedor-direccion">
