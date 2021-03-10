@@ -37,6 +37,10 @@
             <p>Contraseña: </p>
             <input type="password" name="contrasenia" placeholder="Introduce tu contraseña">
         </div>
+        <div>
+            <p>Repetir Contraseña: </p>
+            <input type="password" name="contrasenia" placeholder="Repite tu contraseña">
+        </div>
         <input type="submit" name="registrarse" value="Registrarse"/>
     </form>
 </main>
