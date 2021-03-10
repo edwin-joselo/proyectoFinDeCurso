@@ -41,6 +41,8 @@
         grid-area: main;
         /* background-color: rgba(168, 162, 162, 0.5); */
         background-image: url(../../imagenes/policia-nacional.png);
+        background-repeat: no-repeat;
+        background-size: cover;
         display: flex;
         justify-content: center;
         align-items: center;
