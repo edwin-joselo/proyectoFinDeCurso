@@ -42,12 +42,12 @@ CREATE TABLE denuncias(
     fecha date,
     dni_denunciante varchar(9),
     dni_denunciado varchar(9),
-    delito varchar(6),
+    delito int(100),
     num_placa_policia varchar(7)
 );
 
 CREATE TABLE delitos(
-    cod varchar(6) PRIMARY KEY,
+    cod int(100) PRIMARY KEY AUTO_INCREMENT,
     nombre varchar(200)
 );
 
@@ -62,6 +62,11 @@ ADD CONSTRAINT FOREIGN KEY (delito) REFERENCES delitos(cod),
 ADD CONSTRAINT FOREIGN KEY (num_placa_policia) REFERENCES policias(num_placa),
 ADD CONSTRAINT FOREIGN KEY (cod) REFERENCES denuncias_previas(cod);
 
+
+
 -- agregar policia
 INSERT INTO policias(num_placa, contrasenia) VALUES ('123456A', 'admin');
 
+INSERT INTO delitos(nombre) VALUES ('robo');
+INSERT INTO delitos(nombre) VALUES ('hurto');
+INSERT INTO delitos(nombre) VALUES ('agresión');
