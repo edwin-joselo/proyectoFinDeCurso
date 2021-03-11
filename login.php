@@ -12,7 +12,7 @@
 
         if(!$errores){
             if(comprobar_usuario_bd($conexion)){
-                echo 'Bienvenido';
+                header('Location:./index.php');
             } else {
                 echo 'no se pudo';
             }

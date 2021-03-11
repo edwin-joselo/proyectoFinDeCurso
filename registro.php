@@ -13,7 +13,11 @@
         if(!$errores){
             insertar_usuario($conexion);
         } 
+
     }
+    
+    print_r($errores);
+
 
 ?>
 

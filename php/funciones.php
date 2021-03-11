@@ -65,14 +65,20 @@
     function comprobar_errores_registro($dni, $nombre, $apellidos, $fecha_nacimiento, $telefono, $email, $contrasenia, $repetir_contrasenia, $errores) {
         if(empty($dni)){
             $errores['dni'] = 'El dni no debe estar vacio';
+        } elseif(!preg_match("/^[0-9]{8}[A-Z]$/", $dni)){
+            $errores['dni'] = 'El dni no cumple el patrón (ej: 23456789P)';
         }
         
         if(empty($nombre)){
             $errores['nombre'] = 'El nombre no debe estar vacio';
+        } elseif(strlen($nombre) < 2){
+            $errores['nombre'] = 'El nombre tiene que contener más de 2 caracteres (ej: Ed)';
         }
 
         if(empty($apellidos)){
             $errores['apellidos'] = 'Los apellidos no debe estar vacio';
+        } elseif(strlen($apellidos) < 2){
+            $errores['apellidos'] = 'El apellido tiene que contener más de 2 caracteres';
         }
 
         if(empty($fecha_nacimiento)){
@@ -81,6 +87,8 @@
 
         if(empty($telefono)){
             $errores['telefono'] = 'El telefono no debe estar vacio';
+        } elseif(!preg_match("/^(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}$/", $telefono)){
+            $errores['telefono'] = 'El telefono no cumple con los siguientes patrones (ej: +34|0034|34 666777888)';
         }
 
         if(empty($email)){
@@ -89,17 +97,25 @@
 
         if(empty($contrasenia)){
             $errores['contrasenia'] = 'La contraseña no debe estar vacio';
+        } elseif(strlen($contrasenia) < 6){
+            $errores['contrasenia'] = 'La contraseña debe tener al menos 6 caracteres';
+        } elseif (!preg_match("/[a-z]+/",$contrasenia)){
+            $errores['contrasenia'] = 'La contraseña debe tener al menos una letra minúscula';
+        } elseif (!preg_match("/[A-Z]+/",$contrasenia)){
+            $errores['contrasenia'] = 'La contraseña debe tener al menos una letra mayúscula';
+        } elseif (!preg_match("/[0-9]+/",$contrasenia)){
+            $errores['contrasenia'] = "La contraseña debe tener al menos un caracter numérico";
         }
 
         if(empty($repetir_contrasenia)){
             $errores['repetir_contrasenia'] = 'El campo repetir contraseña no debe estar vacio';
         }
 
-        return $errores;
-    }
+        if($contrasenia !== $repetir_contrasenia){
+            $errores['contrasenias_iguales'] = 'Las contraseñas deben coincidir';
+        }
 
-    function comprobar_contrasenia(){
-        
+        return $errores;
     }
 
     function comprobar_errores_login($email, $contrasenia, $errores){

@@ -9,9 +9,11 @@ function insertar_usuario($conexion){
     $email = $_POST['email'];
     $contrasenia = $_POST['contrasenia'];
 
+    $hash = password_hash($contrasenia, PASSWORD_DEFAULT, ['cost' => 10]);
+
     //Consulta de tipo INSERT
     $sql = 'INSERT INTO usuarios(dni, nombre, apellidos, fecha_nacimiento, telefono, email, contrasenia) 
-            VALUES ("'.$dni.'","'.$nombre.'","'.$apellidos.'","'.$fecha_nacimiento.'",'.$telefono.',"'.$email.'","'.$contrasenia.'")';
+            VALUES ("'.$dni.'","'.$nombre.'","'.$apellidos.'","'.$fecha_nacimiento.'",'.$telefono.',"'.$email.'","'.$hash.'")';
     $resultado = $conexion->exec($sql);
     // echo '<p>Se han insertado '.$resultado.' registros.</p>';
     if($resultado){
@@ -24,13 +26,18 @@ function comprobar_usuario_bd($conexion){
     $contrasenia = $_POST['contrasenia'];
 
     //Consulta de tipo SELECT            
-    $sql = 'SELECT email, contrasenia FROM usuarios
-            WHERE email = "'.$email.'" AND contrasenia = "'.$contrasenia.'"';
+    $sql = 'SELECT email, contrasenia, dni FROM usuarios
+            WHERE email = "'.$email.'"';
+
     $resultado = $conexion->query($sql);   
     //utilizando fetch (array asociativo y numerico)
     if($fila = $resultado->fetch()){
-        return true;
-    } else {
-        return false;
-    }
+        if(password_verify($contrasenia, $fila[1])){
+            session_start();
+            $_SESSION['dni'] = $fila[2];
+            return true;
+        } else {
+            return false;
+        }
+    } 
 }
