@@ -98,8 +98,20 @@
         return $errores;
     }
 
-    function comprobar_errores_login(){
+    function comprobar_contrasenia(){
+        
+    }
 
+    function comprobar_errores_login($email, $contrasenia, $errores){
+        if(empty($email)){
+            $errores['email'] = 'El email no puede estar vacio';
+        }
+
+        if(empty($contrasenia)){
+            $errores['contrasenia'] = 'La contraseña no puede estar vacio';
+        }
+
+        return $errores;
     }
     
 ?>

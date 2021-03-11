@@ -18,3 +18,19 @@ function insertar_usuario($conexion){
         header('Location:login.php');
     }
 }
+
+function comprobar_usuario_bd($conexion){
+    $email = $_POST['email'];
+    $contrasenia = $_POST['contrasenia'];
+
+    //Consulta de tipo SELECT            
+    $sql = 'SELECT email, contrasenia FROM usuarios
+            WHERE email = "'.$email.'" AND contrasenia = "'.$contrasenia.'"';
+    $resultado = $conexion->query($sql);   
+    //utilizando fetch (array asociativo y numerico)
+    if($fila = $resultado->fetch()){
+        return true;
+    } else {
+        return false;
+    }
+}

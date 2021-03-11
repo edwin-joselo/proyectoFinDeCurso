@@ -1,3 +1,25 @@
+<?php
+    require_once './bd/conexion.php';
+    require_once './bd/consultas.php';
+    require_once './php/funciones.php';
+
+    $conexion = abrir_conexion_PDO();
+
+    $errores = [];
+
+    if(isset($_POST['iniciar_sesion'])){
+        $errores = comprobar_errores_login($_POST['email'], $_POST['contrasenia'], $errores);
+
+        if(!$errores){
+            if(comprobar_usuario_bd($conexion)){
+                echo 'Bienvenido';
+            } else {
+                echo 'no se pudo';
+            }
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
