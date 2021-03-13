@@ -1,3 +1,11 @@
+<?php 
+    session_start();
+
+    if(isset($_POST['cerrar_sesion'])){
+        unset($_SESSION['dni']);
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

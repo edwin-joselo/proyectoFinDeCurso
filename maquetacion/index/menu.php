@@ -1,7 +1,7 @@
 <nav class="nav-index">
     <h1>POLICIA NACIONAL</h1>
     <hr>
-    <?php if(isset($_SESSION)) { ?>
+    <?php if(!isset($_SESSION['dni'])) { ?>
         <ul id="menu">
             <li><a href="#">Inicio</a></li>
             <li><a href="./nosotros.php">Sobre nosotros</a></li>
