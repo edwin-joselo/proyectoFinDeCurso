@@ -9,7 +9,7 @@
             <li><a id="btnLogin" href="./login.php">Iniciar Sesión</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
-    <?php }else {?>
+    <?php } else {?>
         <ul id="menu">
             <li><a href="#">Inicio</a></li>
             <li><a href="./nosotros.php">Sobre nosotros</a></li>
