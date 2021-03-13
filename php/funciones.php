@@ -88,7 +88,7 @@
         if(empty($telefono)){
             $errores['telefono'] = 'El telefono no debe estar vacio';
         } elseif(!preg_match("/^(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}$/", $telefono)){
-            $errores['telefono'] = 'El telefono no cumple con los siguientes patrones (ej: +34|0034|34 666777888)';
+            $errores['telefono'] = 'El telefono no cumple con los siguientes patrones (ej: 666777888)';
         }
 
         if(empty($email)){

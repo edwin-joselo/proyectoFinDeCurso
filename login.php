@@ -7,18 +7,7 @@
 
     $errores = [];
 
-    if(isset($_POST['iniciar_sesion'])){
-        $errores = comprobar_errores_login($_POST['email'], $_POST['contrasenia'], $errores);
-
-        if(!$errores){
-            if(comprobar_usuario_bd($conexion)){
-                header('Location:./index.php');
-            } else {
-                echo 'no se pudo';
-            }
-        }
-    }
-?>
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,15 +18,37 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/login/monitor.css">
+<script src="./javascript/sweetalert2.js"></script>
+    <link rel="stylesheet" href="./css/sweetalert2/sweetalert2.css">
 </head>
 <body>
 
     <?php 
+    if(isset($_POST['iniciar_sesion'])){
+        $errores = comprobar_errores_login($_POST['email'], $_POST['contrasenia'], $errores);
+
+        if(!$errores){
+            if(comprobar_usuario_bd($conexion)){
+                header('Location:./index.php');
+            } 
+        } else {
+            foreach($errores as $value => $key){
+                echo '<script>
+                    Swal.fire(
+                        "ERROR!",
+                        "'.$key.'",
+                        "error"
+                    );
+                </script>';
+            }
+        }
+    }
     include_once './maquetacion/index/cabecera.php';
     include_once './maquetacion/login/principal.php';
     include_once './maquetacion/index/pie.php';
     ?>
 
     <script src="./javascript/login.js"></script>
+    <script src="./javascript/general.js"></script>
 </body>
 </html>

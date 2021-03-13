@@ -6,20 +6,7 @@
     $conexion = abrir_conexion_PDO();
 
     $errores = [];
-
-    if(isset($_POST['registrarse'])){
-        $errores = comprobar_errores_registro($_POST['dni'], $_POST['nombre'], $_POST['apellidos'], $_POST['fecha_nacimiento'], $_POST['telefono'], $_POST['email'], $_POST['contrasenia'], $_POST['repetir_contrasenia'], $errores);
-
-        if(!$errores){
-            insertar_usuario($conexion);
-        } 
-
-    }
-    
-    print_r($errores);
-
-
-?>
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,14 +18,37 @@
     <link rel="stylesheet" href="css/global.css">
     <!-- <link rel="stylesheet" href="./css/registro/monitor.css"> -->
     <link rel="stylesheet" href="./css/login/monitor.css">
+    <script src="./javascript/sweetalert2.js"></script>
+    <link rel="stylesheet" href="./css/sweetalert2/sweetalert2.css">
 </head>
 <body>
     <?php
+    if(isset($_POST['registrarse'])){
+        $errores = comprobar_errores_registro($_POST['dni'], $_POST['nombre'], $_POST['apellidos'], $_POST['fecha_nacimiento'], $_POST['telefono'], $_POST['email'], $_POST['contrasenia'], $_POST['repetir_contrasenia'], $errores);
+        
+        if(!$errores){
+            insertar_usuario($conexion);
+        }
+        else {
+            foreach($errores as $value => $key){
+                echo '<script>
+                Swal.fire(
+                    "ERROR!",
+                    "'.$key.'",
+                    "error"
+                );
+                </script>';
+            }
+        }
+        
+    }
+    
     include_once './maquetacion/index/cabecera.php';
     include_once './maquetacion/registro/principal.php';
     include_once './maquetacion/index/pie.php';
     ?>
     
     <script src="./javascript/login.js"></script>
+    <script src="./javascript/general.js"></script>
 </body>
 </html>
