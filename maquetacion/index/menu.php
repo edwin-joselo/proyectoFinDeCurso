@@ -21,7 +21,7 @@
     <hr>
     <div class="presentacion">
         <h3>¿En qué consiste esta página web?</h3>
-        <p>Es una aplicación web que nos permite interponer denuncias on-line además de obtener información realcionada con la policía.</p>
+        <p>Es una aplicación web que nos permite interponer denuncias on-line además de obtener información relacionada con la policía.</p>
         <h3>¿Cómo presentar una denuncia?</h3>
         <p>Hay que seguir los siguientes pasos:</p>
         <ul>
