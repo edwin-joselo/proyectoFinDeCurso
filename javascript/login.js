@@ -1,14 +1,4 @@
-window.addEventListener('DOMContentLoaded', iniciar, 
-    jQuery("input[type=file]").change(function(e){
-        var filename = e.currentTarget.files[0].name
-        var idname = jQuery(this).attr('id');
-        if(e.currentTarget.files.length > 1) {
-            jQuery('span.'+idname).next().find('span').html(`${e.currentTarget.files.length} archivos subidos`);
-        }else {
-            jQuery('span.'+idname).next().find('span').html(filename);
-        }
-    })
-);
+window.addEventListener('DOMContentLoaded', iniciar);
 
 function iniciar(e) {
     document.querySelector('main>a>svg').addEventListener('mouseover', cambiarColor);

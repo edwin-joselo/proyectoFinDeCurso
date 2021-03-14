@@ -4,7 +4,7 @@
             <path fill="white" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"></path>
         </svg>
     </a>
-    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data">
         <div>
             <h1>Poner denuncia</h1>
             <hr>
@@ -15,13 +15,12 @@
         </div>
         <div>
             <p>Descripción: </p>
-            <!-- <input type="textarea" rows="20" cols="50" name="descripcion" placeholder="Describa lo sucedido" <?php mostrar_value('decripcion') ?>> -->
-            <textarea name="textarea" rows="20" cols="50" placeholder="Describa lo sucedido"></textarea>
+            <textarea name="textarea" rows="20" cols="50" placeholder="Describa lo sucedido" ><?php mostrar_text_area('textarea') ?></textarea>
         </div>
         <div>
-            <p>Prueba fotográfica (opcional): </p>
+            <p>Pruebas fotográficas (opcional): </p>
             <span class="inputfile">
-                <input type="file" name="inputfile" id="inputfile" multiple/>
+                <input type="file" name="inputfile" id="inputfile" multiple accept="image/*"/>
             </span>
             <label for="inputfile">
                 <span>Elige un archivo</span> 

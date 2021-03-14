@@ -4,6 +4,10 @@
     require_once './bd/conexion.php';
     require_once './bd/consultas.php';
     require_once './php/funciones.php';
+
+    $conexion = abrir_conexion_PDO();
+
+    $errores = [];
 ?>
 
 
@@ -18,15 +22,53 @@
     <!-- <link rel="stylesheet" href="./css/registro/monitor.css"> -->
     <link rel="stylesheet" href="./css/login/monitor.css">
     <link rel="stylesheet" href="./css/denuncia/monitor.css">
+    <link rel="stylesheet" href="./css/sweetalert2/sweetalert2.css">
+    <script src="./javascript/sweetalert2.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <?php
+    if (isset($_POST['enviar_denuncia'])){
+
+        $errores = comprobar_errores_denuncia($_POST['fecha_delito'], $_POST['textarea'], $errores);
+
+        if(!$errores){
+            insertar_denuncia($conexion);
+            echo '<script>
+                Swal.fire(
+                    "¿Hecho!",
+                    "Denuncia enviada y a la espera de que sea revisada",
+                    "success"
+                );
+                </script>';
+            
+        } else {
+            foreach($errores as $value => $key){
+                echo '<script>
+                    Swal.fire(
+                        "ERROR!",
+                        "'.$key.'",
+                        "error"
+                    );
+                </script>';
+            }
+        }
+    }
+    //Consulta de tipo SELECT            
+    $sql = 'SELECT * FROM denuncias_previas WHERE dni = "'.$_SESSION['dni'].'"';
+
+    $resultado = $conexion->query($sql);   
+    //utilizando fetch (array asociativo y numerico)
+    while($fila = $resultado->fetch()){
+        echo '<img src="data:image/*;base64,'.$fila['foto'].'" width = "100px" height = "100px"/>';
+    }
+
     include_once './maquetacion/index/cabecera.php';
     include_once './maquetacion/denuncia/principal.php';
     include_once './maquetacion/index/pie.php';
     ?>
 
+    <script src="./javascript/inputFile.js"></script>
     <script src="./javascript/login.js"></script>
 </body>
 </html>

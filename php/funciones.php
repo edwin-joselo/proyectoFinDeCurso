@@ -130,5 +130,16 @@
         return $errores;
     }
     
+    function comprobar_errores_denuncia($fecha_delito, $descripcion, $errores){
+        if(empty($fecha_delito)){
+            $errores['fecha_delito'] = 'Seleccione una fecha';
+        }
+
+        if(empty($descripcion)){
+            $errores['descripcion'] = 'Añada una descripción';
+        }
+
+        return $errores;
+    }
 ?>
 
