@@ -36,13 +36,25 @@
                         icon: "success",
                         title: "Registrado correctamente",
                         text: "Redirigiendo al login ...",
-                        timer: 2000,
+                        timer: 3000,
                         showConfirmButton: false
                     });
 
                     setTimeout(() => {
                         window.location.href="./login.php";
-                    }, 2000);
+                    }, 3000);
+                    </script>';
+            } else {
+                echo '
+                    <script>
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Algo ha fallado",
+                        text: "Intentelo de nuevo más tarde...",
+                        timer: 3000,
+                        showConfirmButton: false
+                    });
                     </script>';
             }
         } else {

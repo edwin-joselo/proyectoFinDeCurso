@@ -30,23 +30,35 @@
 
         if(!$errores){
             if(comprobar_usuario_bd($conexion)){
-            echo '
-                <script>
-                Swal.fire({
-                    position: "center",
-                    icon: "success",
-                    title: "Logueado correctamente",
-                    text: "Redirigiendo a la página principal...",
-                    timer: 2000,
-                    showConfirmButton: false
-                });
+                echo '
+                    <script>
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Logueado correctamente",
+                        text: "Redirigiendo a la página principal...",
+                        timer: 3000,
+                        showConfirmButton: false
+                    });
 
-                setTimeout(() => {
-                    window.location.href="./index.php";
-                }, 2000);
-                </script>';
+                    setTimeout(() => {
+                        window.location.href="./index.php";
+                    }, 3000);
+                    </script>';
             
-            } 
+            } else {
+                echo '
+                    <script>
+                    Swal.fire({
+                        position: "center",
+                        icon: "error",
+                        title: "Error al iniciar sesion",
+                        text: "Ha habido un problema, intentelo más tarde...",
+                        timer: 3000,
+                        showConfirmButton: false
+                    });
+                    </script>';
+            }
         } else {
             foreach($errores as $value => $key){
                 echo '<script>
