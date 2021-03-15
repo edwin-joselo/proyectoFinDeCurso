@@ -18,8 +18,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/login/monitor.css">
-<script src="./javascript/sweetalert2.js"></script>
     <link rel="stylesheet" href="./css/sweetalert2/sweetalert2.css">
+    <link rel="stylesheet" href="./css/sweetalert2/wordpress-admin.css">
+    <script src="./javascript/sweetalert2.js"></script>
 </head>
 <body>
 

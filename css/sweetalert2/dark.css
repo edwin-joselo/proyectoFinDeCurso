@@ -9,7 +9,7 @@
   width: auto;
   padding: 0.625em;
   overflow-y: hidden;
-  background: #19191a;
+  background: #2778c4;
   box-shadow: 0 0 0.625em #d9d9d9; }
   .swal2-popup.swal2-toast .swal2-header {
     flex-direction: row;
@@ -209,7 +209,7 @@
   padding: 1.25em;
   border: none;
   border-radius: 5px;
-  background: #19191a;
+  background: rgb(61, 64, 66);
   font-family: inherit;
   font-size: 1rem; }
   .swal2-popup:focus {
@@ -277,7 +277,7 @@
     border: 0;
     border-radius: 0.25em;
     background: initial;
-    background-color: #2778c4;
+    background-color: #1f3d59;
     color: #fff;
     font-size: 1.0625em; }
   .swal2-styled.swal2-deny {
