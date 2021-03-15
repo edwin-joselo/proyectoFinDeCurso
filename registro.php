@@ -6,7 +6,7 @@
     $conexion = abrir_conexion_PDO();
 
     $errores = [];
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="./css/login/monitor.css">
     <script src="./javascript/sweetalert2.js"></script>
     <link rel="stylesheet" href="./css/sweetalert2/sweetalert2.css">
+    <!-- <link rel="stylesheet" href="./css/sweetalert2/dark.css"> -->
 </head>
 <body>
     <?php
@@ -27,9 +28,24 @@
         $errores = comprobar_errores_registro($_POST['dni'], $_POST['nombre'], $_POST['apellidos'], $_POST['fecha_nacimiento'], $_POST['telefono'], $_POST['email'], $_POST['contrasenia'], $_POST['repetir_contrasenia'], $errores);
         
         if(!$errores){
-            insertar_usuario($conexion);
-        }
-        else {
+            if(insertar_usuario($conexion)){
+                echo '
+                    <script>
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Registrado correctamente",
+                        text: "Redirigiendo al login ...",
+                        timer: 2000,
+                        showConfirmButton: false
+                    });
+
+                    setTimeout(() => {
+                        window.location.href="./login.php";
+                    }, 2000);
+                    </script>';
+            }
+        } else {
             foreach($errores as $value => $key){
                 echo '<script>
                 Swal.fire(

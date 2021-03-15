@@ -93,6 +93,8 @@
 
         if(empty($email)){
             $errores['email'] = 'El email no debe estar vacio';
+        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $errores['email'] = 'El email no es correcto. (ej: ejemplo@ejemplo.com)';
         }
 
         if(empty($contrasenia)){
@@ -121,6 +123,20 @@
     function comprobar_errores_login($email, $contrasenia, $errores){
         if(empty($email)){
             $errores['email'] = 'El email no puede estar vacio';
+        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $errores['email'] = 'El email no es correcto. (ej: ejemplo@ejemplo.com)';
+        }
+
+        if(empty($contrasenia)){
+            $errores['contrasenia'] = 'La contraseña no puede estar vacio';
+        }
+
+        return $errores;
+    }
+
+    function comprobar_errores_login_policia($num_placa, $contrasenia, $errores){
+        if(empty($num_placa)){
+            $errores['num_placa'] = 'El número de placa no puede estar vacio';
         }
 
         if(empty($contrasenia)){
