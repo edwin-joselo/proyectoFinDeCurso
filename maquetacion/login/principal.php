@@ -11,7 +11,7 @@
         </div>
         <div>
             <p>Email: </p>
-            <input type="email" name="email" placeholder="Introduce tu email">
+            <input type="email" name="email" placeholder="Introduce tu email" <?php  ?>>
         </div>
         <div>
             <p>Contraseña: </p>

@@ -17,7 +17,9 @@ function insertar_usuario($conexion){
     $resultado = $conexion->exec($sql);
     // echo '<p>Se han insertado '.$resultado.' registros.</p>';
     if($resultado){
-        header('Location:login.php');
+        return true;
+    } else {
+        return false;
     }
 }
 
@@ -42,6 +44,26 @@ function comprobar_usuario_bd($conexion){
     } 
 }
 
+function comprobar_policia_bd($conexion){
+    $num_placa = $_POST['num_placa'];
+    $contrasenia = $_POST['contrasenia'];
+
+    //Consulta de tipo SELECT            
+    $sql = 'SELECT num_placa, contrasenia FROM policias
+            WHERE num_placa = "'.$num_placa.'"';
+
+    $resultado = $conexion->query($sql);   
+    //utilizando fetch (array asociativo y numerico)
+    if($fila = $resultado->fetch()){
+        if(password_verify($contrasenia, $fila[1])){
+            session_start();
+            $_SESSION['policia'] = $fila[0];
+            return true;
+        } else {
+            return false;
+        }
+    } 
+}
 
 function insertar_denuncia($conexion) {
     $dni = $_SESSION['dni'];

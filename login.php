@@ -29,7 +29,22 @@
 
         if(!$errores){
             if(comprobar_usuario_bd($conexion)){
-                header('Location:./index.php');
+            echo '
+                <script>
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Logueado correctamente",
+                    text: "Redirigiendo a la página principal...",
+                    timer: 2000,
+                    showConfirmButton: false
+                });
+
+                setTimeout(() => {
+                    window.location.href="./index.php";
+                }, 2000);
+                </script>';
+            
             } 
         } else {
             foreach($errores as $value => $key){
