@@ -71,7 +71,7 @@
         
     }
     
-    include_once './maquetacion/index/cabecera.php';
+    include_once './maquetacion/login/cabecera.php';
     include_once './maquetacion/registro/principal.php';
     include_once './maquetacion/index/pie.php';
     ?>

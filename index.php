@@ -15,7 +15,8 @@
     <title>Document</title>
     <script src="./javascript/sweetalert2.js"></script>
     <link rel="stylesheet" href="./css/sweetalert2/sweetalert2.css">
-    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/global/global.css">
+    <link rel="stylesheet" href="./css/global/monitor.css">
     <link rel="stylesheet" href="./css/index/movil.css">
     <link rel="stylesheet" href="./css/index/tablet.css">
     <link rel="stylesheet" href="./css/index/monitor.css">

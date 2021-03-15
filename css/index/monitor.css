@@ -19,26 +19,6 @@
         width: 100%;
     }
 
-    header {
-        grid-area: header;
-        background-color: black;
-        display: flex;
-        justify-content: center;
-    }
-
-    header > div {
-        margin: 0 1rem;
-    }
-
-    header > div:nth-child(1) {
-        align-self: center;
-    }
-
-    header > div:nth-child(2) > img {
-        height: 30px;
-        width: 30px;
-    }
-
     nav {
         grid-area: nav;
         /* background-color: rgba(red, green, blue, alpha); */
