@@ -1,28 +1,38 @@
 @media all and (min-width: 901px) {
     .grupo-cards {
-        /* border: solid 1px red; */
+        height: auto;
         display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         
     }
-
+    
     .card {
+        /* border: solid 1px red; */
         margin: 1rem;
         box-shadow: 0 5px 10px;
-        width: 350px;
-        height: auto; 
+        width: 200px; 
+        max-height: max-content;
     }
-
+    
     .card > img {
-        width: 350px;
+        width: inherit;
         height: auto;
-        background-color: transparent;
+        display: block;
+        
     }
 
     .card > div {
+        width: auto;
         text-align: center;
         padding: 1rem;
         align-self: center;
+    }
+    
+    .texto-denuncia > p:last-child {
+        border: solid 1px red;
+        max-width: 100%;
+        
     }
 }

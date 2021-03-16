@@ -69,11 +69,16 @@ function insertar_denuncia($conexion) {
     $dni = $_SESSION['dni'];
     $fecha_delito = $_POST['fecha_delito'];
     $descripcion = $_POST['textarea'];
-    $foto = $_FILES['inputfile']['tmp_name'];
-    $foto = base64_encode(file_get_contents(addslashes($foto)));
+    if(!empty($_POST['inputfile'])){
+        $foto = $_FILES['inputfile']['tmp_name'];
+        $foto = base64_encode(file_get_contents(addslashes($foto)));
+        $sql = 'INSERT INTO denuncias_previas(dni, descripcion, foto, fecha_delito, aprobado) 
+                VALUES ("'.$dni.'","'.$descripcion.'","'.$foto.'","'.$fecha_delito.'", "no")';
+    }else{
+        $sql = 'INSERT INTO denuncias_previas(dni, descripcion, fecha_delito, aprobado) 
+                VALUES ("'.$dni.'","'.$descripcion.'","'.$fecha_delito.'", "no")';
+    }
 
-    $sql = 'INSERT INTO denuncias_previas(dni, descripcion, foto, fecha_delito, aprobado) 
-            VALUES ("'.$dni.'","'.$descripcion.'","'.$foto.'","'.$fecha_delito.'", "no")';
     $resultado = $conexion->exec($sql);
 }
 
@@ -90,23 +95,25 @@ function listar_usuarios($conexion){
 
 function mostrar_denuncias($conexion ) {
     $sql = 'SELECT * FROM denuncias_previas';
-    echo '<div class="card">';
     $resultado = $conexion->query($sql);   
     //utilizando fetch (array asociativo y numerico)
     while($fila = $resultado->fetch()){
         if ($fila['aprobado']=== 'no'){
             $dni = $fila['dni'];
             $descripcion = $fila['descripcion'];
-            $foto = '<img src="data:image/*;base64,'.$fila['foto'].'"/>';
             $fecha_delito = $fila['fecha_delito'];
-
-            echo $foto;
-            echo '<div>
-                <h4>DNI: '.$dni.'</h4>
-                <p>Fecha: '.$fecha_delito.'</p>
-                <p>Descripción: '.$descripcion.'<p>
-                </div>';
-        }
+            echo '<div class="card">';
+            echo '<div class="texto-denuncia">
+            <h4>DNI: '.$dni.'</h4>
+            <p>Fecha: '.$fecha_delito.'</p>
+            <p>Descripción: </p>
+            <p>'.$descripcion.'</p>
+            </div>';
+            if(!is_null($fila['foto'])){
+                $foto = '<img src="data:image/*;base64,'.$fila['foto'].'"/>';
+                echo $foto;
+            }
+            echo '</div>';
+            }
     } 
-    echo '</div>';
 }
