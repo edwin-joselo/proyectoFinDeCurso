@@ -64,7 +64,7 @@
     while($fila = $resultado->fetch()){
         echo '<img src="data:image/*;base64,'.$fila['foto'].'" width = "100px" height = "100px"/>';
     }
-
+    
     include_once './maquetacion/index/cabecera.php';
     include_once './maquetacion/denuncia/principal.php';
     include_once './maquetacion/index/pie.php';
