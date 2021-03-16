@@ -86,4 +86,26 @@ function listar_usuarios($conexion){
     // if($fila = $resultado->fetch()){
     //     echo 'Hola';
     // } 
+
+function mostrar_denuncias($conexion ) {
+    $sql = 'SELECT * FROM denuncias_previas';
+    echo '<div class="card">';
+    $resultado = $conexion->query($sql);   
+    //utilizando fetch (array asociativo y numerico)
+    while($fila = $resultado->fetch()){
+        if ($fila['aprobado']=== 'no'){
+            $dni = $fila['dni'];
+            $descripcion = $fila['descripcion'];
+            $foto = '<img src="data:image/*;base64,'.$fila['foto'].'"/>';
+            $fecha_delito = $fila['fecha_delito'];
+
+            echo $foto;
+            echo '<div>
+                <h4>DNI: '.$dni.'</h4>
+                <p>Fecha: '.$fecha_delito.'</p>
+                <p>Descripción: '.$descripcion.'<p>
+                </div>';
+        }
+    } 
+    echo '</div>';
 }

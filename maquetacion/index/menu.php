@@ -3,17 +3,17 @@
     <hr>
     <?php if(!isset($_SESSION['dni'])) { ?>
         <ul id="menu">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="./nosotros.php">Sobre nosotros</a></li>
-            <li><a id="btnRegistro" href="./registro.php">Registrarse</a></li>
             <li><a id="btnLogin" href="./login.php">Iniciar Sesión</a></li>
+            <li><a id="btnRegistro" href="./registro.php">Registrarse</a></li>
+            <li><a href="#">Estadísticas</a></li>
+            <li><a href="./nosotros.php">Sobre nosotros</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     <?php } else {?>
         <ul id="menu">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="./nosotros.php">Sobre nosotros</a></li>
             <li><a href="denuncia.php">Poner denuncia</a></li>
+            <li><a href="#">Estadísticas</a></li>
+            <li><a href="./nosotros.php">Sobre nosotros</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
 

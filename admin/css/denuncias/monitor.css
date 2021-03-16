@@ -1,0 +1,28 @@
+@media all and (min-width: 901px) {
+    .grupo-cards {
+        /* border: solid 1px red; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+    }
+
+    .card {
+        margin: 1rem;
+        box-shadow: 0 5px 10px;
+        width: 350px;
+        height: auto; 
+    }
+
+    .card > img {
+        width: 350px;
+        height: auto;
+        background-color: transparent;
+    }
+
+    .card > div {
+        text-align: center;
+        padding: 1rem;
+        align-self: center;
+    }
+}

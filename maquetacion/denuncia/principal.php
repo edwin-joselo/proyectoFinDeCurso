@@ -20,7 +20,7 @@
         <div>
             <p>Pruebas fotográficas (opcional): </p>
             <span class="inputfile">
-                <input type="file" name="inputfile" id="inputfile" multiple accept="image/*"/>
+                <input type="file" name="inputfile" id="inputfile" accept="image/*"/>
             </span>
             <label for="inputfile">
                 <span>Elige un archivo</span> 
