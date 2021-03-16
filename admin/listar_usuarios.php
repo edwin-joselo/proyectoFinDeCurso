@@ -42,7 +42,7 @@
 </head>
 <body>
     <?php
-    include_once './maquetacion/listar_usuarios/cabecera.php';
+    include_once './maquetacion/menu/cabecera.php';
     include_once './maquetacion/listar_usuarios/principal.php';
     ?>
 
