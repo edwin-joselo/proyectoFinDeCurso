@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/login/monitor.css">
-    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/global/global.css">
     <link rel="stylesheet" href="../css/sweetalert2/dark.css">
     <script src="../javascript/sweetalert2.js"></script>
 </head>

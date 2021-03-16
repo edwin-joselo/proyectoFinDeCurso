@@ -76,3 +76,14 @@ function insertar_denuncia($conexion) {
             VALUES ("'.$dni.'","'.$descripcion.'","'.$foto.'","'.$fecha_delito.'", "no")';
     $resultado = $conexion->exec($sql);
 }
+
+function listar_usuarios($conexion){
+    // //Consulta de tipo SELECT            
+    // $sql = 'SELECT * FROM usuarios';
+
+    // $resultado = $conexion->query($sql);   
+    // //utilizando fetch (array asociativo y numerico)
+    // if($fila = $resultado->fetch()){
+    //     echo 'Hola';
+    // } 
+}
