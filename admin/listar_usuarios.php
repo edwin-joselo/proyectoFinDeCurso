@@ -28,7 +28,7 @@
 
     <!-- GLOBAL -->
     <link rel="stylesheet" href="../css/global/global.css">
-
+    
     <!-- MAQUETACIÓN -->
     <link rel="stylesheet" href="../css/login/monitor.css">
 
@@ -37,8 +37,7 @@
     <script src="../javascript/sweetalert2.js"></script>
 
     <!-- Datatables -->
-    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"> -->
-    <link rel="stylesheet" href="../datatables/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="../css/datatables/jquery.dataTables.css">
 
 </head>
 <body>
@@ -48,10 +47,8 @@
     ?>
 
     <!-- JQUERY -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script> -->
-    <script src="../datatables/js/jquery.js"></script>
-    <!-- <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script> -->
-    <script src="../datatables/js/jquery.dataTables.js"></script>
+    <script src="../javascript/datatables/jquery.js"></script>
+    <script src="../javascript/datatables/jquery.dataTables.js"></script>
 
     <script>
         $(document).ready( function () {
