@@ -123,11 +123,31 @@
         border: none;
         border-radius: 4rem;
     }
-    
 
     a {
         /* color: rgb(66, 98, 202); */
         color: rgb(181, 222, 255);
     }
+
+    .fondo {
+        background-color: rgba(19, 30, 53, 0.9);
+    }
+    
+    /* .dataTables_length > label, .dataTables_length > label > select {
+        color: white;
+    } */
+    
+    /* .dataTables_filter > label, .dataTables_filter > label > input{
+        color: white;
+    } */
+
+    /* .odd > td{
+        background-color: rgba(19, 30, 53, 0.9);
+    }
+
+    .dataTables_paginate > a {
+        color: white;
+    } */
+
 
 }

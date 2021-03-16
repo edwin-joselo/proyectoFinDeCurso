@@ -78,14 +78,21 @@ function insertar_denuncia($conexion) {
 }
 
 function listar_usuarios($conexion){
-    // //Consulta de tipo SELECT            
-    // $sql = 'SELECT * FROM usuarios';
+    //Consulta de tipo SELECT            
+    $sql = 'SELECT * FROM usuarios';
 
-    // $resultado = $conexion->query($sql);   
-    // //utilizando fetch (array asociativo y numerico)
-    // if($fila = $resultado->fetch()){
-    //     echo 'Hola';
-    // } 
+    $resultado = $conexion->query($sql);   
+    //utilizando fetch (array asociativo y numerico)
+    while($fila = $resultado->fetch()){
+        echo '<tr>';
+            echo '<td>'.$fila['dni'].'</td>';
+            echo '<td>'.$fila['nombre'].'</td>';
+            echo '<td>'.$fila['apellidos'].'</td>';
+            echo '<td>'.$fila['fecha_nacimiento'].'</td>';
+            echo '<td>'.$fila['telefono'].'</td>';
+            echo '<td>'.$fila['email'].'</td>';
+        echo '</tr>';
+    } 
 }
 
 function mostrar_denuncias($conexion ) {
