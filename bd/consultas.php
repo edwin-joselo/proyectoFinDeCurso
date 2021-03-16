@@ -86,6 +86,7 @@ function listar_usuarios($conexion){
     // if($fila = $resultado->fetch()){
     //     echo 'Hola';
     // } 
+}
 
 function mostrar_denuncias($conexion ) {
     $sql = 'SELECT * FROM denuncias_previas';
