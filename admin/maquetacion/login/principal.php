@@ -6,7 +6,7 @@
         </div>
         <div>
             <p>Número de placa:</p>
-            <input type="email" name="email" placeholder="Introduce tu email">
+            <input type="text" name="num_placa" placeholder="Introduce tu placa">
         </div>
         <div>
             <p>Contraseña:</p>

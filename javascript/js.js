@@ -2,8 +2,8 @@ window.addEventListener('DOMContentLoaded', initMap)
 
 function initMap() {
     //Ponemos el mapa
-    let centerPosition = { lat: 37.664289902583164, lng: -1.6965250818394138 };
-    let schoolPosition = { lat: 37.664289902583164, lng: -1.6965250818394138 };
+    let centerPosition = { lat: 37.66404630613665, lng: -1.696978364914519 };
+    
 
     let map = new google.maps.Map(
         tagDivMap,
@@ -17,7 +17,7 @@ function initMap() {
 
     //Creamos un marcador
     let markerSchool = new google.maps.Marker({
-        position: schoolPosition,
+        position: centerPosition,
         map: map
     });
 
@@ -26,6 +26,7 @@ function initMap() {
         map: map
     });
 
+    , 
     let panorama = new google.maps.StreetViewPanorama(
         tagDivPanorama,
         {

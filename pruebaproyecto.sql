@@ -13,7 +13,7 @@ GRANT ALL PRIVILEGES ON pruebaproyecto.* TO 'admin';
 -- crear las tablas
 CREATE TABLE policias(
     num_placa varchar(7) PRIMARY KEY,
-    contrasenia varchar(32)
+    contrasenia varchar(100)
 );
 
 -- usuarios
@@ -65,7 +65,7 @@ ADD CONSTRAINT FOREIGN KEY (cod) REFERENCES denuncias_previas(cod);
 
 
 -- agregar policia
-INSERT INTO policias(num_placa, contrasenia) VALUES ('123456A', 'admin');
+INSERT INTO policias(num_placa, contrasenia) VALUES ('123456A', '$2y$10$gvudwMuxL0LcmyXgfl/5.uVYj3EPXFEKY.cq4LUHiMbLgOQZnThnW');
 
 INSERT INTO delitos(nombre) VALUES ('robo');
 INSERT INTO delitos(nombre) VALUES ('hurto');
