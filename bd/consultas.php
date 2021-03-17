@@ -69,7 +69,7 @@ function insertar_denuncia($conexion) {
     $dni = $_SESSION['dni'];
     $fecha_delito = $_POST['fecha_delito'];
     $descripcion = $_POST['textarea'];
-    if(!empty($_POST['inputfile'])){
+    if(!empty($_FILES['inputfile']['tmp_name'])){
         $foto = $_FILES['inputfile']['tmp_name'];
         $foto = base64_encode(file_get_contents(addslashes($foto)));
         $sql = 'INSERT INTO denuncias_previas(dni, descripcion, foto, fecha_delito, aprobado) 
