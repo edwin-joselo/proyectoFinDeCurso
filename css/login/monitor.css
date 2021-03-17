@@ -23,19 +23,23 @@
         background-color: black;
         display: flex;
         justify-content: center;
-    }
-
-    header > div {
+    }    
+    
+    .info-cabecera {
         margin: 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    header > div:nth-child(1) {
-        align-self: center;
+    .info-cabecera > *:hover {
+        cursor: pointer;
     }
 
-    header > div:nth-child(2) > img {
+    .info-cabecera > img {
         height: 25px;
         width: 30px;
+        margin-left: 1rem;
     }
 
     main {

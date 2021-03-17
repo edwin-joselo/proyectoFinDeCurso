@@ -16,12 +16,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/global/global.css">
-    <!-- <link rel="stylesheet" href="css/global/monitor.css"> -->
-    <!-- <link rel="stylesheet" href="./css/registro/monitor.css"> -->
     <link rel="stylesheet" href="./css/login/monitor.css">
     <script src="./javascript/sweetalert2.js"></script>
     <link rel="stylesheet" href="./css/sweetalert2/sweetalert2.css">
-    <!-- <link rel="stylesheet" href="./css/sweetalert2/dark.css"> -->
+    <link rel="stylesheet" href="./css/sweetalert2/dark.css">
 </head>
 <body>
     <?php
@@ -78,6 +76,6 @@
     ?>
     
     <script src="./javascript/login.js"></script>
-    <script src="./javascript/general.js"></script>
+    <script src="./javascript/cabecera_usuario.js"></script>
 </body>
 </html>

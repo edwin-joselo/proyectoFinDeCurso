@@ -6,7 +6,7 @@
         display: flex;
         justify-content: center;
     }
-
+    
     header > div {
         margin: 0 1rem;
         flex-grow: 1;
@@ -14,15 +14,19 @@
         justify-content: center;
         align-items: center;
     }
-
+    
     header > div:nth-child(1) {
         justify-content: start;
     }
-
-    header > div:nth-child(2) {
+    
+    .info-cabecera {
         align-self: center;
         justify-content: center;
         display: flex;
+    }
+
+    .info-cabecera > *:hover, header > div:nth-child(3) > form > input, header > div:nth-child(3) > form > label{
+        cursor: pointer;
     }
 
     header > div:nth-child(2) > img {

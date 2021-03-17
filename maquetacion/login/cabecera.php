@@ -1,8 +1,6 @@
 <header>
-    <div id="spanCabeceraUsuario">
+    <div id="cabeceraUsuario" class="info-cabecera">
         <span>WEB POLICIAL</span>
-    </div>
-    <div>
-        <img src="./imagenes/escudo-policia.png" alt="">
+        <img src="./imagenes/escudo-policia.png">
     </div>
 </header>
