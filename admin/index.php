@@ -3,7 +3,13 @@
     require_once '../bd/consultas.php';
     require_once '../php/funciones.php';
 
+    session_start();
+    
     $conexion = abrir_conexion_PDO();
+
+    if(isset($_SESSION['policia'])){
+        header("Location: menu.php");
+    }
 
     $errores = [];
 
