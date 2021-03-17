@@ -8,8 +8,8 @@
     }
 ?>
     </div>
-    <div>
-        <span class="info-cabecera">WEB POLICIAL</span>
+    <div id="spanCabeceraAdmin">
+        <span>WEB POLICIAL</span>
         <img src="../imagenes/escudo-policia.png">
     </div>
 

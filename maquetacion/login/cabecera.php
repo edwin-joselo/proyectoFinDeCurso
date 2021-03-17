@@ -1,5 +1,5 @@
 <header>
-    <div class="info-cabecera">
+    <div id="spanCabeceraUsuario">
         <span>WEB POLICIAL</span>
     </div>
     <div>

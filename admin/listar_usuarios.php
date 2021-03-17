@@ -29,6 +29,7 @@
     <!-- GLOBAL -->
     <link rel="stylesheet" href="../css/global/global.css">
     <link rel="stylesheet" href="../css/global/monitor.css">
+    
     <!-- MAQUETACIÓN -->
     <link rel="stylesheet" href="../css/login/monitor.css">
 
@@ -53,5 +54,6 @@
 
     <!-- JAVASCRIPT -->
     <script src="../javascript/login.js"></script>
+    <script src="../javascript/cabecera_admin.js"></script>
 </body>
 </html>

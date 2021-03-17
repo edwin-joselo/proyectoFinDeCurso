@@ -38,5 +38,6 @@
     include_once './maquetacion/menu/cabecera.php';
     include_once './maquetacion/denuncias/principal.php';
     ?>
+    <script src="../javascript/cabecera_admin.js"></script>
 </body>
 </html>
