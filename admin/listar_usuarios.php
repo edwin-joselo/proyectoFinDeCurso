@@ -50,5 +50,8 @@
     <script src="../javascript/datatables/jquery.js"></script>
     <script src="../javascript/datatables/jquery.dataTables.js"></script>
     <script src="../javascript/datatables/tabla-traduccion.js"></script>
+
+    <!-- JAVASCRIPT -->
+    <script src="../javascript/login.js"></script>
 </body>
 </html>
