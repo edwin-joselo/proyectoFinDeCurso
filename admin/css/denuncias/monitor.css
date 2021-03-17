@@ -12,27 +12,49 @@
         /* border: solid 1px red; */
         margin: 1rem;
         box-shadow: 0 5px 10px;
-        width: 200px; 
-        max-height: max-content;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
     }
     
     .card > img {
         width: inherit;
         height: auto;
         display: block;
-        
+        bottom: 0;
     }
 
-    .card > div {
+
+
+    .texto-denuncia {
         width: auto;
-        text-align: center;
+        text-align: start;
         padding: 1rem;
         align-self: center;
+        /* display: grid; */
+        grid-template-rows: 1fr 1fr 1fr 2fr;
+        height: inherit;
     }
-    
-    .texto-denuncia > p:last-child {
-        border: solid 1px red;
+
+    .texto-denuncia > * {
+        border: solid 1x red;
+    }
+
+    .texto-denuncia > textarea{
+        font-family: Roboto, Arial;
+        color: white;
+        text-align: start;
         max-width: 100%;
-        
+        resize: none;
+        border-bottom: solid 2px white;
+        background-color: transparent;
+        font-size: 1rem;
+        outline: none;
+        padding: 0.3rem;
+        height: 100%;
+    }
+
+    textarea:hover {
+        cursor: default;
     }
 }

@@ -114,7 +114,7 @@ function mostrar_denuncias($conexion ) {
             <h4>DNI: '.$dni.'</h4>
             <p>Fecha: '.$fecha_delito.'</p>
             <p>Descripción: </p>
-            <p>'.$descripcion.'</p>
+            <textarea readonly>'.$descripcion.'</textarea>
             </div>';
             if(!is_null($fila['foto'])){
                 $foto = '<img src="data:image/*;base64,'.$fila['foto'].'"/>';
