@@ -49,11 +49,6 @@
     <!-- JQUERY -->
     <script src="../javascript/datatables/jquery.js"></script>
     <script src="../javascript/datatables/jquery.dataTables.js"></script>
-
-    <script>
-        $(document).ready( function () {
-            $('#example').DataTable();
-        } );
-    </script>
+    <script src="../javascript/datatables/tabla-traduccion.js"></script>
 </body>
 </html>
