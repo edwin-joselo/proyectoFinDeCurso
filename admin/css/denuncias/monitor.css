@@ -14,16 +14,27 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: center;
         
     }
     
     .card {
-        /* border: solid 1px red; */
+        background-color: rgb(19, 30, 53);
         margin: 1rem;
         box-shadow: 0 5px 10px;
-        width: 300px;
+        width: 350px;
+        display: flexbox;
+        flex-direction: column;
+        align-items: center;
+        text-align: start;
+        align-self: center;
+        /* padding: 1rem; */
+        /* margin: 1rem; */
+        /* display: grid; */
         display: flex;
         flex-direction: column;
+        height: inherit;
+        padding: 1rem;
     }
     
     .card > img {
@@ -32,30 +43,20 @@
         display: block;
         bottom: 0;
     }
-
-
-
-    .texto-denuncia {
-        width: auto;
-        text-align: start;
-        padding: 1rem;
-        align-self: center;
-        /* display: grid; */
-        grid-template-rows: 1fr 1fr 1fr 2fr;
-        height: inherit;
+    
+    .card > * {
+        width: 100%;
+        font-size: 1.3rem;
+        /* margin: 1rem; */
+        /* border: solid 1px blue; */
     }
 
-    .texto-denuncia > * {
-        border: solid 1x red;
-    }
-
-    .texto-denuncia > textarea{
+    .card > textarea{
         font-family: Roboto, Arial;
         color: white;
         text-align: start;
         max-width: 100%;
         resize: none;
-        border-bottom: solid 2px white;
         background-color: transparent;
         font-size: 1rem;
         outline: none;
@@ -63,7 +64,45 @@
         height: 100%;
     }
 
-    textarea:hover {
+    .card:hover, textarea:hover {
         cursor: default;
     }
+
+    .card > label, .aceptar > input[type="submit"]{
+        background-color: white;
+        color: black;
+        margin-top: 0.5rem;
+        font-size: 1rem;
+        width: auto;
+        padding: 0.7rem 3rem;
+        border: none;
+        border-radius: 4rem;
+        outline: none;
+    }
+
+    label > svg{
+        height: 35px;
+    }
+
+    .card > input[type="submit"]{
+        display: none;
+    }
+
+    .aceptar {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .aceptar > input[name="aceptar_denuncia"]{
+        background-color: rgb(62, 135, 196);
+    }
+
+    .aceptar > input[name="rechazar_denuncia"]{
+        background-color: rgb(243 96 100);
+    }
+
+    .swal2-html-container > img {
+        width: 100%;
+    }
+        
 }

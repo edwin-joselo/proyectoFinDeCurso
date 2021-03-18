@@ -23,7 +23,6 @@
     <!-- <link rel="stylesheet" href="./css/registro/monitor.css"> -->
     <link rel="stylesheet" href="./css/login/monitor.css">
     <link rel="stylesheet" href="./css/denuncia/monitor.css">
-    <!-- <link rel="stylesheet" href="./css/sweetalert2/sweetalert2.css"> -->
     <link rel="stylesheet" href="./css/sweetalert2/dark.css">
     <script src="./javascript/sweetalert2.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -56,14 +55,14 @@
             }
         }
     }
-    //Consulta de tipo SELECT            
-    $sql = 'SELECT * FROM denuncias_previas WHERE dni = "'.$_SESSION['dni'].'"';
+    // //Consulta de tipo SELECT            
+    // $sql = 'SELECT * FROM denuncias_previas WHERE dni = "'.$_SESSION['dni'].'"';
 
-    $resultado = $conexion->query($sql);   
-    //utilizando fetch (array asociativo y numerico)
-    while($fila = $resultado->fetch()){
-        echo '<img src="data:image/*;base64,'.$fila['foto'].'" width = "100px" height = "100px"/>';
-    }
+    // $resultado = $conexion->query($sql);   
+    // //utilizando fetch (array asociativo y numerico)
+    // while($fila = $resultado->fetch()){
+    //     echo '<img src="data:image/*;base64,'.$fila['foto'].'" width = "100px" height = "100px"/>';
+    // }
     
     include_once './maquetacion/index/cabecera.php';
     include_once './maquetacion/denuncia/principal.php';

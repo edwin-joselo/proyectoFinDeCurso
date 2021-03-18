@@ -33,18 +33,18 @@ footer > img{
 
 
 ::-webkit-scrollbar-track {
-box-shadow: inset 0 0 5px grey; 
-border-radius: 10px;
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
 }
 
 
 ::-webkit-scrollbar-thumb {
-background: rgb(62, 135, 196); 
-border-radius: 10px;
+    background: rgb(62, 135, 196); 
+    border-radius: 10px;
 }
 
 
 ::-webkit-scrollbar-thumb:hover {
-background:rgba(19, 30, 53, 0.9); 
+    background:rgb(85 108 145);
 }
 

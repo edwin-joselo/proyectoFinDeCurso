@@ -5,6 +5,7 @@
 
     session_start();
 
+    $conexion = abrir_conexion_PDO();
     
     if(isset($_POST['cerrar_sesion'])){
         unset($_SESSION['policia']);
@@ -13,11 +14,11 @@
     if(!isset($_SESSION['policia'])){
         header("Location: index.php");
     }
-    
-    $conexion = abrir_conexion_PDO();
 
-    
-?>
+    if(isset($_POST['aceptar_denuncia'])){
+        aceptar_denuncia($conexion, $_POST['cod'], $_POST['dni'], $_POST['delito'],$_SESSION['policia']);
+    }
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +38,10 @@
     <?php
     include_once './maquetacion/menu/cabecera.php';
     include_once './maquetacion/denuncias/principal.php';
+
+    if(isset($_POST['mostrar_foto'])){
+        mostrar_foto($conexion, $_POST['cod']);
+    }
     ?>
 </body>
 </html>
