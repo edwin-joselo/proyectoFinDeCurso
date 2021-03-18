@@ -43,5 +43,6 @@
         mostrar_foto($conexion, $_POST['cod']);
     }
     ?>
+    <script src="../javascript/cabecera_admin.js"></script>
 </body>
 </html>

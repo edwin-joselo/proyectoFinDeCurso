@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./css/global/global.css">
     <!-- <link rel="stylesheet" href="./css/global/monitor.css"> -->
     <link rel="stylesheet" href="./css/login/monitor.css">
+    <link rel="stylesheet" href="./css/sweetalert2/sweetalert2.css">
     <link rel="stylesheet" href="./css/sweetalert2/dark.css">
     <script src="./javascript/sweetalert2.js"></script>
 </head>
@@ -77,6 +78,6 @@
     ?>
 
     <script src="./javascript/login.js"></script>
-    <script src="./javascript/general.js"></script>
+    <script src="./javascript/cabecera_usuario.js"></script>
 </body>
 </html>

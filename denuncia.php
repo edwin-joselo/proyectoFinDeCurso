@@ -71,5 +71,7 @@
 
     <script src="./javascript/inputFile.js"></script>
     <script src="./javascript/login.js"></script>
+    <script src="./javascript/cabecera_usuario.js"></script>
+
 </body>
 </html>

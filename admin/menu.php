@@ -39,5 +39,6 @@
     include_once './maquetacion/menu/cabecera.php';
     include_once './maquetacion/menu/principal.php';
     ?>
+    
 </body>
 </html>

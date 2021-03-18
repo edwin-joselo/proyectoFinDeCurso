@@ -31,5 +31,6 @@
     </script>
     <script src="./javascript/codigo.js"></script>
     <script src="./javascript/login.js"></script>
+    <script src="./javascript/cabecera_usuario.js"></script>
 </body>
 </html>

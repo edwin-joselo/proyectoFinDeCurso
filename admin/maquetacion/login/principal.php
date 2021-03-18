@@ -6,7 +6,7 @@
         </div>
         <div>
             <p>Número de placa:</p>
-            <input type="text" name="num_placa" placeholder="Introduce tu placa">
+            <input type="text" name="num_placa" placeholder="Introduce tu placa" <?php mostrar_value('num_placa'); ?>>
         </div>
         <div>
             <p>Contraseña:</p>
