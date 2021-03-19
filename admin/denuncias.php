@@ -47,6 +47,7 @@
         mostrar_foto($conexion, $_POST['cod']);
     }
     ?>
+    <script type="text/javascript" src="../javascript/maintainscroll.min.js"></script>
     <script src="../javascript/cabecera_admin.js"></script>
     <script src="../javascript/login.js"></script>
 </body>
