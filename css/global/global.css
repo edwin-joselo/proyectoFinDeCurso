@@ -48,3 +48,6 @@ footer > img{
     background:rgb(85 108 145);
 }
 
+.pointer:hover {
+    cursor: pointer;
+}

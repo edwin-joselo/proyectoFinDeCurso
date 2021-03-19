@@ -26,6 +26,6 @@
                 <span>Elige un archivo</span> 
             </label>
         </div>
-        <input type="submit" name="enviar_denuncia" value="Enviar"/>
+        <input class="pointer" type="submit" name="enviar_denuncia" value="Enviar"/>
     </form>
 </main>

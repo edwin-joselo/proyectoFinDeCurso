@@ -32,10 +32,6 @@
         justify-content: center;
     }
 
-    .info-cabecera > *:hover {
-        cursor: pointer;
-    }
-
     .info-cabecera > img {
         height: 25px;
         width: 30px;

@@ -1,6 +1,6 @@
 <header>
     <div id="cabeceraUsuario" class="info-cabecera">
-        <span>WEB POLICIAL</span>
-        <img src="./imagenes/escudo-policia.png">
+        <span class="pointer">WEB POLICIAL</span>
+        <img class="pointer" src="./imagenes/escudo-policia.png">
     </div>
 </header>
