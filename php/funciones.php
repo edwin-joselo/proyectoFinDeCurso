@@ -157,5 +157,12 @@
 
         return $errores;
     }
+
+    function comprobar_error_delito($nombre, $errores){
+        if(empty($nombre)){
+            $errores['nombre'] = 'El nombre del delito no puede estar vacio';
+        }
+        return $errores;
+    }
 ?>
 

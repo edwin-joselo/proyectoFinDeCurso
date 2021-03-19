@@ -11,16 +11,3 @@
         return $conexion;
     }
     //No hace falta cerrar la conexion manualmente en PDO
-
-    function calcular_max($id, $tabla, $consulta){
-        //Consulta de tipo SELECT  
-        $sql = 'SELECT MAX('.$id.') FROM '.$tabla; 
-        $consulta->prepare($sql);
-        $consulta->execute();
-        //almaceno el resultado en variables
-        $consulta->bind_result($max_cod);
-        //obtenemos registro a registro
-        while($consulta->fetch()) {
-            return $max_cod+=1;
-        }
-    }
