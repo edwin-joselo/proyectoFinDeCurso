@@ -145,7 +145,7 @@ function select_delitos($conexion) {
     $sql = 'SELECT * FROM delitos';
     $resultado = $conexion->query($sql); 
     while($fila = $resultado->fetch()){
-        echo '<option>'.$fila['nombre'].'</option>';
+        echo '<option value="'.$fila['cod'].'">'.$fila['nombre'].'</option>';
     }
 }
 
