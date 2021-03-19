@@ -11,6 +11,10 @@
         unset($_SESSION['dni']);
     }
 
+    if(!isset($_SESSION['dni'])){
+        header("Location: index.php");
+    }
+
     $errores = [];
 ?>
 
