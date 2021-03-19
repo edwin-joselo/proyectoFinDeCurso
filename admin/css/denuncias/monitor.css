@@ -1,6 +1,8 @@
 @media all and (min-width: 901px) {
 
-    
+    .flecha {
+        z-index: 1;
+    }    
     
     main > a > svg {
         position: absolute;

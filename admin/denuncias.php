@@ -44,5 +44,6 @@
     }
     ?>
     <script src="../javascript/cabecera_admin.js"></script>
+    <script src="../javascript/login.js"></script>
 </body>
 </html>
