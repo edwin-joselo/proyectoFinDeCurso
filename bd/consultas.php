@@ -72,11 +72,11 @@ function insertar_denuncia($conexion) {
     if(!empty($_FILES['inputfile']['tmp_name'])){
         $foto = $_FILES['inputfile']['tmp_name'];
         $foto = base64_encode(file_get_contents(addslashes($foto)));
-        $sql = 'INSERT INTO denuncias_previas(dni, descripcion, foto, fecha_delito, aprobado) 
-                VALUES ("'.$dni.'","'.$descripcion.'","'.$foto.'","'.$fecha_delito.'", "no")';
+        $sql = 'INSERT INTO denuncias_previas(dni, descripcion, foto, fecha_delito) 
+                VALUES ("'.$dni.'","'.$descripcion.'","'.$foto.'","'.$fecha_delito.'")';
     }else{
-        $sql = 'INSERT INTO denuncias_previas(dni, descripcion, fecha_delito, aprobado) 
-                VALUES ("'.$dni.'","'.$descripcion.'","'.$fecha_delito.'", "no")';
+        $sql = 'INSERT INTO denuncias_previas(dni, descripcion, fecha_delito) 
+                VALUES ("'.$dni.'","'.$descripcion.'","'.$fecha_delito.'")';
     }
 
     $resultado = $conexion->exec($sql);
@@ -105,7 +105,7 @@ function mostrar_denuncias($conexion) {
     $resultado = $conexion->query($sql);   
     //utilizando fetch (array asociativo y numerico)
     while($fila = $resultado->fetch()){
-        if ($fila['aprobado']=== 'no'){
+        if (is_null($fila['aprobado'])){
             $cod = $fila['cod'];
             $dni = $fila['dni'];
             $descripcion = $fila['descripcion'];
@@ -113,6 +113,7 @@ function mostrar_denuncias($conexion) {
             echo '
             <form action="'. $_SERVER['PHP_SELF'] .'" method="post">
                 <div class="card">
+                    <a name="'.$cod.'"></a>
                     <h4>Cod. denuncia: '.$cod.' </h4>
                     <p>DNI: '.$dni.'</p>
                     <p>Fecha: '.$fecha_delito.'</p>
@@ -159,7 +160,7 @@ function mostrar_foto($conexion, $codigo){
         <script>
             Swal.fire({
                 title: 'Cod. denuncia: <?php echo $cod ?>',
-                html: '<img src="data:image/*;base64,<?php echo $fila['foto'] ?>" />'
+                html: '<img src="data:image/*;base64,<?php echo $fila['foto'] ?>"/>'
             });
         </script>
         <?php
@@ -174,8 +175,10 @@ function aceptar_denuncia($conexion, $codigo, $dni_denunciante, $delito, $num_pl
         $sql= 'INSERT INTO denuncias(cod, fecha, dni_denunciante, delito, num_placa_policia) 
         VALUES ('.$codigo.',"'.$fecha.'","'.$dni_denunciante.'", "'.$delito.'","'.$num_placa.'")';
         $resultado = $conexion->exec($sql);
-        // if($fila = $resultado->fetch()){
-        //     echo 'oleeeee';
-        // }
     }
+}
+
+function rechazar_denuncia($conexion, $codigo) {
+    $sql = 'UPDATE denuncias_previas SET aprobado = "no" WHERE cod = '.$codigo.'';
+    $resultado = $conexion->query($sql); 
 }

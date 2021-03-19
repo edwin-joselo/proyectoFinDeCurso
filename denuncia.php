@@ -56,7 +56,6 @@
                     window.location.href="./index.php";
                 }, 3000);
                 </script>';
-            
         } else {
             foreach($errores as $value => $key){
                 echo '<script>
