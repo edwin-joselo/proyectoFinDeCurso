@@ -7,6 +7,10 @@
 
     $conexion = abrir_conexion_PDO();
 
+    if(isset($_POST['cerrar_sesion'])){
+        unset($_SESSION['dni']);
+    }
+
     $errores = [];
 ?>
 
@@ -35,11 +39,18 @@
         if(!$errores){
             insertar_denuncia($conexion);
             echo '<script>
-                Swal.fire(
-                    "¿Hecho!",
-                    "Denuncia enviada y a la espera de que sea revisada",
-                    "success"
-                );
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "¡Hecho!",
+                    text: "Denuncia enviada y a la espera de que sea revisada",
+                    timer: 3000,
+                    showConfirmButton: false
+                });
+
+                setTimeout(() => {
+                    window.location.href="./index.php";
+                }, 3000);
                 </script>';
             
         } else {
