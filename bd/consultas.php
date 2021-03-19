@@ -1,5 +1,5 @@
 <?php
-    function calcular_max_PDO($id, $tabla, $conexion){
+    function calcular_max_PDO($conexion, $id, $tabla){
         //Consulta de tipo SELECT  
         $sql = 'SELECT MAX('.$id.') FROM '.$tabla; 
         $resultado = $conexion->query($sql);
@@ -204,7 +204,7 @@
 
         //Consulta de tipo INSERT
         $sql = 'INSERT INTO delitos(cod, nombre) 
-                VALUES ('.calcular_max_PDO('cod', 'delitos', $conexion).', "'.$nombre.'")';
+                VALUES ('.calcular_max_PDO($conexion, 'cod', 'delitos').', "'.$nombre.'")';
         $resultado = $conexion->exec($sql);
         if($resultado){
             return true;
@@ -240,4 +240,9 @@
     function rechazar_denuncia($conexion, $codigo) {
         $sql = 'UPDATE denuncias_previas SET aprobado = "no" WHERE cod = '.$codigo.'';
         $resultado = $conexion->query($sql); 
+        if($resultado){
+            return true;
+        } else {
+            return false;
+        }
     }
