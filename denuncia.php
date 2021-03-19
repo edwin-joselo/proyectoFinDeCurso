@@ -11,6 +11,10 @@
         unset($_SESSION['dni']);
     }
 
+    if(!isset($_SESSION['dni'])){
+        header("Location: index.php");
+    }
+
     $errores = [];
 ?>
 
@@ -52,7 +56,6 @@
                     window.location.href="./index.php";
                 }, 3000);
                 </script>';
-            
         } else {
             foreach($errores as $value => $key){
                 echo '<script>
