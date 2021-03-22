@@ -38,7 +38,8 @@
                         title: "Logueado correctamente",
                         text: "Redirigiendo a la página principal...",
                         timer: 3000,
-                        showConfirmButton: false
+                        showConfirmButton: false,
+                        allowOutsideClick: false
                     });
 
                     setTimeout(() => {

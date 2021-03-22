@@ -45,7 +45,8 @@
                             title: "Logueado correctamente",
                             text: "Redirigiendo al menú...",
                             timer: 3000,
-                            showConfirmButton: false
+                            showConfirmButton: false,
+                            allowOutsideClick: false
                         });
     
                         setTimeout(() => {

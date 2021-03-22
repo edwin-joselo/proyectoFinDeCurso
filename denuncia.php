@@ -49,7 +49,8 @@
                     title: "¡Hecho!",
                     text: "Denuncia enviada y a la espera de que sea revisada",
                     timer: 3000,
-                    showConfirmButton: false
+                    showConfirmButton: false,
+                    allowOutsideClick: false
                 });
 
                 setTimeout(() => {

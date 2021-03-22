@@ -8,7 +8,11 @@
     $conexion = abrir_conexion_PDO();
 
     if(isset($_POST['cerrar_sesion'])){
-        unset($_SESSION['dni']);
+        unset($_SESSION['policia']);
+    }
+
+    if(!isset($_SESSION['policia'])){
+        header("Location: index.php");
     }
 
     $errores = [];
