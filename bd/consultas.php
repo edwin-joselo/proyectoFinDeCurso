@@ -227,14 +227,23 @@
     }
 
     function aceptar_denuncia($conexion, $codigo, $dni_denunciante, $delito, $num_placa) {
-        $sql = 'UPDATE denuncias_previas SET aprobado = "si" WHERE cod = '.$codigo.'';
-        $resultado = $conexion->query($sql); 
-        if($resultado){
-            $fecha = date("Y-m-d");
-            $sql= 'INSERT INTO denuncias(cod, fecha, dni_denunciante, delito, num_placa_policia) 
-            VALUES ('.$codigo.',"'.$fecha.'","'.$dni_denunciante.'", "'.$delito.'","'.$num_placa.'")';
-            $resultado = $conexion->exec($sql);
+        if($delito){
+            $sql = 'UPDATE denuncias_previas SET aprobado = "si" WHERE cod = '.$codigo.'';
+            $resultado = $conexion->query($sql); 
+            if($resultado){
+                $fecha = date("Y-m-d");
+                try {
+                    $sql = 'INSERT INTO denuncias(cod, fecha, dni_denunciante, delito, num_placa_policia) 
+                            VALUES ('.$codigo.',"'.$fecha.'","'.$dni_denunciante.'", "'.$delito.'","'.$num_placa.'")';
+                    $resultado = $conexion->exec($sql);
+                } catch (PDOException $e) {
+                    echo 'Error: ' . $e;
+                }
+            }
+        } else {
+            
         }
+        
     }
 
     function rechazar_denuncia($conexion, $codigo) {

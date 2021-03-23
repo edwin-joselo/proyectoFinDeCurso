@@ -12,6 +12,6 @@
             <p>Contraseña:</p>
             <input type="password" name="contrasenia" placeholder="Introduce tu contraseña">
         </div>
-        <input type="submit" name="iniciar_sesion" value="Iniciar Sesión">
+        <input type="submit" class="pointer" name="iniciar_sesion" value="Iniciar Sesión">
     </form>
 </main>

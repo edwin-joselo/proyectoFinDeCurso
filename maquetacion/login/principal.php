@@ -17,7 +17,7 @@
             <p>Contraseña: </p>
             <input type="password" name="contrasenia" placeholder="Introduce tu contraseña">
         </div>
-        <input type="submit" name="iniciar_sesion" value="Iniciar Sesión">
+        <input type="submit" class="pointer" name="iniciar_sesion" value="Iniciar Sesión">
         <div>
             <p><a href="">¿Has perdido la contraseña?</a></p>
             <p><label>¿No tienes una cuenta?</label><a href="./registro.php">Registrate</a></p>

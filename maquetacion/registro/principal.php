@@ -41,6 +41,6 @@
             <p>Repetir Contraseña: </p>
             <input type="password" name="repetir_contrasenia" placeholder="Repite tu contraseña" <?php mostrar_value('repetir_contrasenia') ?>>
         </div>
-        <input type="submit" name="registrarse" value="Registrarse"/>
+        <input type="submit" class="pointer" name="registrarse" value="Registrarse"/>
     </form>
 </main>
