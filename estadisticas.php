@@ -44,13 +44,13 @@
 ?>
 <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>        
     <script type="text/javascript">
-    
+
     //Inicializar los graficos de Google
     google.charts.load('current', {'packages':['table']});
-    
+
     //Llamada a la funcion que va a crear el grafico "miPrimerGrafico"
     google.charts.setOnLoadCallback(miPrimerGrafico);
-    
+
     //funcion para crear el grafico "miPrimerGrafico"
     function miPrimerGrafico() {
         //variable que almacena los datos extraidos de la BD en formato array
@@ -85,7 +85,8 @@
                     ['Brazil', 400],
                     ['Canada', 500],
                     ['France', 600],
-                    ['RU', 700]
+                    ['RU', 700],
+                    ['Benin', 10000]
                 ]);
 
                 var options = {};

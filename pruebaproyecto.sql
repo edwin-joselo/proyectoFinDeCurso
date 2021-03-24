@@ -23,6 +23,7 @@ CREATE TABLE usuarios(
     nombre varchar(100),
     apellidos varchar(100),
     fecha_nacimiento varchar(100),
+    pais_residencia varchar(100),
     telefono int(9),
     email varchar(100),
     contrasenia varchar(100)
@@ -41,7 +42,6 @@ CREATE TABLE denuncias(
     cod int(100) PRIMARY KEY,
     fecha date,
     dni_denunciante varchar(9),
-    dni_denunciado varchar(9),
     delito int(100),
     num_placa_policia varchar(7)
 );
