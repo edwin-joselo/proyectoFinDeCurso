@@ -114,6 +114,17 @@
         padding: 0.3rem;
     }
 
+    main > form > div > select {
+        background-color: transparent;
+        color: white;
+        font-size: 1.5rem;
+    }
+    
+    main > form > div > select > option {
+        background-color: rgba(19, 30, 53, 0.9);
+        text-align: center;
+    }
+
     main > form > input[type="submit"] {
         background-color: white;
         color: black;

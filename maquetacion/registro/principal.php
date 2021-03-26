@@ -26,8 +26,8 @@
             <input type="date" name="fecha_nacimiento" placeholder="Introduce tu fecha de nacimiento" <?php mostrar_value('fecha_nacimiento') ?>>
         </div>
         <div>
-            <p>Pais de residencia: </p>
-            <select name="pais_residencia" id="nSelPaisesResidencia"></select>
+            <p>Comunidad autónoma: </p>
+            <select name="comunidad_autonoma" id="nSelComunidadAutonoma"></select>
         </div>
         <div>
             <p>Teléfono: </p>

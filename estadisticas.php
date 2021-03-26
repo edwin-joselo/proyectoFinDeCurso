@@ -65,34 +65,34 @@
     </script> -->
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-            
-            //Cargar los gráficos y el paquete del núclero de gráficos
-            google.charts.load('current', {
-                'packages':['geochart'],
-                'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
-            });
-            
-            //Llamada del callback para pintar los gráficos
-            google.charts.setOnLoadCallback(miPrimerGrafico);
-            
-            
-            function miPrimerGrafico() {
-                var data = google.visualization.arrayToDataTable([
-                    ['Country', 'Popularity'],
-                    ['Germany', 200],
-                    ['United States', 300],
-                    ['Brazil', 400],
-                    ['Canada', 500],
-                    ['France', 600],
-                    ['RU', 700],
-                    ['Benin', 10000]
-                ]);
+    <script type="text/javascript">
+        
+        //Cargar los gráficos y el paquete del núclero de gráficos
+        google.charts.load('current', {
+            'packages':['geochart'],
+            'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+        });
+        
+        //Llamada del callback para pintar los gráficos
+        google.charts.setOnLoadCallback(miPrimerGrafico);
+        
+        
+        function miPrimerGrafico() {
+            var data = google.visualization.arrayToDataTable([
+                ['Country', 'Popularity'],
+                ['Germany', 200],
+                ['United States', 300],
+                ['Brazil', 400],
+                ['Canada', 500],
+                ['France', 600],
+                ['RU', 700],
+                ['Benin', 10000]
+            ]);
 
-                var options = {};
-                var chart = new google.visualization.GeoChart(document.getElementById('miPrimerGrafico'));
-                chart.draw(data, options);
-            }
+            var options = {};
+            var chart = new google.visualization.GeoChart(document.getElementById('miPrimerGrafico'));
+            chart.draw(data, options);
+        }
     </script>
     
 </body>

@@ -17,7 +17,6 @@ CREATE TABLE policias(
 );
 
 -- usuarios
-
 CREATE TABLE usuarios(
     dni varchar(9) PRIMARY KEY,
     nombre varchar(100),

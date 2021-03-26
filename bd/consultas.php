@@ -15,6 +15,7 @@
         $nombre = $_POST['nombre'];
         $apellidos = $_POST['apellidos'];
         $fecha_nacimiento = $_POST['fecha_nacimiento'];
+        $comunidad_autonoma = $_POST['comunidad_autonoma'];
         $telefono = $_POST['telefono'];
         $email = $_POST['email'];
         $contrasenia = $_POST['contrasenia'];
@@ -22,8 +23,8 @@
         $hash = password_hash($contrasenia, PASSWORD_DEFAULT, ['cost' => 10]);
 
         //Consulta de tipo INSERT
-        $sql = 'INSERT INTO usuarios(dni, nombre, apellidos, fecha_nacimiento, telefono, email, contrasenia) 
-                VALUES ("'.$dni.'","'.$nombre.'","'.$apellidos.'","'.$fecha_nacimiento.'",'.$telefono.',"'.$email.'","'.$hash.'")';
+        $sql = 'INSERT INTO usuarios(dni, nombre, apellidos, fecha_nacimiento, comunidad_autonoma, telefono, email, contrasenia) 
+                VALUES ("'.$dni.'","'.$nombre.'","'.$apellidos.'","'.$fecha_nacimiento.'",'.$telefono.', "'.$comunidad_autonoma.'","'.$email.'","'.$hash.'")';
         $resultado = $conexion->exec($sql);
         // echo '<p>Se han insertado '.$resultado.' registros.</p>';
         if($resultado){
