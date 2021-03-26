@@ -5,8 +5,9 @@
     <?php if(!isset($_SESSION['dni'])) { ?>
             <li><a id="btnLogin" href="./login.php">Iniciar Sesión</a></li>
             <li><a id="btnRegistro" href="./registro.php">Registrarse</a></li>
-    <?php }?>
+    <?php }else {?>
             <li><a href="./denuncia.php">Poner denuncia</a></li>
+    <?php {?>
             <li><a href="./estadisticas.php">Estadísticas</a></li>
             <li><a href="./nosotros.php">Sobre nosotros</a></li>
             <li><a href="#contacto">Contacto</a></li>
