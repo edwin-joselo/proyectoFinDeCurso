@@ -153,6 +153,38 @@
 
     }
 
+    function mostrar_denuncias_previas_usuario($conexion, $usuario){
+        $sql = 'SELECT dp.* 
+                FROM usuarios u 
+                INNER JOIN denuncias_previas dp
+                ON u.dni = dp.dni
+                WHERE u.dni = "'.$usuario.'"';
+        $resultado = $conexion->query($sql); 
+        while($fila = $resultado->fetch()){
+            $cod = $fila['cod'];
+            $descripcion = $fila['descripcion'];
+    ?>
+            <div class="card">
+                <h4>Cod. denuncia: <?php echo $cod; ?> </h4>
+                <p>Descripción: </p>
+                <textarea readonly rows="5"> <?php echo $descripcion ?></textarea>
+            </div>
+    <?php
+        }
+    }
+
+    function mostrar_denuncias_usuario($conexion, $usuario){
+        $sql = 'SELECT dp.* 
+                FROM denuncias d 
+                INNER JOIN denuncias_previas dp
+                ON d.cod = dp.cod
+                WHERE u.dni = "'.$usuario.'"';
+        $resultado = $conexion->query($sql); 
+        while($fila = $resultado->fetch()){
+
+        }
+    }
+
     function select_delitos($conexion) {
         $sql = 'SELECT * FROM delitos';
         $resultado = $conexion->query($sql); 
@@ -256,3 +288,4 @@
             return false;
         }
     }
+

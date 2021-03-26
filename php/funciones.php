@@ -42,26 +42,6 @@
         }
     }    
     
-    // function comprobar_campo_vacio($campo, $nombre_campo){
-    //     if(empty($campo)){
-    //        return 'El campo '.$nombre_campo.' no debe estar vacio';
-    //     }
-    // }
-    
-    // function comprobar_errores_registro($dni, $nombre, $apellidos, $fecha_nacimiento, $telefono, $email, $contrasenia, $repetir_contrasenia, $errores) {
-    //     $error = [];
-    //     $error['dni'] = comprobar_campo_vacio($dni, 'DNI');
-    //     $error['nombre'] = comprobar_campo_vacio($nombre, 'Nombre');
-    //     $error['apellidos'] = comprobar_campo_vacio($apellidos, 'Apellidos');
-    //     $error['fecha_nacimiento'] = comprobar_campo_vacio($fecha_nacimiento, 'Fecha de nacimiento');
-    //     $error['telefono'] = comprobar_campo_vacio($telefono, 'Teléfono');
-    //     $error['email'] = comprobar_campo_vacio($email, 'Email');
-    //     $error['contrasenia'] = comprobar_campo_vacio($contrasenia, 'Contraseña');
-    //     $error['repetir_contrasenia'] = comprobar_campo_vacio($repetir_contrasenia, 'Repetir contraseña');
-
-    //     return $error;
-    // }
-    
     function comprobar_errores_registro($dni, $nombre, $apellidos, $fecha_nacimiento, $telefono, $email, $contrasenia, $repetir_contrasenia, $errores) {
         if(empty($dni)){
             $errores['dni'] = 'El dni no debe estar vacio';
