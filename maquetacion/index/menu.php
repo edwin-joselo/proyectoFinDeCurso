@@ -13,9 +13,9 @@
 <?php    
     }
 ?>
-            <li><a href="./estadisticas.php">Estadísticas</a></li>
-            <li><a href="./nosotros.php">Sobre nosotros</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+        <li><a href="./estadisticas.php">Estadísticas</a></li>
+        <li><a href="./nosotros.php">Sobre nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
     </ul>
     <hr>
     <div class="presentacion">
