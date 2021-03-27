@@ -54,7 +54,7 @@
                         position: "center",
                         icon: "error",
                         title: "Error al iniciar sesion",
-                        text: "Ha habido un problema, intentelo más tarde...",
+                        text: "Los datos no concuerdan con ningún usuario",
                         timer: 3000,
                         showConfirmButton: false
                     });

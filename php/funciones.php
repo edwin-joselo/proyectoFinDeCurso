@@ -126,13 +126,19 @@
         return $errores;
     }
     
-    function comprobar_errores_denuncia($fecha_delito, $descripcion, $errores){
+    function comprobar_errores_denuncia($fecha_delito, $descripcion, $inputfile, $errores){
         if(empty($fecha_delito)){
             $errores['fecha_delito'] = 'Seleccione una fecha';
         }
 
         if(empty($descripcion)){
             $errores['descripcion'] = 'Añada una descripción';
+        }
+
+        if(!empty($_FILES['inputfile']['tmp_name'])){
+            if(filesize($inputfile)> 800000){
+                $errores['inputfile'] = 'Imagen demasiado grande';
+            }
         }
 
         return $errores;

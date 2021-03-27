@@ -24,7 +24,7 @@
 
         //Consulta de tipo INSERT
         $sql = 'INSERT INTO usuarios(dni, nombre, apellidos, fecha_nacimiento, comunidad_autonoma, telefono, email, contrasenia) 
-                VALUES ("'.$dni.'","'.$nombre.'","'.$apellidos.'","'.$fecha_nacimiento.'",'.$telefono.', "'.$comunidad_autonoma.'","'.$email.'","'.$hash.'")';
+                VALUES ("'.$dni.'","'.$nombre.'","'.$apellidos.'","'.$fecha_nacimiento.'", "'.$comunidad_autonoma.'", '.$telefono.', "'.$email.'","'.$hash.'")';
         $resultado = $conexion->exec($sql);
         // echo '<p>Se han insertado '.$resultado.' registros.</p>';
         if($resultado){
@@ -273,9 +273,7 @@
                     echo 'Error: ' . $e;
                 }
             }
-        } else {
-            
-        }
+        } 
         
     }
 

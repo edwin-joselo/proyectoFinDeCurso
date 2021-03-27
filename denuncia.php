@@ -37,9 +37,9 @@
 <body>
     <?php
     if (isset($_POST['enviar_denuncia'])){
-
-        $errores = comprobar_errores_denuncia($_POST['fecha_delito'], $_POST['textarea'], $errores);
-
+        
+        $errores = comprobar_errores_denuncia($_POST['fecha_delito'], $_POST['textarea'], $_FILES['inputfile']['tmp_name'], $errores);
+        
         if(!$errores){
             insertar_denuncia($conexion);
             echo '<script>
