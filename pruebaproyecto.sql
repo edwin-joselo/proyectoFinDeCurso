@@ -22,7 +22,7 @@ CREATE TABLE usuarios(
     nombre varchar(100),
     apellidos varchar(100),
     fecha_nacimiento varchar(100),
-    pais_residencia varchar(100),
+    comunidad_autonoma varchar(100),
     telefono int(9),
     email varchar(100),
     contrasenia varchar(100)
@@ -66,13 +66,15 @@ ADD CONSTRAINT FOREIGN KEY (cod) REFERENCES denuncias_previas(cod);
 -- agregar policia
 INSERT INTO policias(num_placa, contrasenia) VALUES ('123456A', '$2y$10$gvudwMuxL0LcmyXgfl/5.uVYj3EPXFEKY.cq4LUHiMbLgOQZnThnW');
 
+-- agregar delitos
 INSERT INTO delitos(nombre) VALUES ('robo');
 INSERT INTO delitos(nombre) VALUES ('hurto');
 INSERT INTO delitos(nombre) VALUES ('agresión');
 
-INSERT INTO usuarios(dni, nombre, apellidos, fecha_nacimiento, telefono, email, contrasenia) 
-VALUES ('24345678X', 'Juan','Martinez', '1993-12-12', 675321594, 'juan@prueba.com', '$2y$10$9pTDOnWUsnWEzNSsIl5/NOc3R18zIB0Fr5gXXURAHEW9icIdKPpd2');
-INSERT INTO usuarios(dni, nombre, apellidos, fecha_nacimiento, telefono, email, contrasenia) 
-VALUES ('35345612X', 'Francisco','Ole', '1987-05-24', 678454561, 'francisco@prueba.com', '$2y$10$9pTDOnWUsnWEzNSsIl5/NOc3R18zIB0Fr5gXXURAHEW9icIdKPpd2');
-INSERT INTO usuarios(dni, nombre, apellidos, fecha_nacimiento, telefono, email, contrasenia) 
-VALUES ('25345647X', 'Pedro','Garcia', '1999-01-01', 612345678, 'pedro@prueba.com', '$2y$10$9pTDOnWUsnWEzNSsIl5/NOc3R18zIB0Fr5gXXURAHEW9icIdKPpd2');
+-- agegar usuarios (contrasenia: Hola123)
+INSERT INTO usuarios(dni, nombre, apellidos, fecha_nacimiento, telefono, email, contrasenia, comunidad_autonoma) 
+VALUES ('24345678X', 'Juan','Martinez', '1993-12-12', 675321594, 'juan@prueba.com', '$2y$10$9pTDOnWUsnWEzNSsIl5/NOc3R18zIB0Fr5gXXURAHEW9icIdKPpd2', 'Cantabria');
+INSERT INTO usuarios(dni, nombre, apellidos, fecha_nacimiento, telefono, email, contrasenia, comunidad_autonoma) 
+VALUES ('35345612X', 'Francisco','Ole', '1987-05-24', 678454561, 'francisco@prueba.com', '$2y$10$9pTDOnWUsnWEzNSsIl5/NOc3R18zIB0Fr5gXXURAHEW9icIdKPpd2', 'Cataluña');
+INSERT INTO usuarios(dni, nombre, apellidos, fecha_nacimiento, telefono, email, contrasenia, comunidad_autonoma) 
+VALUES ('25345647X', 'Pedro','Garcia', '1999-01-01', 612345678, 'pedro@prueba.com', '$2y$10$9pTDOnWUsnWEzNSsIl5/NOc3R18zIB0Fr5gXXURAHEW9icIdKPpd2', 'Andalucía');
