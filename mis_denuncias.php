@@ -23,7 +23,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mis denuncias</title>
     <link rel="stylesheet" href="./css/global/global.css">
     <link rel="stylesheet" href="./css/global/monitor.css">
     <link rel="stylesheet" href="./css/login/monitor.css">
@@ -34,7 +34,11 @@
 <body>
     <?php 
         include_once './maquetacion/index/cabecera.php'; 
-        include_once './maquetacion/mostrar_denuncias/principal.php';
+        include_once './maquetacion/mis_denuncias/principal.php';
+        include_once './maquetacion/index/pie.php';
     ?>
+
+    <script src="./javascript/login.js"></script>
+    <script src="./javascript/cabecera_usuario.js"></script>
 </body>
 </html>

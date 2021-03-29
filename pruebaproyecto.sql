@@ -63,7 +63,7 @@ ADD CONSTRAINT FOREIGN KEY (cod) REFERENCES denuncias_previas(cod);
 
 
 
--- agregar policia
+-- agregar policia (contrasenia: admin)
 INSERT INTO policias(num_placa, contrasenia) VALUES ('123456A', '$2y$10$gvudwMuxL0LcmyXgfl/5.uVYj3EPXFEKY.cq4LUHiMbLgOQZnThnW');
 
 -- agregar delitos

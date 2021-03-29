@@ -10,7 +10,7 @@
     }else{
 ?>
         <li><a href="./denuncia.php">Poner denuncia</a></li>
-        <li><a href="./mostrar_denuncias.php">Mostrar denuncias</a></li>
+        <li><a href="./mis_denuncias.php">Mis denuncias</a></li>
 <?php    
     }
 ?>

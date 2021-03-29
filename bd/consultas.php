@@ -190,31 +190,67 @@
                 FROM usuarios u 
                 INNER JOIN denuncias_previas dp
                 ON u.dni = dp.dni
-                WHERE u.dni = "'.$usuario.'"';
+                WHERE u.dni = "'.$usuario.'" AND dp.aprobado IS NULL';
         $resultado = $conexion->query($sql); 
         while($fila = $resultado->fetch()){
             $cod = $fila['cod'];
+            $fecha_delito = $fila['fecha_delito'];
             $descripcion = $fila['descripcion'];
-    ?>
-            <div class="card">
-                <h4>Cod. denuncia: <?php echo $cod; ?> </h4>
-                <p>Descripción: </p>
-                <textarea readonly rows="5"> <?php echo $descripcion ?></textarea>
-            </div>
-    <?php
+            plantilla_card_denuncia($cod, $fecha_delito, $descripcion, 'card-previo');
         }
     }
 
     function mostrar_denuncias_usuario($conexion, $usuario){
-        $sql = 'SELECT dp.* 
+        $sql = 'SELECT d.*, dp.* 
                 FROM denuncias d 
                 INNER JOIN denuncias_previas dp
                 ON d.cod = dp.cod
-                WHERE u.dni = "'.$usuario.'"';
+                WHERE dp.dni = "'.$usuario.'"';
         $resultado = $conexion->query($sql); 
         while($fila = $resultado->fetch()){
-
+            $cod = $fila[0];
+            $descripcion = $fila[7];
+            $fecha_acontecimiento = $fila[1];
+            $fecha_aprobacion = $fila[9];
+?>
+            <div class="card card-aprobado">
+                <h4>Cod. denuncia: <?php echo $cod; ?> </h4>
+                <p>Fecha del delito:</p>
+                <p class="fecha"><?php echo $fecha_acontecimiento ?></p>
+                <p>Fecha de aprobación:</p>
+                <p class="fecha"><?php echo $fecha_aprobacion ?></p>
+                <p>Descripción: </p>
+                <textarea readonly rows="5"> <?php echo $descripcion ?></textarea>
+            </div>
+<?php
         }
+    }
+
+    function mostrar_denuncias_rechazadas_usuario($conexion, $usuario){
+        $sql = 'SELECT dp.* 
+                FROM usuarios u 
+                INNER JOIN denuncias_previas dp
+                ON u.dni = dp.dni
+                WHERE u.dni = "'.$usuario.'" AND dp.aprobado="no"';
+        $resultado = $conexion->query($sql); 
+        while($fila = $resultado->fetch()){
+            $cod = $fila['cod'];
+            $fecha_delito = $fila['fecha_delito'];
+            $descripcion = $fila['descripcion'];
+            plantilla_card_denuncia($cod, $fecha_delito, $descripcion, 'card-rechazado');
+        }
+    }
+
+    function plantilla_card_denuncia($cod, $fecha_delito, $descripcion, $tipo){
+?>
+        <div class="card <?php echo $tipo ?>">
+            <h4>Cod. denuncia: <?php echo $cod; ?> </h4>
+            <p>Fecha del delito:</p>
+            <p class="fecha"><?php echo $fecha_delito ?></p>
+            <p>Descripción: </p>
+            <textarea readonly rows="5"> <?php echo $descripcion ?></textarea>
+        </div>
+<?php
     }
 
     function select_delitos($conexion) {
