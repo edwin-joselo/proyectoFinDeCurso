@@ -42,6 +42,7 @@ CREATE TABLE denuncias(
     fecha date,
     dni_denunciante varchar(9),
     delito int(100),
+    descripcion_policia text,
     num_placa_policia varchar(7)
 );
 
