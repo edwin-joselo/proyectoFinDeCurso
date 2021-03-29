@@ -16,7 +16,7 @@
     }
 
     if(isset($_POST['aceptar_denuncia'])){
-        aceptar_denuncia($conexion, $_POST['cod'], $_POST['dni'], $_POST['delito'],$_SESSION['policia']);
+        aceptar_denuncia($conexion, $_POST['cod'], $_POST['dni'], $_POST['delito'],$_SESSION['policia'], $_POST['descripcion_policia']);
     }
 
     if(isset($_POST['rechazar_denuncia'])){
