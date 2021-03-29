@@ -5,10 +5,10 @@
         </svg>
     </a>
     <div class="fondo">
-        <h1>Denuncias enviadas</h1>
+        <h1>Revisar denuncias</h1>
         <div class="grupo-cards">
         <?php 
-            mostrar_denuncias_sin_verificar($conexion);
+            mostrar_denuncias_revisar($conexion);
         ?>
         </div>
     </div>
