@@ -77,6 +77,6 @@
     
     <script src="./javascript/login.js"></script>
     <script src="./javascript/cabecera_usuario.js"></script>
-    <script src="./javascript/paises_residencia.js"></script>
+    <script src="./javascript/comunidades_autonomas.js"></script>
 </body>
 </html>

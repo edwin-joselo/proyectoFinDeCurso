@@ -5,7 +5,7 @@
         </svg>
     </a>
     <div class="fondo">
-        <div id="miPrimerGrafico" style="width: 900px; height: 300px;"></div>
+        <div id="queso" style="width: 900px; height: 300px;"></div>
     </div>
     
 </main>

@@ -10,6 +10,10 @@
         top: 4%;
         left: 5%;
     }
+
+    .titulo-tipo-denuncia {
+        text-align: center;
+    }
     
     .grupo-cards {
         height: auto;
@@ -85,6 +89,22 @@
 
     .card > input[type="submit"]{
         display: none;
+    }
+
+    .card > .fecha {
+        text-align: center;
+    }
+
+    .card-previo {
+        background-color: rgba(158, 156, 2, 0.5);
+    }
+
+    .card-aprobado {
+        background-color: rgba(2, 158, 28, 0.5);
+    }
+
+    .card-rechazado {
+        background-color: rgba(158, 2, 2, 0.5);
     }
 
     .tipo-delito {
