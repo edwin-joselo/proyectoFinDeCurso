@@ -111,6 +111,17 @@
         } 
     }
 
+    //DENUNCIAS SIN VERIFICAR
+    function comprobar_denuncias_sin_verificar($conexion){
+        $sql = 'SELECT * FROM denuncias_previas WHERE aprobado IS NULL';
+        $resultado = $conexion->query($sql);
+        if($fila = $resultado->fetch()){
+            mostrar_denuncias_sin_verificar($conexion);
+        } else {
+            echo '<p>No se han encontrado resultados.</p>';
+        }
+    }
+
     function mostrar_denuncias_sin_verificar($conexion) {
         $sql = 'SELECT * FROM denuncias_previas WHERE aprobado IS NULL';
         $resultado = $conexion->query($sql);   
@@ -148,20 +159,6 @@
                 </div>
             </form>';
         } 
-    }
-
-    //DENUNCIAS SIN VERIFICAR
-    function comprobar_denuncias_revisar($conexion){
-        $sql = 'SELECT * FROM denuncias_previas 
-                INNER JOIN denuncias ON denuncias.cod = denuncias_previas.cod 
-                INNER JOIN delitos ON denuncias.delito = delitos.cod 
-                WHERE aprobado="si"';
-        $resultado = $conexion->query($sql);
-        if($fila = $resultado->fetch()){
-            mostrar_denuncias_revisar($conexion);
-        } else {
-            echo '<p>No se han encontrado resultados.</p>';
-        }
     }
 
     function mostrar_denuncias_revisar($conexion) {
@@ -312,8 +309,36 @@
 <?php
     }
 
+    
+    //DELITOS
+    function consulta_select_delitos(){
+        return 'SELECT * FROM delitos';
+    }
+
+    function comprobar_table_delitos($conexion){
+        $sql = consulta_select_delitos();
+        $resultado = $conexion->query($sql);
+        if($fila = $resultado->fetch()){
+            table_delitos($conexion);
+        } else {
+            echo '<p>No se han encontrado resultados.</p>';
+        }
+    }
+
+    function insertar_delito($conexion){
+        $nombre = $_POST['nombre'];
+        $sql = 'INSERT INTO delitos(cod, nombre) 
+                VALUES ('.calcular_max_PDO($conexion, 'cod', 'delitos').', "'.$nombre.'")';
+        $resultado = $conexion->exec($sql);
+        if($resultado){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     function select_delitos($conexion) {
-        $sql = 'SELECT * FROM delitos';
+        $sql = consulta_select_delitos();
         $resultado = $conexion->query($sql); 
         while($fila = $resultado->fetch()){
             echo '<option value="'.$fila['cod'].'">'.$fila['nombre'].'</option>';
@@ -321,7 +346,7 @@
     }
 
     function table_delitos($conexion){
-        $sql = 'SELECT * FROM delitos';
+        $sql = consulta_select_delitos();
         $resultado = $conexion->query($sql); 
         echo '<div class="contenedor-tabla">';
         echo '<table class="tabla-delitos" align="center">';
@@ -359,19 +384,6 @@
         }
     }
 
-    function insertar_delito($conexion){
-        $nombre = $_POST['nombre'];
-
-        //Consulta de tipo INSERT
-        $sql = 'INSERT INTO delitos(cod, nombre) 
-                VALUES ('.calcular_max_PDO($conexion, 'cod', 'delitos').', "'.$nombre.'")';
-        $resultado = $conexion->exec($sql);
-        if($resultado){
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     function eliminar_delito($conexion){
         $cod = $_POST['cod'];

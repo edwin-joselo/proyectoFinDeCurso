@@ -12,7 +12,8 @@
         </div>
         <div>
             <?php
-            table_delitos($conexion);
+            comprobar_table_delitos($conexion);
+            // table_delitos($conexion);
             ?>
         </div>
         <hr>

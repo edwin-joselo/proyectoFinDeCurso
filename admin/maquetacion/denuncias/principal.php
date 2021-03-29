@@ -8,7 +8,8 @@
         <h1>Denuncias enviadas</h1>
         <div class="grupo-cards">
         <?php 
-            mostrar_denuncias_sin_verificar($conexion);
+            comprobar_denuncias_sin_verificar($conexion);
+            // mostrar_denuncias_sin_verificar($conexion);
         ?>
         </div>
     </div>
