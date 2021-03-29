@@ -5,22 +5,25 @@
         </svg>
     </a>
     <div class="fondo">
-        <h1 class="titulo-tipo-denuncia">Denuncias por verificar</h1>
+        <h1 class="titulo-tipo-denuncia">Denuncias sin verificar</h1>
         <div class="grupo-cards">
 <?php 
-            mostrar_denuncias_previas_usuario($conexion, $_SESSION['dni']);
+            comprobar_denuncias_previas($conexion, $_SESSION['dni']);
+            // mostrar_denuncias_previas_usuario($conexion, $_SESSION['dni']);
 ?>
         </div>
         <h1 class="titulo-tipo-denuncia">Denuncias aprobadas</h1>
         <div class="grupo-cards">
 <?php 
-            mostrar_denuncias_usuario($conexion, $_SESSION['dni']);
+            comprobar_denuncias_aprobadas($conexion, $_SESSION['dni']);
+            // mostrar_denuncias_usuario($conexion, $_SESSION['dni']);
 ?>
         </div>
         <h1 class="titulo-tipo-denuncia">Denuncias rechazadas</h1>
         <div class="grupo-cards">
 <?php 
-            mostrar_denuncias_rechazadas_usuario($conexion, $_SESSION['dni']);
+            comprobar_denuncias_rechazadas($conexion, $_SESSION['dni']);
+            // mostrar_denuncias_rechazadas_usuario($conexion, $_SESSION['dni']);
 ?>
         </div>
     </div>

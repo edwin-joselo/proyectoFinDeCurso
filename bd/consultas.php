@@ -150,6 +150,20 @@
         } 
     }
 
+    //DENUNCIAS SIN VERIFICAR
+    function comprobar_denuncias_revisar($conexion){
+        $sql = 'SELECT * FROM denuncias_previas 
+                INNER JOIN denuncias ON denuncias.cod = denuncias_previas.cod 
+                INNER JOIN delitos ON denuncias.delito = delitos.cod 
+                WHERE aprobado="si"';
+        $resultado = $conexion->query($sql);
+        if($fila = $resultado->fetch()){
+            mostrar_denuncias_revisar($conexion);
+        } else {
+            echo '<p>No se han encontrado resultados.</p>';
+        }
+    }
+
     function mostrar_denuncias_revisar($conexion) {
         $sql = 'SELECT * FROM denuncias_previas 
         INNER JOIN denuncias ON denuncias.cod = denuncias_previas.cod 
@@ -185,13 +199,28 @@
         } 
     }
 
+    //DENUNCIAS PREVIAS
+    function comprobar_denuncias_previas($conexion, $usuario){
+        $sql = 'SELECT dp.* 
+                FROM usuarios u 
+                INNER JOIN denuncias_previas dp
+                ON u.dni = dp.dni
+                WHERE u.dni = "'.$usuario.'" AND dp.aprobado IS NULL';
+        $resultado = $conexion->query($sql);
+        if($fila = $resultado->fetch()){
+            mostrar_denuncias_previas_usuario($conexion, $usuario);
+        } else {
+            echo '<p>No se han encontrado resultados.</p>';
+        }
+    }
+
     function mostrar_denuncias_previas_usuario($conexion, $usuario){
         $sql = 'SELECT dp.* 
                 FROM usuarios u 
                 INNER JOIN denuncias_previas dp
                 ON u.dni = dp.dni
                 WHERE u.dni = "'.$usuario.'" AND dp.aprobado IS NULL';
-        $resultado = $conexion->query($sql); 
+        $resultado = $conexion->query($sql);
         while($fila = $resultado->fetch()){
             $cod = $fila['cod'];
             $fecha_delito = $fila['fecha_delito'];
@@ -200,7 +229,22 @@
         }
     }
 
-    function mostrar_denuncias_usuario($conexion, $usuario){
+    //DENUNCIAS APROBADAS
+    function comprobar_denuncias_aprobadas($conexion, $usuario){
+        $sql = 'SELECT d.*, dp.* 
+                FROM denuncias d 
+                INNER JOIN denuncias_previas dp
+                ON d.cod = dp.cod
+                WHERE dp.dni = "'.$usuario.'"';
+        $resultado = $conexion->query($sql);
+        if($fila = $resultado->fetch()){
+            mostrar_denuncias_aprobadas_usuario($conexion, $usuario);
+        } else {
+            echo '<p>No se han encontrado resultados.</p>';
+        }
+    }
+
+    function mostrar_denuncias_aprobadas_usuario($conexion, $usuario){
         $sql = 'SELECT d.*, dp.* 
                 FROM denuncias d 
                 INNER JOIN denuncias_previas dp
@@ -223,6 +267,21 @@
                 <textarea readonly rows="5"> <?php echo $descripcion ?></textarea>
             </div>
 <?php
+        }
+    }
+
+    //DENUNCIAS RECHAZADAS
+    function comprobar_denuncias_rechazadas($conexion, $usuario){
+        $sql = 'SELECT dp.* 
+                FROM usuarios u 
+                INNER JOIN denuncias_previas dp
+                ON u.dni = dp.dni
+                WHERE u.dni = "'.$usuario.'" AND dp.aprobado="no"';
+        $resultado = $conexion->query($sql);
+        if($fila = $resultado->fetch()){
+            mostrar_denuncias_rechazadas_usuario($conexion, $usuario);
+        } else {
+            echo '<p>No se han encontrado resultados.</p>';
         }
     }
 
@@ -267,7 +326,7 @@
         echo '<div class="contenedor-tabla">';
         echo '<table class="tabla-delitos" align="center">';
         while($fila = $resultado->fetch()){
-            ?>
+?>
             <tr>
                 <td> 
                     <label><?php echo $fila['nombre'] ?> </label>
@@ -277,7 +336,7 @@
                     </form>
                 </td>
             </tr>
-            <?php
+<?php
         }
         echo '</table>';
         echo '</div>';
@@ -289,14 +348,14 @@
         if($fila = $resultado->fetch()){
             $foto = '<img src="data:image/*;base64,'.$fila['foto'].'" />';
             $cod = $fila['cod'];
-            ?>
+?>
             <script>
                 Swal.fire({
                     title: 'Cod. denuncia: <?php echo $cod ?>',
                     html: '<img src="data:image/*;base64,<?php echo $fila['foto'] ?>"/>'
                 });
             </script>
-            <?php
+<?php
         }
     }
 
