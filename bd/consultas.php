@@ -207,21 +207,23 @@
         while($fila = $resultado->fetch()){
             $cod = $fila[0];
             $dni = $fila['dni'];
-            $descripcion = $fila['descripcion'];
+            $descripcion = $fila['descripcion_policia'];
             $fecha_delito = $fila['fecha_delito'];
+            $delito = $fila['nombre'];
             echo '
-            <form action="'. $_SERVER['PHP_SELF'] .'" method="post">
+            <form action="./../pdf/generarPDF.php" method="post">
                 <div class="card">
                     <a name="'.$cod.'"></a>
                     <h4>Cod. denuncia: '.$cod.' </h4>
                     <p>DNI: '.$dni.'</p>
                     <p>Fecha: '.$fecha_delito.'</p>
-                    <input type="hidden" name="cod" value="'.$cod.'"/>
-                    <input type="hidden" name="dni" value="'.$dni.'"/>';
-                    echo '<p>Delito: '.$fila['nombre'].'</p>
+                    <input type="hidden" name="cod_denuncia" value="'.$cod.'"/>
+                    <p>Delito: '.$delito.'</p>
                     <p>Descripción policía: </p>
-                    <textarea readonly rows="5">'.$fila['descripcion_policia'].'</textarea>
-                        </div>
+                    <textarea readonly rows="5">'.$descripcion.'</textarea>
+                    <div class="aceptar">
+                            <input class="pointer" type="submit" name="generarPDF" value="Generar PDF"/>           
+                    </div>
                 </div>
             </form>';
         } 
@@ -417,7 +419,6 @@
         $sql = 'SELECT * FROM denuncias_previas WHERE cod = '.$codigo.'';
         $resultado = $conexion->query($sql); 
         if($fila = $resultado->fetch()){
-            $foto = '<img src="data:image/*;base64,'.$fila['foto'].'" />';
             $cod = $fila['cod'];
 ?>
             <script>
