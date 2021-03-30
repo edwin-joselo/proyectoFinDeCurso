@@ -103,6 +103,8 @@
             $errores['email'] = 'El email no debe estar vacio';
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)){
             $errores['email'] = 'El email no es correcto. (ej: ejemplo@ejemplo.com)';
+        } elseif (strlen($email) >  40){
+            $errores['email'] = 'El email es muy largo. (ej: ejemplo@ejemplo.com)';
         }
 
         if(empty($contrasenia)){
