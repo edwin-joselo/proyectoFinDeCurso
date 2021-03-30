@@ -1,8 +1,8 @@
 window.addEventListener('DOMContentLoaded', (function () {
     $('#example').DataTable({
         language: {
-            info: 'Mostrando _START_-_END_ de _TOTAL_ Usuarios',
-            lengthMenu: 'Mostrar _MENU_ usuarios por página',
+            info: 'Mostrando _START_-_END_ de _TOTAL_ registros',
+            lengthMenu: 'Mostrar _MENU_ registros por página',
             zeroRecords: 'No se han encontrado registros',
             infoEmpty: 'No hay registros disponibles',
             infoFiltered: '(filtrado de _MAX_ registros totales)',

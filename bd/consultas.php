@@ -20,6 +20,7 @@
                 echo '<td>'.$fila['nombre'].'</td>';
                 echo '<td>'.$fila['apellidos'].'</td>';
                 echo '<td>'.$fila['fecha_nacimiento'].'</td>';
+                echo '<td>'.$fila['comunidad_autonoma'].'</td>';
                 echo '<td>'.$fila['telefono'].'</td>';
                 echo '<td>'.$fila['email'].'</td>';
             echo '</tr>';
@@ -171,7 +172,7 @@
                             select_delitos($conexion);
                     echo '</select>
                     </div>
-                    <p>Texto denuncia: </p>
+                    <p>Añadir descripción: </p>
                     <textarea name="descripcion_policia" rows="5"></textarea>';
                     echo '<div class="aceptar">
                         <input class="pointer" type="submit" name="aceptar_denuncia" value="aceptar"/>
@@ -184,48 +185,38 @@
 
     //IMPRIMIR DENUNCIAS
     function consulta_select_imprimir_denuncias(){
-        return 'SELECT * FROM denuncias_previas 
-                INNER JOIN denuncias ON denuncias.cod = denuncias_previas.cod 
-                INNER JOIN delitos ON denuncias.delito = delitos.cod 
-                WHERE aprobado="si"';
+        return 'SELECT denuncias.cod, usuarios.dni, delitos.nombre, usuarios.nombre, fecha_delito, fecha FROM denuncias 
+        INNER JOIN denuncias_previas ON denuncias.cod = denuncias_previas.cod 
+        INNER JOIN delitos ON denuncias.delito = delitos.cod 
+        INNER JOIN usuarios ON denuncias.dni_denunciante = usuarios.dni';
     }
 
-    function comprobar_imprimir_denuncias($conexion){
+    function listar_denuncias($conexion){
         $sql = consulta_select_imprimir_denuncias();
-        $resultado = $conexion->query($sql);   
-        if($fila = $resultado->fetch()){
-            mostrar_imprimir_denuncias($conexion);
-        } else {
-            echo '<p>No se han encontrado resultados.</p>';
-        }
-    }
 
-    function mostrar_imprimir_denuncias($conexion) {
-        $sql = consulta_select_imprimir_denuncias();
         $resultado = $conexion->query($sql);   
         while($fila = $resultado->fetch()){
-            $cod = $fila[0];
+            $cod = $fila['cod'];
             $dni = $fila['dni'];
-            $descripcion = $fila['descripcion_policia'];
             $fecha_delito = $fila['fecha_delito'];
-            $delito = $fila['nombre'];
-            echo '
-            <form action="./../pdf/generarPDF.php" method="post">
-                <div class="card">
-                    <a name="'.$cod.'"></a>
-                    <h4>Cod. denuncia: '.$cod.' </h4>
-                    <p>DNI: '.$dni.'</p>
-                    <p>Fecha: '.$fecha_delito.'</p>
-                    <input type="hidden" name="cod_denuncia" value="'.$cod.'"/>
-                    <p>Delito: '.$delito.'</p>
-                    <p>Descripción policía: </p>
-                    <textarea readonly rows="5">'.$descripcion.'</textarea>
-                    <div class="aceptar">
-                            <input class="pointer" type="submit" name="generarPDF" value="Generar PDF"/>           
-                    </div>
-                </div>
-            </form>';
-        } 
+            $fecha_aprobacion = $fila['fecha'];
+            $delito = $fila[2];
+            $nombre = $fila[3];
+            echo '<tr>';
+                echo '<td>'.$cod.'</td>';
+                echo '<td>'.$dni.'</td>';
+                echo '<td>'.$nombre.'</td>';
+                echo '<td>'.$fecha_delito.'</td>';
+                echo '<td>'.$delito.'</td>';
+                echo '<td>'.$fecha_aprobacion.'</td>';
+                echo '<td>
+                    <form action="./../pdf/generarPDF.php" method="post">
+                        <input type="hidden" name="cod_denuncia" value="'.$cod.'"/>
+                        <input class="pointer imprimir" type="submit" name="generarPDF" value="Generar PDF"/>
+                    </form>
+                </td>';
+            echo '</tr>';
+        }
     }
 
     //DENUNCIAS PREVIAS

@@ -8,29 +8,29 @@
         <table id="example" class="display" style="width:100%">
             <thead>
                 <tr>
+                    <th>Código</th>
                     <th>DNI</th>
                     <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Fecha de nacimiento</th>
-                    <th>CCAA</th>
-                    <th>Teléfono</th>
-                    <th>Email</th>
+                    <th>Fecha delito</th>
+                    <th>Delito</th>
+                    <th>Fecha denuncia</th>
+                    <th>Imprimir</th>
                 </tr>
             </thead>
             <tbody>
 <?php
-                listar_usuarios($conexion);
+                listar_denuncias($conexion);
 ?>              
             </tbody>
             <tfoot>
                 <tr>
+                    <th>Código</th>
                     <th>DNI</th>
                     <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Fecha de nacimiento</th>
-                    <th>CCAA</th>
-                    <th>Teléfono</th>
-                    <th>Email</th>
+                    <th>Fecha delito</th>
+                    <th>Delito</th>
+                    <th>Fecha denuncia</th>
+                    <th>Imprimir</th>
                 </tr>
             </tfoot>
         </table>
