@@ -196,12 +196,27 @@
         } 
     }
 
-    //REVISAR DENUNCIAS
-    function mostrar_denuncias_revisar($conexion) {
-        $sql = 'SELECT * FROM denuncias_previas 
-        INNER JOIN denuncias ON denuncias.cod = denuncias_previas.cod 
-        INNER JOIN delitos ON denuncias.delito = delitos.cod 
-        WHERE aprobado="si"';
+    //IMPRIMIR DENUNCIAS
+    function consulta_select_imprimir_denuncias(){
+        return 'SELECT * FROM denuncias_previas 
+                INNER JOIN denuncias ON denuncias.cod = denuncias_previas.cod 
+                INNER JOIN delitos ON denuncias.delito = delitos.cod 
+                WHERE aprobado="si"';
+    }
+
+    function comprobar_imprimir_denuncias($conexion){
+        $sql = consulta_select_imprimir_denuncias();
+        $resultado = $conexion->query($sql);   
+        //utilizando fetch (array asociativo y numerico)
+        if($fila = $resultado->fetch()){
+            mostrar_imprimir_denuncias($conexion);
+        } else {
+            echo '<p>No se han encontrado resultados.</p>';
+        }
+    }
+
+    function mostrar_imprimir_denuncias($conexion) {
+        $sql = consulta_select_imprimir_denuncias();
         $resultado = $conexion->query($sql);   
         //utilizando fetch (array asociativo y numerico)
         while($fila = $resultado->fetch()){

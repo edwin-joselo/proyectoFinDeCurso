@@ -26,7 +26,7 @@
 <body>
     <?php
     include_once './maquetacion/menu/cabecera.php';
-    include_once './maquetacion/revisar/principal.php';
+    include_once './maquetacion/imprimir_denuncias/principal.php';
 
     if(isset($_POST['mostrar_foto'])){
         mostrar_foto($conexion, $_POST['cod']);
