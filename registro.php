@@ -36,7 +36,8 @@
                         title: "Registrado correctamente",
                         text: "Redirigiendo al login ...",
                         timer: 3000,
-                        showConfirmButton: false
+                        showConfirmButton: false,
+                        allowOutsideClick: false
                     });
 
                     setTimeout(() => {
@@ -48,7 +49,7 @@
                     <script>
                     Swal.fire({
                         position: "center",
-                        icon: "success",
+                        icon: "error",
                         title: "Algo ha fallado",
                         text: "Intentelo de nuevo más tarde...",
                         timer: 3000,
