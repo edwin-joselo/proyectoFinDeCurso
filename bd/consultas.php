@@ -1,4 +1,5 @@
 <?php
+    //CALCULAR CÓDIGO MÁXIMO
     function calcular_max_PDO($conexion, $id, $tabla){
         //Consulta de tipo SELECT  
         $sql = 'SELECT MAX('.$id.') FROM '.$tabla; 
@@ -8,6 +9,26 @@
             $max_cod = $fila[0];
             return $max_cod+=1;
         }
+    }
+
+    //USUARIO
+    
+    function listar_usuarios($conexion){
+        //Consulta de tipo SELECT            
+        $sql = 'SELECT * FROM usuarios';
+
+        $resultado = $conexion->query($sql);   
+        //utilizando fetch (array asociativo y numerico)
+        while($fila = $resultado->fetch()){
+            echo '<tr>';
+                echo '<td>'.$fila['dni'].'</td>';
+                echo '<td>'.$fila['nombre'].'</td>';
+                echo '<td>'.$fila['apellidos'].'</td>';
+                echo '<td>'.$fila['fecha_nacimiento'].'</td>';
+                echo '<td>'.$fila['telefono'].'</td>';
+                echo '<td>'.$fila['email'].'</td>';
+            echo '</tr>';
+        } 
     }
 
     function insertar_usuario($conexion){
@@ -55,6 +76,7 @@
         } 
     }
 
+    //POLICIA
     function comprobar_policia_bd($conexion){
         $num_placa = $_POST['num_placa'];
         $contrasenia = $_POST['contrasenia'];
@@ -76,6 +98,7 @@
         } 
     }
 
+    //DENUNCIAS
     function insertar_denuncia($conexion) {
         $dni = $_SESSION['dni'];
         $fecha_delito = $_POST['fecha_delito'];
@@ -93,22 +116,32 @@
         $resultado = $conexion->exec($sql);
     }
 
-    function listar_usuarios($conexion){
-        //Consulta de tipo SELECT            
-        $sql = 'SELECT * FROM usuarios';
-
-        $resultado = $conexion->query($sql);   
-        //utilizando fetch (array asociativo y numerico)
-        while($fila = $resultado->fetch()){
-            echo '<tr>';
-                echo '<td>'.$fila['dni'].'</td>';
-                echo '<td>'.$fila['nombre'].'</td>';
-                echo '<td>'.$fila['apellidos'].'</td>';
-                echo '<td>'.$fila['fecha_nacimiento'].'</td>';
-                echo '<td>'.$fila['telefono'].'</td>';
-                echo '<td>'.$fila['email'].'</td>';
-            echo '</tr>';
+    function aceptar_denuncia($conexion, $codigo, $dni_denunciante, $delito, $num_placa, $descripcion_policia) {
+        if($delito){
+            $sql = 'UPDATE denuncias_previas SET aprobado = "si" WHERE cod = '.$codigo.'';
+            $resultado = $conexion->query($sql); 
+            if($resultado){
+                $fecha = date("Y-m-d");
+                try {
+                    $sql = 'INSERT INTO denuncias(cod, fecha, dni_denunciante, delito, num_placa_policia, descripcion_policia) 
+                            VALUES ('.$codigo.',"'.$fecha.'","'.$dni_denunciante.'", "'.$delito.'","'.$num_placa.'", "'.$descripcion_policia.'")';
+                    $resultado = $conexion->exec($sql);
+                } catch (PDOException $e) {
+                    echo 'Error: ' . $e;
+                }
+            }
         } 
+        
+    }
+
+    function rechazar_denuncia($conexion, $codigo) {
+        $sql = 'UPDATE denuncias_previas SET aprobado = "no" WHERE cod = '.$codigo.'';
+        $resultado = $conexion->query($sql); 
+        if($resultado){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     //DENUNCIAS SIN VERIFICAR
@@ -163,6 +196,7 @@
         } 
     }
 
+    //REVISAR DENUNCIAS
     function mostrar_denuncias_revisar($conexion) {
         $sql = 'SELECT * FROM denuncias_previas 
         INNER JOIN denuncias ON denuncias.cod = denuncias_previas.cod 
@@ -294,6 +328,7 @@
         }
     }
 
+    //PLATILLA CARD DENUNCIAS
     function plantilla_card_denuncia($cod, $fecha_delito, $descripcion, $tipo){
 ?>
         <div class="card <?php echo $tipo ?>">
@@ -363,7 +398,21 @@
         echo '</table>';
         echo '</div>';
     }
+    
+    function eliminar_delito($conexion){
+        $cod = $_POST['cod'];
+        try {
+            //Consulta de tipo DELETE
+            $sql = 'DELETE FROM delitos WHERE cod="'.$cod.'"';
+            $resultado = $conexion->exec($sql);
+            return true;
+        } catch (PDOException $e) {
+            $_SESSION['cod_delito'] = $_POST['cod'];
+            return false;
+        }
+    }
 
+    //FOTO
     function mostrar_foto($conexion, $codigo){
         $sql = 'SELECT * FROM denuncias_previas WHERE cod = '.$codigo.'';
         $resultado = $conexion->query($sql); 
@@ -380,46 +429,3 @@
 <?php
         }
     }
-
-
-    function eliminar_delito($conexion){
-        $cod = $_POST['cod'];
-        try {
-            //Consulta de tipo DELETE
-            $sql = 'DELETE FROM delitos WHERE cod="'.$cod.'"';
-            $resultado = $conexion->exec($sql);
-            return true;
-        } catch (PDOException $e) {
-            $_SESSION['cod_delito'] = $_POST['cod'];
-            return false;
-        }
-    }
-
-    function aceptar_denuncia($conexion, $codigo, $dni_denunciante, $delito, $num_placa, $descripcion_policia) {
-        if($delito){
-            $sql = 'UPDATE denuncias_previas SET aprobado = "si" WHERE cod = '.$codigo.'';
-            $resultado = $conexion->query($sql); 
-            if($resultado){
-                $fecha = date("Y-m-d");
-                try {
-                    $sql = 'INSERT INTO denuncias(cod, fecha, dni_denunciante, delito, num_placa_policia, descripcion_policia) 
-                            VALUES ('.$codigo.',"'.$fecha.'","'.$dni_denunciante.'", "'.$delito.'","'.$num_placa.'", "'.$descripcion_policia.'")';
-                    $resultado = $conexion->exec($sql);
-                } catch (PDOException $e) {
-                    echo 'Error: ' . $e;
-                }
-            }
-        } 
-        
-    }
-
-    function rechazar_denuncia($conexion, $codigo) {
-        $sql = 'UPDATE denuncias_previas SET aprobado = "no" WHERE cod = '.$codigo.'';
-        $resultado = $conexion->query($sql); 
-        if($resultado){
-            return true;
-        } else {
-            return false;
-        }
-    }
-

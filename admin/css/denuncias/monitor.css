@@ -11,6 +11,10 @@
         left: 5%;
     }
 
+    .fondo > h1 {
+        margin: 1rem;
+    }
+
     .titulo-tipo-denuncia {
         text-align: center;
     }
