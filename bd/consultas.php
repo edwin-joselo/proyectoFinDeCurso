@@ -1,10 +1,8 @@
 <?php
     //CALCULAR CÓDIGO MÁXIMO
     function calcular_max_PDO($conexion, $id, $tabla){
-        //Consulta de tipo SELECT  
         $sql = 'SELECT MAX('.$id.') FROM '.$tabla; 
         $resultado = $conexion->query($sql);
-        //obtenemos registro a registro
         if($fila = $resultado->fetch()){
             $max_cod = $fila[0];
             return $max_cod+=1;
@@ -12,13 +10,10 @@
     }
 
     //USUARIO
-    
     function listar_usuarios($conexion){
-        //Consulta de tipo SELECT            
         $sql = 'SELECT * FROM usuarios';
 
         $resultado = $conexion->query($sql);   
-        //utilizando fetch (array asociativo y numerico)
         while($fila = $resultado->fetch()){
             echo '<tr>';
                 echo '<td>'.$fila['dni'].'</td>';
@@ -43,11 +38,9 @@
 
         $hash = password_hash($contrasenia, PASSWORD_DEFAULT, ['cost' => 10]);
 
-        //Consulta de tipo INSERT
         $sql = 'INSERT INTO usuarios(dni, nombre, apellidos, fecha_nacimiento, comunidad_autonoma, telefono, email, contrasenia) 
                 VALUES ("'.$dni.'","'.$nombre.'","'.$apellidos.'","'.$fecha_nacimiento.'", "'.$comunidad_autonoma.'", '.$telefono.', "'.$email.'","'.$hash.'")';
         $resultado = $conexion->exec($sql);
-        // echo '<p>Se han insertado '.$resultado.' registros.</p>';
         if($resultado){
             return true;
         } else {
@@ -59,12 +52,10 @@
         $email = $_POST['email'];
         $contrasenia = $_POST['contrasenia'];
 
-        //Consulta de tipo SELECT            
         $sql = 'SELECT email, contrasenia, dni FROM usuarios
                 WHERE email = "'.$email.'"';
 
         $resultado = $conexion->query($sql);   
-        //utilizando fetch (array asociativo y numerico)
         if($fila = $resultado->fetch()){
             if(password_verify($contrasenia, $fila[1])){
                 session_start();
@@ -81,15 +72,11 @@
         $num_placa = $_POST['num_placa'];
         $contrasenia = $_POST['contrasenia'];
 
-        //Consulta de tipo SELECT            
         $sql = 'SELECT num_placa, contrasenia FROM policias
                 WHERE num_placa = "'.$num_placa.'"';
-
         $resultado = $conexion->query($sql);   
-        //utilizando fetch (array asociativo y numerico)
         if($fila = $resultado->fetch()){
             if(password_verify($contrasenia, $fila[1])){
-                // session_start();
                 $_SESSION['policia'] = $fila[0];
                 return true;
             } else {
@@ -158,7 +145,6 @@
     function mostrar_denuncias_sin_verificar($conexion) {
         $sql = 'SELECT * FROM denuncias_previas WHERE aprobado IS NULL';
         $resultado = $conexion->query($sql);   
-        //utilizando fetch (array asociativo y numerico)
         while($fila = $resultado->fetch()){
             $cod = $fila['cod'];
             $dni = $fila['dni'];
@@ -207,7 +193,6 @@
     function comprobar_imprimir_denuncias($conexion){
         $sql = consulta_select_imprimir_denuncias();
         $resultado = $conexion->query($sql);   
-        //utilizando fetch (array asociativo y numerico)
         if($fila = $resultado->fetch()){
             mostrar_imprimir_denuncias($conexion);
         } else {
@@ -218,7 +203,6 @@
     function mostrar_imprimir_denuncias($conexion) {
         $sql = consulta_select_imprimir_denuncias();
         $resultado = $conexion->query($sql);   
-        //utilizando fetch (array asociativo y numerico)
         while($fila = $resultado->fetch()){
             $cod = $fila[0];
             $dni = $fila['dni'];
@@ -419,7 +403,6 @@
     function eliminar_delito($conexion){
         $cod = $_POST['cod'];
         try {
-            //Consulta de tipo DELETE
             $sql = 'DELETE FROM delitos WHERE cod="'.$cod.'"';
             $resultado = $conexion->exec($sql);
             return true;
@@ -444,4 +427,20 @@
             </script>
 <?php
         }
+    }
+
+    //GRÁFICA
+
+    function datos_grafica(){    
+        $conexion = abrir_conexion_mysqli();
+        $sql = "SELECT * FROM contratos";
+        $resultado = mysqli_query($conexion,$sql);
+        $datos[0] = array('cod_contratos','nombre_escuderia', 'nombre_piloto', 'fecha');
+        $i=1;
+        while($row = mysqli_fetch_array($resultado)){
+            $datos[$i] = array((int)$row['0'], $row['1'], $row['2'], $row['3']);
+            $i++;
+        }
+        
+        return $datos;
     }

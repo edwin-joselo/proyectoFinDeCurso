@@ -4,6 +4,10 @@
     require_once '../php/funciones.php';
 
     session_start();
+    
+    if(!isset($_SESSION['policia'])){
+        header("Location: index.php");
+    }
 
     $conexion = abrir_conexion_PDO();
 
