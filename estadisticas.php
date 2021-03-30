@@ -53,7 +53,7 @@
             var data = google.visualization.arrayToDataTable(cargarDatos);
 
             var options = {
-                backgroundColor: 'rgb(62, 135, 196)',
+                backgroundColor: '#7a9ad8',
                 title: 'Denuncias por CCAA',
                 is3D: true,
             };
@@ -80,7 +80,7 @@
                 2]);
 
             var options = {
-                backgroundColor: 'rgb(62, 135, 196)',
+                backgroundColor: '#7a9ad8',
                 title: "Delitos",
                 width: 900,
                 height: 300,
