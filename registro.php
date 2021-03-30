@@ -51,8 +51,8 @@
                         position: "center",
                         icon: "error",
                         title: "Algo ha fallado",
-                        text: "Intentelo de nuevo más tarde...",
-                        timer: 3000,
+                        text: "Es posible que los datos introducidos ya existan (DNI o email)",
+                        timer: 4000,
                         showConfirmButton: false
                     });
                     </script>';

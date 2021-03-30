@@ -13,42 +13,42 @@ GRANT ALL PRIVILEGES ON pruebaproyecto.* TO 'admin';
 -- crear las tablas
 CREATE TABLE policias(
     num_placa varchar(7) PRIMARY KEY,
-    contrasenia varchar(100)
+    contrasenia varchar(100) NOT NULL
 );
 
 -- usuarios
 CREATE TABLE usuarios(
     dni varchar(9) PRIMARY KEY,
-    nombre varchar(100),
-    apellidos varchar(100),
-    fecha_nacimiento varchar(100),
-    comunidad_autonoma varchar(100),
-    telefono int(9),
-    email varchar(100),
-    contrasenia varchar(100)
+    nombre varchar(100) NOT NULL,
+    apellidos varchar(100) NOT NULL,
+    fecha_nacimiento varchar(100) NOT NULL,
+    comunidad_autonoma varchar(100) NOT NULL,
+    telefono int(9) NOT NULL,
+    email varchar(100) UNIQUE NOT NULL,
+    contrasenia varchar(100) NOT NULL
 );
 
 CREATE TABLE denuncias_previas(
     cod int(100) PRIMARY KEY AUTO_INCREMENT,
-    dni varchar(9),
-    descripcion text,
+    dni varchar(9) NOT NULL,
+    descripcion text NOT NULL,
     foto longblob,
-    fecha_delito date,
+    fecha_delito date NOT NULL,
     aprobado varchar(2)
 );
 
 CREATE TABLE denuncias(
     cod int(100) PRIMARY KEY,
-    fecha date,
-    dni_denunciante varchar(9),
-    delito int(100),
-    descripcion_policia text,
-    num_placa_policia varchar(7)
+    fecha date NOT NULL,
+    dni_denunciante varchar(9) NOT NULL,
+    delito int(100) NOT NULL,
+    descripcion_policia text NOT NULL,
+    num_placa_policia varchar(7) NOT NULL
 );
 
 CREATE TABLE delitos(
     cod int(100) PRIMARY KEY AUTO_INCREMENT,
-    nombre varchar(200)
+    nombre varchar(200) NOT NULL
 );
 
 

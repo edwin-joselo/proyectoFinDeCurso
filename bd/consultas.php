@@ -38,12 +38,12 @@
 
         $hash = password_hash($contrasenia, PASSWORD_DEFAULT, ['cost' => 10]);
 
-        $sql = 'INSERT INTO usuarios(dni, nombre, apellidos, fecha_nacimiento, comunidad_autonoma, telefono, email, contrasenia) 
-                VALUES ("'.$dni.'","'.$nombre.'","'.$apellidos.'","'.$fecha_nacimiento.'", "'.$comunidad_autonoma.'", '.$telefono.', "'.$email.'","'.$hash.'")';
-        $resultado = $conexion->exec($sql);
-        if($resultado){
+        try {
+            $sql = 'INSERT INTO usuarios(dni, nombre, apellidos, fecha_nacimiento, comunidad_autonoma, telefono, email, contrasenia) 
+                    VALUES ("'.$dni.'","'.$nombre.'","'.$apellidos.'","'.$fecha_nacimiento.'", "'.$comunidad_autonoma.'", '.$telefono.', "'.$email.'","'.$hash.'")';
+            $resultado = $conexion->exec($sql);
             return true;
-        } else {
+        } catch (PDOException $e) {
             return false;
         }
     }
