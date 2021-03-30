@@ -29,6 +29,9 @@
 <body>
 
     <?php 
+
+        $datos_queso = datos_grafica_queso_ccaa($conexion);
+
         include_once './maquetacion/index/cabecera.php'; 
         include_once './maquetacion/estadisticas/principal.php';
         include_once './maquetacion/index/pie.php';
@@ -37,6 +40,61 @@
     <script src="./javascript/login.js"></script>
     <script src="./javascript/cabecera_usuario.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="./javascript/graficas.js"></script>
+    <script>
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.load('current', {'packages':['corechart']});
+
+        google.charts.setOnLoadCallback(pintarGraficaQueso);
+        google.charts.setOnLoadCallback(pintarGraficaColumnas);
+
+        function pintarGraficaQueso() {
+            var cargarDatos = <?php echo json_encode($datos_queso); ?>
+
+            var data = google.visualization.arrayToDataTable(cargarDatos);
+
+            var options = {
+                title: 'Denuncias por CCAA',
+                is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('graficaQueso'));
+            chart.draw(data, options);
+        }
+        
+        function pintarGraficaColumnas() {
+            var data = new google.visualization.arrayToDataTable([
+                ['delito', 'numero' , { role: "style" } ],    
+                <?php
+                    datos_grafica_columnas_delitos($conexion);
+                ?>
+            ]);
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, 1,
+                { 
+                    calc: "stringify",
+                    sourceColumn: 1,
+                    type: "string",
+                    role: "annotation" 
+                },
+                2]);
+
+            var options = {
+                title: "Delitos",
+                width: 900,
+                height: 300,
+                bar: {groupWidth: "90%"},
+                legend: { position: "none" },
+                vAxis: {
+                    title: 'Cantidad'
+                },
+                hAxis: {
+                    title: 'Tipo'
+                }
+            };
+            var chart = new google.visualization.ColumnChart(document.getElementById('graficaColumnas'));
+            chart.draw(view, options);
+        }
+        
+    </script>
 </body>
 </html>
