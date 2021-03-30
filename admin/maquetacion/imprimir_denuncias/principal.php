@@ -5,10 +5,10 @@
         </svg>
     </a>
     <div class="fondo">
-        <h1>Revisar denuncias</h1>
+        <h1>Imprimir denuncias</h1>
         <div class="grupo-cards">
         <?php 
-            mostrar_denuncias_revisar($conexion);
+            comprobar_imprimir_denuncias($conexion);
         ?>
         </div>
     </div>
