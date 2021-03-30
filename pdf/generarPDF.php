@@ -52,12 +52,12 @@
             <p>Según el policía encargado de aprobar la denuncia: "'.$fila['descripcion_policia'].'."</p>'
         );
         if(!is_null($fila['foto'])){
-            $pdf->WriteHTML('A continuación se muestran la prueba fotográfica presentadas por el denunciante: </br>
+            $pdf->WriteHTML('A continuación se muestra la prueba fotográfica presentada por el denunciante: </br>
             <img src="data:image/*;base64,'.$fila['foto'].'" />');
         }
-    } 
         
-    //generamos el fichero pdf
-    //$pdf->Output();
-    $pdf->Output('compra.pdf','D');
-    //$pdf->Output('ejemplo.pdf','I');
+        //generamos el fichero pdf
+        //$pdf->Output();
+        $pdf->Output('denuncia'.$cod.'.pdf','D');
+        //$pdf->Output('ejemplo.pdf','I');
+    } 
