@@ -89,6 +89,10 @@
             $errores['fecha_delito'] = 'Debes ser mayor de edad para poder registrarte';
         }
 
+        elseif(anio_diferencia($fecha_nacimiento) > 120){
+            $errores['fecha_delito'] = 'Fecha muy lejana';
+        }
+
         if(empty($telefono)){
             $errores['telefono'] = 'El telefono no debe estar vacio';
         } elseif(!preg_match("/^(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}$/", $telefono)){
@@ -163,7 +167,7 @@
         }
 
         elseif(anio_diferencia($fecha_delito) > 10){
-            $errores['fecha_delito'] = 'La fecha es muy antigua ('.anio_diferencia($fecha_delito).' años)';
+            $errores['fecha_delito'] = 'La fecha es muy lejana ('.anio_diferencia($fecha_delito).' años) y el máximo es de 10 años';
         }
 
         if(empty($descripcion)){
