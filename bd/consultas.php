@@ -283,9 +283,9 @@
         $resultado = $conexion->query($sql); 
         while($fila = $resultado->fetch()){
             $cod = $fila[0];
-            $descripcion = $fila[7];
-            $fecha_acontecimiento = $fila[1];
-            $fecha_aprobacion = $fila[9];
+            $descripcion = $fila['descripcion'];
+            $fecha_acontecimiento = $fila['fecha_delito'];
+            $fecha_aprobacion = $fila['fecha'];
 ?>
             <div class="card card-aprobado">
                 <h4>Cod. denuncia: <?php echo $cod; ?> </h4>
