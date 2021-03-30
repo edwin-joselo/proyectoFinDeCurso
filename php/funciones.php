@@ -40,9 +40,25 @@
         if(isset($_POST[$name])){
             echo $_POST[$name];
         }
-    }    
+    }
+    
+    function anio_diferencia($fecha){
+        list($anio,$mes,$dia) = explode("-",$fecha);
+        $anio_dif = date("Y") - $anio;
+        $mes_dif = date("m") - $mes;
+        $dia_dif = date("d") - $dia;
+
+        if ($dia_dif < 0 || $mes_dif < 0) { 
+            $anio_dif--; 
+        } 
+        
+        return $anio_dif; 
+    }
     
     function comprobar_errores_registro($dni, $nombre, $apellidos, $fecha_nacimiento, $telefono, $email, $contrasenia, $repetir_contrasenia, $errores) {
+        $fecha_actual = date("Y-m-d");
+        $fecha_nacimiento_date = date("Y-m-d", strtotime($fecha_nacimiento));
+
         if(empty($dni)){
             $errores['dni'] = 'El dni no debe estar vacio';
         } elseif(!preg_match("/^[0-9]{8}[A-Z]$/", $dni)){
@@ -63,6 +79,14 @@
 
         if(empty($fecha_nacimiento)){
             $errores['fecha_nacimiento'] = 'La fecha de nacimiento no debe estar vacio';
+        }
+
+        elseif($fecha_actual < $fecha_nacimiento_date){
+            $errores['fecha_delito'] = 'Seleccione una fecha del pasado';
+        }
+
+        elseif(anio_diferencia($fecha_nacimiento) < 18){
+            $errores['fecha_delito'] = 'Debes ser mayor de edad para poder registrarte';
         }
 
         if(empty($telefono)){
@@ -125,10 +149,21 @@
 
         return $errores;
     }
-    
+
     function comprobar_errores_denuncia($fecha_delito, $descripcion, $inputfile, $errores){
+        $fecha_actual = date("Y-m-d");
+        $fecha_delito_date = date("Y-m-d", strtotime($fecha_delito));
+
         if(empty($fecha_delito)){
             $errores['fecha_delito'] = 'Seleccione una fecha';
+        }
+
+        elseif($fecha_actual < $fecha_delito_date){
+            $errores['fecha_delito'] = 'Seleccione una fecha del pasado';
+        }
+
+        elseif(anio_diferencia($fecha_delito) > 10){
+            $errores['fecha_delito'] = 'La fecha es muy antigua ('.anio_diferencia($fecha_delito).' años)';
         }
 
         if(empty($descripcion)){
