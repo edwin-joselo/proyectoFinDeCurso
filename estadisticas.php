@@ -79,6 +79,35 @@
                 2]);
 
             var options = {
+                backgroundColor: 'rgb(181, 222, 255)',
+                series: {
+                    // low
+                    0: {
+                    areaOpacity: 0.6,
+                    color: '#FFF59D',
+                    visibleInLegend: false
+                    },
+
+                    // avg
+                    1: {
+                    areaOpacity: 0.6,
+                    color: '#A5D6A7',
+                    visibleInLegend: false
+                    },
+
+                    // high
+                    2: {
+                    areaOpacity: 0.6,
+                    color: '#EF9A9A',
+                    visibleInLegend: false
+                    },
+
+                    // dogs
+                    3: {
+                    color: '#01579B',
+                    type: 'line'
+                    }
+                },
                 title: "Delitos",
                 width: 900,
                 height: 300,
