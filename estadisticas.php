@@ -20,16 +20,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estadísticas</title>
+
+    <!-- GLOBAL -->
     <link rel="stylesheet" href="./css/global/global.css">
     <link rel="stylesheet" href="./css/global/monitor.css">
+
+    <!-- MAQUETACIÓN -->
     <link rel="stylesheet" href="./css/login/monitor.css">
-    <link rel="stylesheet" href="./admin/css/denuncias/monitor.css">
     <link rel="stylesheet" href="./css/denuncia/monitor.css">
+
+    <!-- MAQUETACIÓN ADMIN -->
+    <link rel="stylesheet" href="./admin/css/denuncias/monitor.css">
 </head>
 <body>
 
     <?php 
-
         $datos_queso = datos_grafica_queso_ccaa($conexion);
 
         include_once './maquetacion/index/cabecera.php'; 
@@ -37,6 +42,7 @@
         include_once './maquetacion/index/pie.php';
     ?>
 
+    <!-- JAVASCRIPT -->
     <script src="./javascript/login.js"></script>
     <script src="./javascript/cabecera_usuario.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

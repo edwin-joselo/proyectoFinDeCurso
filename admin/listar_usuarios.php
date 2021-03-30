@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="../css/global/global.css">
     <link rel="stylesheet" href="../css/global/monitor.css">
     
-    <!-- MAQUETACIÓN -->
+    <!-- MAQUETACIÓN USUARIO -->
     <link rel="stylesheet" href="../css/login/monitor.css">
 
     <!-- SWEETALERT2 -->

@@ -13,8 +13,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- GLOBAL -->
     <link rel="stylesheet" href="./css/global/global.css">
     <link rel="stylesheet" href="./css/global/monitor.css">
+
+    <!-- MAQUETACIÓN -->
     <link rel="stylesheet" href="./css/login/monitor.css">
     <link rel="stylesheet" href="./css/nosotros/monitor.css">
 
@@ -26,6 +30,8 @@
     include_once './maquetacion/nosotros/principal.php';
     include_once './maquetacion/index/pie.php';
     ?>
+
+    <!-- JAVASCRIPT -->
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfulz2jpJ3DGJQRHy-cpOjARGoGIUSLY8&callback=initMap">
     </script>

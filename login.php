@@ -16,8 +16,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- GLOBAL -->
     <link rel="stylesheet" href="./css/global/global.css">
+
+    <!-- MAQUETACIÓN -->
     <link rel="stylesheet" href="./css/login/monitor.css">
+
+    <!-- SWEETALERT2 -->
     <link rel="stylesheet" href="./css/sweetalert2/sweetalert2.css">
     <link rel="stylesheet" href="./css/sweetalert2/dark.css">
     <script src="./javascript/sweetalert2.js"></script>
@@ -77,6 +83,7 @@
     include_once './maquetacion/index/pie.php';
     ?>
 
+    <!-- JAVASCRIPT -->
     <script src="./javascript/login.js"></script>
     <script src="./javascript/cabecera_usuario.js"></script>
 </body>

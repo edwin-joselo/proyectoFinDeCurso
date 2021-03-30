@@ -26,12 +26,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- GLOBAL -->
     <link rel="stylesheet" href="./css/global/global.css">
     <link rel="stylesheet" href="./css/global/monitor.css">
+
+    <!-- MAQUETACIÓN -->
     <link rel="stylesheet" href="./css/login/monitor.css">
     <link rel="stylesheet" href="./css/denuncia/monitor.css">
+
+    <!-- SWEETALERT2 -->
     <link rel="stylesheet" href="./css/sweetalert2/dark.css">
     <script src="./javascript/sweetalert2.js"></script>
+
+    <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
@@ -69,20 +77,13 @@
             }
         }
     }
-    // //Consulta de tipo SELECT            
-    // $sql = 'SELECT * FROM denuncias_previas WHERE dni = "'.$_SESSION['dni'].'"';
-
-    // $resultado = $conexion->query($sql);   
-    // //utilizando fetch (array asociativo y numerico)
-    // while($fila = $resultado->fetch()){
-    //     echo '<img src="data:image/*;base64,'.$fila['foto'].'" width = "100px" height = "100px"/>';
-    // }
     
     include_once './maquetacion/index/cabecera.php';
     include_once './maquetacion/denuncia/principal.php';
     include_once './maquetacion/index/pie.php';
     ?>
 
+    <!-- JAVASCRIPT -->
     <script src="./javascript/inputFile.js"></script>
     <script src="./javascript/login.js"></script>
     <script src="./javascript/cabecera_usuario.js"></script>

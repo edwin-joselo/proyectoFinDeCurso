@@ -20,10 +20,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- GLOBAL -->
     <link rel="stylesheet" href="../css/global/global.css">
     <link rel="stylesheet" href="../css/global/monitor.css">
+
+    <!-- MAQUETACIÓN -->
     <link rel="stylesheet" href="./css/menu/monitor.css">
     <link rel="stylesheet" href="./css/denuncias/monitor.css">
+
+    <!-- SWEETALERT2 -->
     <link rel="stylesheet" href="../css/sweetalert2/dark.css">
     <script src="../javascript/sweetalert2.js"></script>
 </head>
@@ -36,6 +42,8 @@
         mostrar_foto($conexion, $_POST['cod']);
     }
     ?>
+
+    <!-- JAVASCRIPT -->
     <script type="text/javascript" src="../javascript/maintainscroll.min.js"></script>
     <script src="../javascript/cabecera_admin.js"></script>
     <script src="../javascript/login.js"></script>
