@@ -59,7 +59,6 @@
         $resultado = $conexion->query($sql);   
         if($fila = $resultado->fetch()){
             if(password_verify($contrasenia, $fila[1])){
-                session_start();
                 $_SESSION['dni'] = $fila[2];
                 return true;
             } else {

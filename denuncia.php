@@ -12,7 +12,7 @@
     }
 
     if(!isset($_SESSION['dni'])){
-        header("Location: index.php");
+        include_once './redireccionar_index.php';
     }
 
     $errores = [];

@@ -106,7 +106,7 @@
                                 });
 
                                 setTimeout(() => {
-                                    window.location.href="../php/eliminar_denuncias.php";
+                                    window.location.href="../bd/eliminar_denuncias.php";
                                 }, 3000);
                             }
                         })

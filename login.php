@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     require_once './bd/conexion.php';
     require_once './bd/consultas.php';
     require_once './php/funciones.php';
