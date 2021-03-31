@@ -49,15 +49,15 @@
         $pdf->WriteHTML('<p>En esta denuncia, aprobada en la web policical en '.$fila['fecha'].', fue presentada por '.$fila['nombre'].
             ' '.$fila['apellidos'].' de DNI '.$fila['dni'].' y con residencia en '.$fila['comunidad_autonoma'].'. 
             La causa de la denuncia es por '.$delito.', suceso ocurrido en '.$fila['fecha_delito'].'.</p>
-            <p>Según el policía encargado de aprobar la denuncia: "'.$fila['descripcion_policia'].'."</p>'
+            <p>Según el agente encargado de aprobar la denuncia: "'.$fila['descripcion_policia'].'."</p>'
         );
         if(!is_null($fila['foto'])){
-            $pdf->WriteHTML('A continuación se muestra la prueba fotográfica presentada por el denunciante: </br>
+            $pdf->WriteHTML('<p>A continuación se muestra la prueba fotográfica presentada por el denunciante: </p>
             <img src="data:image/*;base64,'.$fila['foto'].'" />');
         }
         
         //generamos el fichero pdf
         //$pdf->Output();
-        $pdf->Output('denuncia'.$cod.'.pdf','D');
+        $pdf->Output('denuncia_'.$cod.'.pdf','D');
         //$pdf->Output('ejemplo.pdf','I');
     } 
