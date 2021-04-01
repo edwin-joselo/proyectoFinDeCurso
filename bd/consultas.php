@@ -209,11 +209,17 @@
                 echo '<td>'.$delito.'</td>';
                 echo '<td>'.$fecha_aprobacion.'</td>';
                 echo '<td>
-                    <form action="./../pdf/generarPDF.php" method="post">
-                        <input type="hidden" name="cod_denuncia" value="'.$cod.'"/>
-                        <input class="pointer imprimir" type="submit" name="generarPDF" value="Generar PDF"/>
-                    </form>
-                </td>';
+                        <form action="./../pdf/generarPDF.php" method="post">
+                            <input type="hidden" name="cod_denuncia" value="'.$cod.'"/>
+                            <input class="pointer imprimir" type="submit" name="generarPDF" value="Generar PDF"/>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="./../word/generarWord.php" method="post">
+                            <input type="hidden" name="cod_denuncia" value="'.$cod.'"/>
+                            <input class="pointer imprimir" type="submit" name="generarWord" value="Generar Word"/>
+                        </form>
+                    </td>';
             echo '</tr>';
         }
     }

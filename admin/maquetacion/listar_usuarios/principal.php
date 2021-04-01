@@ -5,6 +5,7 @@
         </svg>
     </a>
     <div class="fondo">
+        <h1>Usuarios</h1>
         <table id="example" class="display" style="width:100%">
             <thead>
                 <tr>

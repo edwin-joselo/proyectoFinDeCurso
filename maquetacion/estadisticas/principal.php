@@ -5,8 +5,9 @@
         </svg>
     </a>
     <div class="fondo">
-        <div id="graficaQueso" class="grafica" style="width: 900px; height: 300px;"></div>
-        <div id="graficaColumnas" class="grafica" style="width: 900px; height: 300px;"></div>
+        <h1>Gráficas</h1>
+        <div id="graficaQueso" class="grafica"></div>
+        <div id="graficaColumnas" class="grafica"></div>
     </div>
     
 </main>
