@@ -3,21 +3,6 @@
 require_once '../bd/conexion.php';
 require_once './vendor/phpoffice/phpword/bootstrap.php';
 
-function setImageValue($search, $replace)
-    {
-        // Sanity check
-        if (!file_exists($replace))
-        {
-            return;
-        }
-
-        // Delete current image
-        $this->zipClass->deleteName('word/media/' . $search);
-
-        // Add a new one
-        $this->zipClass->addFile($replace, 'word/media/' . $search);
-    }
-
 $phpWord = new \PhpOffice\PhpWord\PhpWord();
 
 $phpWord->getSettings()->setUpdateFields(true);
