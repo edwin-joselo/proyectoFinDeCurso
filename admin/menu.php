@@ -1,9 +1,10 @@
 <?php
+    session_start();
+    
     require_once '../bd/conexion.php';
     require_once '../bd/consultas.php';
     require_once '../php/funciones.php';
 
-    session_start();
 
     
     if(isset($_POST['cerrar_sesion'])){
@@ -11,7 +12,7 @@
     }
     
     if(!isset($_SESSION['policia'])){
-        header("Location: index.php");
+        include_once './../php/redireccionar_index.php';
     }
     
     $conexion = abrir_conexion_PDO();
