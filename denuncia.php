@@ -12,7 +12,7 @@
     }
 
     if(!isset($_SESSION['dni'])){
-        include_once './redireccionar_index.php';
+        include_once './php/redireccionar_index.php';
     }
 
     $errores = [];

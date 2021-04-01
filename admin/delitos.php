@@ -12,7 +12,7 @@
     }
 
     if(!isset($_SESSION['policia'])){
-        header("Location: index.php");
+        include_once './../php/redireccionar_index.php';
     }
 
     $errores = [];
