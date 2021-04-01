@@ -90,11 +90,20 @@
         $dni = $_SESSION['dni'];
         $fecha_delito = $_POST['fecha_delito'];
         $descripcion = $_POST['textarea'];
-        if(!empty($_FILES['inputfile']['tmp_name'])){
-            $foto = $_FILES['inputfile']['tmp_name'];
+        // if(!empty($_FILES['inputfile']['tmp_name'])){
+        if(!empty($_POST['foto'])){
+            //original
+            // $foto = $_FILES['inputfile']['tmp_name'];
+            // $foto = base64_encode(file_get_contents(addslashes($foto)));
+            // $sql = 'INSERT INTO denuncias_previas(dni, descripcion, foto, fecha_delito) 
+            //         VALUES ("'.$dni.'","'.$descripcion.'","'.$foto.'","'.$fecha_delito.'")';
+
+            $foto = $_POST['foto'];
             $foto = base64_encode(file_get_contents(addslashes($foto)));
             $sql = 'INSERT INTO denuncias_previas(dni, descripcion, foto, fecha_delito) 
                     VALUES ("'.$dni.'","'.$descripcion.'","'.$foto.'","'.$fecha_delito.'")';
+            
+
         }else{
             $sql = 'INSERT INTO denuncias_previas(dni, descripcion, fecha_delito) 
                     VALUES ("'.$dni.'","'.$descripcion.'","'.$fecha_delito.'")';

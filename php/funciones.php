@@ -156,7 +156,7 @@
         return $errores;
     }
 
-    function comprobar_errores_denuncia($fecha_delito, $descripcion, $inputfile, $errores){
+    function comprobar_errores_denuncia($fecha_delito, $descripcion, $errores){
         $fecha_actual = date("Y-m-d");
         $fecha_delito_date = date("Y-m-d", strtotime($fecha_delito));
 
@@ -176,11 +176,11 @@
             $errores['descripcion'] = 'Añada una descripción';
         }
 
-        if(!empty($_FILES['inputfile']['tmp_name'])){
-            if(filesize($inputfile)> 800000){
-                $errores['inputfile'] = 'Imagen demasiado grande';
-            }
-        }
+        // if(!empty($_FILES['inputfile']['tmp_name'])){
+        //     if(filesize($inputfile)> 800000){
+        //         $errores['inputfile'] = 'Imagen demasiado grande';
+        //     }
+        // }
 
         return $errores;
     }
