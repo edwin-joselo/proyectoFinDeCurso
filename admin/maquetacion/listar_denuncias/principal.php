@@ -5,6 +5,7 @@
         </svg>
     </a>
     <div class="fondo">
+        <h1>Denuncias</h1>
         <table id="example" class="display" style="width:100%">
             <thead>
                 <tr>
@@ -14,7 +15,8 @@
                     <th>Fecha delito</th>
                     <th>Delito</th>
                     <th>Fecha denuncia</th>
-                    <th>Imprimir</th>
+                    <th>Imprimir PDF</th>
+                    <th>Imprimir Word</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,7 +32,8 @@
                     <th>Fecha delito</th>
                     <th>Delito</th>
                     <th>Fecha denuncia</th>
-                    <th>Imprimir</th>
+                    <th>Imprimir PDF</th>
+                    <th>Imprimir Word</th>
                 </tr>
             </tfoot>
         </table>

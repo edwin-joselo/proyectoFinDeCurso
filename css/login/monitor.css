@@ -148,5 +148,13 @@
         margin: 1rem;
     }
 
+    .fondo > h1 {
+        font-size: 4rem;
+        text-align: center;
+    }
 
+    .grafica {
+        width: 900px; 
+        height: 300px;
+    }
 }
