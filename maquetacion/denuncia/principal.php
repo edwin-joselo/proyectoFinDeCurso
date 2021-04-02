@@ -20,7 +20,13 @@
         <div>
             <p>Pruebas fotográficas (opcional): </p>
             <span class="inputfile">
-                <input type="file" name="inputfile" id="inputfile" accept="image/*"/>
+                <!-- <input id="imageFile" name="imageFile" type="file" class="imageFile"  accept="image/*"  />  -->
+                <!-- <input type="button" value="Resize Image"  onsubmit="ResizeImage()"/>  -->
+                <!-- <br/> -->
+                <!-- <img src="" id="preview">-->
+                <!-- <img src="" id="output">  -->
+                <input type="hidden" value="" name="foto" id="outputHidden">
+                <input type="file" name="inputfile" id="inputfile" accept="image/*" onchange="ResizeImage()" />
             </span>
             <label for="inputfile">
                 <span>Elige un archivo</span> 
