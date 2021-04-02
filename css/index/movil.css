@@ -38,8 +38,9 @@
     }
     
     nav > label {
-        bottom: 50%;
+        bottom: 9%;
         right: 2%;
+        z-index: 1;
         background-image: url(../../imagenes/x.svg);
     }
     
