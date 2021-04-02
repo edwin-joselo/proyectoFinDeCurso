@@ -1,9 +1,5 @@
 /* Móvil */
 @media all and (max-width: 450px) {
-
-    footer {
-        display: none;
-    }
     
     body {
         min-height: 100vh;
