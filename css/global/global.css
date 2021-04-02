@@ -16,19 +16,6 @@
     padding: 0;
 }
 
-footer {
-    grid-area: footer;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: space-evenly; 
-}
-
-footer > img{
-    height: 50px;
-}
-
 /* scroll bar*/
 ::-webkit-scrollbar {
     width: 20px;
