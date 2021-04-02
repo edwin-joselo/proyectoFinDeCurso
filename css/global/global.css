@@ -41,3 +41,17 @@
 .pointer:hover {
     cursor: pointer;
 }
+
+footer {
+    grid-area: footer;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+footer > img{
+    align-self: cen;
+    height: 50px;
+}
