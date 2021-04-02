@@ -56,4 +56,18 @@
         width: 25px;
     }
 
+    footer {
+        grid-area: footer;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: space-evenly; 
+        /* position: relative; */
+    }
+    
+    footer > img{
+        align-self: cen;
+        height: 50px;
+    }
 }
