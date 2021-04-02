@@ -1,5 +1,7 @@
 <nav class="nav-index">
     <h1>POLICIA NACIONAL</h1>
+    <input type="checkbox" id="tChkMenu" checked>
+    <label for="tChkMenu" class="boton-menu"></label>
     <hr>
     <ul id="menu">
 <?php 

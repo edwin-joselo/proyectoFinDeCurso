@@ -1,10 +1,15 @@
 :root {
     font-family: Roboto, Arial;
-    /* font-family: Arial, Helvetica, sans-serif; */
     font-size: 16px;
     color: white;
     /* color: black; */
+    --fondo-transparente: rgba(19, 30, 53, 0.9);
+    --fondo-solido: rgba(19, 30, 53);
+    --menu-transparente: rgba(61, 98, 167, 0.603);
+    --gris-transparente: rgba(168, 162, 162, 0.5);
+    --gris-solido: rgba(168, 162, 162);
 }
+
 
 * {
     margin: 0;

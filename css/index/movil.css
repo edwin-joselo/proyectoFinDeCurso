@@ -1,6 +1,209 @@
 /* Móvil */
 @media all and (max-width: 450px) {
+
     body {
-        background-color: red;
+        min-height: 100vh;
+        max-width: 100vw;
+        display: grid;
+        grid-template: 
+        "header" auto
+        "nav"    auto
+        "main"   1fr
+        "footer" auto
+        / 1fr
+        ;
     }
+
+    .cabecera {
+        background-image: url(../../imagenes/policia-nacional-movil.png);
+        height: 100%;
+        width: 100%;
+    }
+    
+    nav {
+        grid-area: nav;
+        background-color: var(--fondo-transparente);
+        border-bottom: solid 1px var(--fondo-transparente);
+    }
+
+    nav > input {
+        display: none;
+    }
+
+    nav > label, nav > input:checked + label {
+        position: fixed;
+        background-repeat: no-repeat;
+        height: 30px;
+        width: 30px;
+    }
+    
+    nav > label {
+        bottom: 50%;
+        right: 2%;
+        background-image: url(../../imagenes/x.svg);
+    }
+    
+    nav > input:checked ~ ul {
+        display: none;
+    }
+    
+    nav > input:checked + label {
+        bottom: 7%;
+        right: 2%;
+        background-image: url(../../imagenes/boton-hamburguesa.svg);
+    }
+
+    nav > h1 {
+        font-size: 3rem;
+        text-align: center;
+        padding: 2rem 0;
+    }
+
+    nav > hr:nth-child(6) {
+        display: none;
+    }
+
+    nav > ul {
+        background-color: var(--fondo-solido);
+        position: fixed;
+        top: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav > ul > li > a {
+        text-decoration: none;
+        float: left;
+        padding: 10px;
+        color: white;
+    }
+
+    nav > ul > li {
+        margin: 0.5rem 5rem;
+        list-style: none;
+        border-bottom: solid 1px white;
+    }
+
+    
+    nav > ul > li > a {
+        font-weight: bold;
+    }
+    
+    #menu > li > a:hover {
+        background-color: var(--menu-transparente);
+        border-radius: 1.5rem;
+    }
+    
+    a {
+        font-size: 1.3rem;
+        color: white;
+        text-decoration: none;
+    }
+
+    .presentacion > ul > li {
+        list-style: square;
+    }
+    
+    .presentacion {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .presentacion > h3:nth-child(3) {
+        margin-top: 1rem;
+    }
+
+    .presentacion > ul > li {
+        margin: 0.5rem 0;
+    }
+
+    main {
+        grid-area: main;
+        color: black;
+        background-color: var(--gris-transparente);
+        padding: 1rem;
+    }
+    
+    .titulo {
+        display: flex;
+    }
+
+    .indice {
+        margin-right: 0;
+        max-height: 100vh;
+        width: 20px;
+        background-color:rgba(19, 30, 53, 0.9);
+    }
+
+    .grupo-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+    }
+        
+    .card {
+        margin: 1rem;
+        box-shadow: 0 5px 10px;
+        width: 100%;
+        height: auto; 
+    }
+    
+    .card > img {
+        width: 100%;
+        height: auto;
+        background-color: transparent;
+    }
+    
+    .card > div {
+        text-align: center;
+        padding: 1rem;
+        align-self: center;
+    }
+
+    .card > div > h3 {
+        margin: 0.5rem;
+    }
+    
+    .card > div > a {
+        display: inline-block;
+        width: fit-content;
+        padding: 0.25rem;
+        margin-top: 1rem;
+        background-color: var(--gris-solido);
+    }
+    
+    .card > div > a:hover {
+        background-color: black;
+    }
+    
+    .contacto {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem;
+        font-size: 20px;
+    }
+    
+    .contacto > div {
+        padding: 0.5rem;
+    }
+    
+    .contacto > div > p {
+        padding: 0.2rem;
+    }
+
+    
+    .redes {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .redes > a > svg {
+        width: 80px;
+        height: 80px;
+    }
+
 }
