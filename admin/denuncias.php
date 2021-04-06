@@ -36,10 +36,13 @@
     <!-- GLOBAL -->
     <link rel="stylesheet" href="../css/global/global.css">
     <link rel="stylesheet" href="../css/global/monitor.css">
+    <link rel="stylesheet" href="../css/global/movil.css">
 
     <!-- MAQUETACIÓN -->
     <link rel="stylesheet" href="./css/menu/monitor.css">
+    <link rel="stylesheet" href="./css/menu/movil.css">
     <link rel="stylesheet" href="./css/denuncias/monitor.css">
+    <link rel="stylesheet" href="./css/denuncias/movil.css">
 
     <!-- SWEETALERT2 -->
     <link rel="stylesheet" href="../css/sweetalert2/dark.css">
