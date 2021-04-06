@@ -28,6 +28,7 @@
     <!-- MAQUETACIÓN -->
     <link rel="stylesheet" href="./css/login/monitor.css">
     <link rel="stylesheet" href="./css/denuncia/monitor.css">
+    <link rel="stylesheet" href="./css/login/movil.css">
 
     <!-- MAQUETACIÓN ADMIN -->
     <link rel="stylesheet" href="./admin/css/denuncias/monitor.css">
