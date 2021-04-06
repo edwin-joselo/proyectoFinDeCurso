@@ -30,9 +30,11 @@
     <!-- GLOBAL -->
     <link rel="stylesheet" href="../css/global/global.css">
     <link rel="stylesheet" href="../css/global/monitor.css">
-    
+    <link rel="stylesheet" href="../css/global/movil.css">
+   
     <!-- MAQUETACIÓN USUARIO -->
     <link rel="stylesheet" href="../css/login/monitor.css">
+    <link rel="stylesheet" href="../css/login/movil.css">
 
     <!-- SWEETALERT2 -->
     <link rel="stylesheet" href="../css/sweetalert2/dark.css">
@@ -40,6 +42,9 @@
 
     <!-- Datatables -->
     <link rel="stylesheet" href="../css/datatables/jquery.dataTables.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.2.7/css/rowReorder.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.dataTables.min.css">
 
 </head>
 <body>
@@ -51,7 +56,32 @@
     <!-- JQUERY -->
     <script src="../javascript/datatables/jquery.js"></script>
     <script src="../javascript/datatables/jquery.dataTables.js"></script>
-    <script src="../javascript/datatables/tabla-traduccion.js"></script>
+    <script src="https://cdn.datatables.net/rowreorder/1.2.7/js/dataTables.rowReorder.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var table = $('#example').DataTable( {
+                rowReorder: {
+                    selector: 'td:nth-child(2)'
+                },
+                responsive: true,
+                language: {
+                    info: 'Mostrando _START_-_END_ de _TOTAL_ registros',
+                    lengthMenu: 'Mostrar _MENU_ registros por página',
+                    zeroRecords: 'No se han encontrado registros',
+                    infoEmpty: 'No hay registros disponibles',
+                    infoFiltered: '(filtrado de _MAX_ registros totales)',
+                    search: 'Criterio de búsqueda:',
+                    paginate: {
+                        previous: 'Anterior',
+                        next: 'Siguiente',
+                        first: 'Primera',
+                        last: 'Última'
+                    }
+                }
+            } );
+        } );
+    </script>
 
     <!-- JAVASCRIPT -->
     <script src="../javascript/login.js"></script>

@@ -40,8 +40,6 @@
     <!-- MAQUETACIÓN -->
     <link rel="stylesheet" href="./css/listar_denuncias/monitor.css">
 
-    <!-- <link rel="stylesheet" href="./css/listar_denuncias/movil.css"> -->
-
     <!-- SWEETALERT2 -->
     <link rel="stylesheet" href="../css/sweetalert2/dark.css">
     <script src="../javascript/sweetalert2.js"></script>
@@ -49,8 +47,6 @@
     <!-- Datatables -->
     <link rel="stylesheet" href="../css/datatables/jquery.dataTables.css">
 
-    
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.2.7/css/rowReorder.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.dataTables.min.css">
 
