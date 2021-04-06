@@ -3,7 +3,7 @@
 <?php
     if(isset($_SESSION['dni'])){
 ?> 
-        <label>DNI: <?php echo $_SESSION['dni'] ?></label>
+        <label><?php echo $_SESSION['dni'] ?></label>
 <?php
     }
 ?>
