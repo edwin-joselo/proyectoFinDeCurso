@@ -1,5 +1,9 @@
 /* Móvil */
 @media all and (max-width: 450px) {
+    header {
+        width: 100%;
+    }
+
     h1 {
         text-align: center;
         /* font-size: 4rem;
@@ -18,12 +22,12 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        border: solid 1px red;
+        /* border: solid 1px red; */
     }
     
     #tagDivMap {
-        height: 350px;
-        width: 380px;
+        height: 320px;
+        width: 320px;
     }
     
     .direccion {

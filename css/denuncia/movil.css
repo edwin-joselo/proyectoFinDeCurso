@@ -5,19 +5,19 @@
         font-family: Roboto, Arial;
         color: white;
         text-align: start;
-        display: none;
-        width: auto;
+        display: block;
+        width: 100%;
         border-bottom: solid 2px white;
         background-color: transparent;
         font-size: 1.2rem;
         outline: none;
         border-radius: 1rem;
-        /* padding: 0.3rem; */
+        padding: 0.3rem;
 
     }
     
     input[type='file']#inputfile {
-        visibility: hidden;
+        display: none;
     }
 
     label[for="inputfile"] {
@@ -55,5 +55,4 @@
         display: inline;
     }
 
-    
 }
