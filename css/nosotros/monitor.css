@@ -2,7 +2,7 @@
 @media all and (min-width: 901px) {
 
     .fondo {
-        background-color: rgba(19, 30, 53, 0.9);
+        background-color: var(--fondo-transparente);
         margin: 1rem;
         padding: 1rem;
         width: 100%;
