@@ -23,8 +23,8 @@
         align-self: center;
         font-size: 14px;
         font-weight: 600;
-        color: #fff;
-        background-color: #106BA0;
+        color: white;
+        background-color: var(--azul-claro-inputfile);
         display: inline-block;
         transition: all .5s;
         cursor: pointer;

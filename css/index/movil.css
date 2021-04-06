@@ -139,7 +139,7 @@
         margin-right: 0;
         max-height: 100vh;
         width: 20px;
-        background-color:rgba(19, 30, 53, 0.9);
+        background-color:var(--fondo-transparente);
     }
 
     .grupo-cards {
