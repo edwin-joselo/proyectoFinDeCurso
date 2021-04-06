@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="./css/login/monitor.css">
     <link rel="stylesheet" href="./css/nosotros/monitor.css">
 
+    <link rel="stylesheet" href="./css/login/movil.css">
+    <link rel="stylesheet" href="./css/nosotros/movil.css">
 </head>
 <body>
 

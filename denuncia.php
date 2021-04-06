@@ -35,6 +35,8 @@
     <link rel="stylesheet" href="./css/login/monitor.css">
     <link rel="stylesheet" href="./css/denuncia/monitor.css">
 
+    <link rel="stylesheet" href="./css/login/movilcss">
+
     <!-- SWEETALERT2 -->
     <link rel="stylesheet" href="./css/sweetalert2/dark.css">
     <script src="./javascript/sweetalert2.js"></script>
