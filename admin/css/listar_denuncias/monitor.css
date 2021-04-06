@@ -1,4 +1,4 @@
-@media all and (min-width: 901px) {
+/* @media all and (min-width: 901px) { */
     .imprimir{
         background-color: white;
         color: black;
@@ -14,4 +14,4 @@
         background-color: grey;
         color: white;
     }
-}
+/* } */
