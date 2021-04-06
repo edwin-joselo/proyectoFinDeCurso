@@ -4,8 +4,12 @@
         grid-area: header;
         background-color: black;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
     }
+/* 
+    header > div {
+        margin: 2px;
+    } */
 
     /* header > div {
         margin: 0 1rem;
