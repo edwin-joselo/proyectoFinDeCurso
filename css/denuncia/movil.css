@@ -1,0 +1,59 @@
+/* Móvil */
+@media all and (max-width: 450px) {
+    
+    input[type="textarea"], textarea {
+        font-family: Roboto, Arial;
+        color: white;
+        text-align: start;
+        display: none;
+        width: auto;
+        border-bottom: solid 2px white;
+        background-color: transparent;
+        font-size: 1.2rem;
+        outline: none;
+        border-radius: 1rem;
+        /* padding: 0.3rem; */
+
+    }
+    
+    input[type='file']#inputfile {
+        visibility: hidden;
+    }
+
+    label[for="inputfile"] {
+        align-self: center;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #fff;
+        background-color: #106BA0;
+        display: inline-block;
+        transition: all .5s;
+        cursor: pointer;
+        padding: 15px 40px;
+        text-transform: uppercase;
+        width: fit-content;
+        text-align: center;
+    }
+
+    .contenedor-tabla {
+        display: flex;
+        justify-content: center;
+    }
+
+    .tabla-delitos {
+        width: 50%;
+        text-align: center;
+    }
+
+    .tabla-delitos tr td{
+        border-bottom: solid 1px white;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .tabla-delitos tr td form {
+        display: inline;
+    }
+
+    
+}

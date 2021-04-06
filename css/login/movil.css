@@ -141,9 +141,9 @@
         border-radius: 1rem;
     }
     
-    .fondo > * {
+    /* .fondo > * {
         margin: 1rem;
-    }
+    } */
     
     .fondo > h1 {
         font-size: 4rem;
