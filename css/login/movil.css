@@ -139,6 +139,9 @@
     .fondo {
         background-color: rgba(19, 30, 53, 0.9);
         border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: 1;
     }
     
     /* .fondo > * {
@@ -149,10 +152,5 @@
         font-size: 4rem;
         text-align: center;
     }
-    
-    .grafica {
-        width: 900px; 
-        height: 300px;
-    } 
     
 }
