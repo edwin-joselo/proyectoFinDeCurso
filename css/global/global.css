@@ -2,7 +2,6 @@
     font-family: Roboto, Arial;
     font-size: 16px;
     color: white;
-    /* color: black; */
     --fondo-transparente: rgba(19, 30, 53, 0.9);
     --fondo-solido: rgba(19, 30, 53);
     --menu-transparente: rgba(61, 98, 167, 0.603);
@@ -10,13 +9,15 @@
     --azul-claro-scrollbar: rgb(62, 135, 196);
     --azul-claro-inputfile: rgb(16, 107, 160);
     --azul-claro-enlaces: rgb(181, 222, 255);
+    --azul-aceptar: rgb(62, 135, 196);
     --gris-transparente: rgba(168, 162, 162, 0.5);
     --gris-solido: rgba(168, 162, 162);
     --gris-solido-hr: rgb(97, 87, 89);
+    --gris-oscuro-transparente: rgba(64, 68, 73, 0.5);
     --amarillo-previo: rgba(158, 156, 2, 0.5);
     --verde-aprobado: rgba(2, 158, 28, 0.5);
+    --rojo-rechazar: rgba(243, 96, 100);
     --rojo-rechazado: rgba(158, 2, 2, 0.5);
-    --gris-oscuro-transparente: rgba(64, 68, 73, 0.5);
 }
 
 
