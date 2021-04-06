@@ -17,13 +17,7 @@
     .cabecera {
         background-image: url(../imagenes/policia-nacional.png);
     }
-    
-    header {
-        grid-area: header;
-        background-color: black;
-        display: flex;
-        justify-content: center;
-    }    
+
     .info-cabecera {
         margin: 0 1rem;
         display: flex;

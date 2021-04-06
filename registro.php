@@ -17,7 +17,8 @@
     <title>Document</title>
 
     <!-- GLOBAL -->
-    <link rel="stylesheet" href="css/global/global.css">
+    <link rel="stylesheet" href="./css/global/global.css">
+    <link rel="stylesheet" href="./css/global/movil.css">
 
     <!-- MAQUETACIÓN -->
     <link rel="stylesheet" href="./css/login/monitor.css">
