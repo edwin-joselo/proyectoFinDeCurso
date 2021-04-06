@@ -24,6 +24,7 @@
     <!-- GLOBAL -->
     <link rel="stylesheet" href="./css/global/global.css">
     <link rel="stylesheet" href="./css/global/monitor.css">
+    <link rel="stylesheet" href="./css/global/movil.css">
 
     <!-- MAQUETACIÓN -->
     <link rel="stylesheet" href="./css/login/monitor.css">
@@ -88,8 +89,6 @@
             var options = {
                 backgroundColor: '#7a9ad8',
                 title: "Delitos",
-                width: 900,
-                height: 300,
                 bar: {groupWidth: "90%"},
                 legend: { position: "none" },
                 vAxis: {
