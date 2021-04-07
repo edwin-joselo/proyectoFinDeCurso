@@ -29,14 +29,17 @@
     <link rel="stylesheet" href="./css/global/global.css">
     <link rel="stylesheet" href="./css/global/monitor.css">
     <link rel="stylesheet" href="./css/global/movil.css">
+    <link rel="stylesheet" href="./css/global/tablet.css">
 
     <!-- MAQUETACIÓN -->
     <link rel="stylesheet" href="./css/login/monitor.css">
+    <link rel="stylesheet" href="./css/login/tablet.css">
     <link rel="stylesheet" href="./css/denuncia/monitor.css">
     <link rel="stylesheet" href="./css/mis_denuncias/movil.css">
 
     <!-- MAQUETACIÓN ADMIN -->
     <link rel="stylesheet" href="./admin/css/denuncias/monitor.css">
+    <link rel="stylesheet" href="./admin/css/denuncias/tablet.css">
 
     <!-- SWEETALERT2 -->
     <link rel="stylesheet" href="./css/sweetalert2/dark.css">

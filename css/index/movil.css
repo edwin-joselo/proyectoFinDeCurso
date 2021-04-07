@@ -71,6 +71,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: center;
     }
     
     nav > ul > li > a {

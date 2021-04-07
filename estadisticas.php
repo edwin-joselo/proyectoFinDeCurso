@@ -25,11 +25,13 @@
     <link rel="stylesheet" href="./css/global/global.css">
     <link rel="stylesheet" href="./css/global/monitor.css">
     <link rel="stylesheet" href="./css/global/movil.css">
+    <link rel="stylesheet" href="./css/global/tablet.css">
 
     <!-- MAQUETACIÓN -->
     <link rel="stylesheet" href="./css/login/monitor.css">
     <link rel="stylesheet" href="./css/denuncia/monitor.css">
     <link rel="stylesheet" href="./css/login/movil.css">
+    <link rel="stylesheet" href="./css/estadisticas/tablet.css">
 
     <!-- MAQUETACIÓN ADMIN -->
     <link rel="stylesheet" href="./admin/css/denuncias/monitor.css">

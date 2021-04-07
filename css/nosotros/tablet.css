@@ -1,0 +1,42 @@
+/* Tablet */
+@media all and (min-width: 451px) and (max-width: 900px){
+    header {
+        width: 100%;
+    }
+
+    h1 {
+        text-align: center;
+    }
+    
+    h2 {
+        margin-bottom: 1rem;
+    }
+    
+    .contexto {
+        margin-bottom: 1rem;
+    }
+    
+    .contenedor-direccion {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* border: solid 1px red; */
+    }
+    
+    #tagDivMap {
+        height: 250px;
+        width: 300px;
+    }
+    
+    .direccion {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-self: center;
+        padding: 1rem;
+    }
+    
+    .direccion > p {
+        font-size: 20px;
+    }
+}

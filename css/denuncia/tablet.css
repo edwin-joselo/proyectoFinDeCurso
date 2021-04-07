@@ -1,5 +1,5 @@
-/* Monitor */
-@media all and (min-width: 901px) {
+/* Tablet */
+@media all and (min-width: 451px) and (max-width: 900px){
     input[type="textarea"], textarea {
         font-family: Roboto, Arial;
         color: white;
@@ -53,5 +53,4 @@
     .tabla-delitos tr td form {
         display: inline;
     }
-
 }

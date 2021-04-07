@@ -30,9 +30,11 @@
     <link rel="stylesheet" href="../css/global/global.css">
     <link rel="stylesheet" href="../css/global/monitor.css">
     <link rel="stylesheet" href="../css/global/movil.css">
+    <link rel="stylesheet" href="../css/global/tablet.css">
 
     <!-- MAQUETACIÓN USUARIO-->
     <link rel="stylesheet" href="../css/login/monitor.css">
+    <link rel="stylesheet" href="../css/login/tablet.css">
     <link rel="stylesheet" href="../css/login/movil.css">
 
     <!-- SWEETALERT2 -->

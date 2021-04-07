@@ -1,0 +1,67 @@
+/* Tablet */
+@media all and (min-width: 451px) and (max-width: 900px){
+    body {
+        min-height: 100vh;
+        background-repeat: no-repeat;
+        display: grid;
+        grid-template: 
+        "header" auto
+        "main"   1fr
+        / 1fr
+        ;
+    }
+    
+    main {
+        background-image: url(../../../imagenes/policia-nacional.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-color: var(--gris-oscuro-transparente);
+        height: 100%;
+        width: 100%;
+        grid-area: main;
+    }
+
+    .fondo {
+        background-color: var(--fondo-transparente);
+        margin: 1rem;
+        min-width: 25rem;
+        border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+    }
+
+    h1{
+        font-size: 4rem;
+    }
+
+    li{
+        list-style: none;
+        padding: 1rem;
+        border-bottom: solid 1px;
+        padding-bottom: 0.5rem;
+    }
+
+
+    li:last-child{
+        border-bottom: none;
+    }
+
+    a {
+        align-items: center;
+        font-size: 2rem;
+        color: white;
+        text-decoration: none;
+        display: block;
+    }
+
+    a:hover{
+        background-color: var(--menu-transparente);
+    }
+}

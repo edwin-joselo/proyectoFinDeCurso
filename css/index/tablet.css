@@ -1,7 +1,196 @@
-
 /* Tablet */
 @media all and (min-width: 451px) and (max-width: 900px){
     body {
-        background-color: green;
+        min-height: 100vh;
+        background-repeat: no-repeat;
+        display: grid;
+        grid-template: 
+        "header" auto
+        "nav"    auto
+        "main"   1fr
+        "footer" auto
+        / 1fr
+        ;
+    }
+    
+    .cabecera {
+        background-image: url(../../imagenes/policia-nacional.png);
+        height: 100%;
+        width: 100%;
+    }
+
+    nav {
+        grid-area: nav;
+        background-color: var(--fondo-transparente);
+        border-radius: 1.5rem;
+    }
+
+    nav > input, nav > label{
+        display: none;
+    }
+
+    nav > h1 {
+        font-size: 3rem;
+        text-align: center;
+        padding: 2rem 0;
+    }
+    
+    nav > hr {
+        margin: 0 15%;
+    }
+
+    nav > ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav > ul > li > a {
+        font-size: 1.5rem;
+    }
+    
+    li {
+        margin: 0.5rem 1rem;
+        list-style: none;
+    }
+    
+    a {
+        font-size: 1.3rem;
+        color: white;
+        text-decoration: none;
+    }
+
+    #menu{
+        margin: 0 15%;
+    }
+
+    #menu li a {
+        text-decoration: none;
+        float: left;
+        padding: 10px;
+        color: #fff;
+    }
+
+    #menu > li > a {
+        font-weight: bold;
+       
+    }
+
+    #menu > li > a:hover {
+        background-color: var(--menu-transparente);
+        border-radius: 1.5rem;
+    }
+    
+    .presentacion > ul > li {
+        list-style: square;
+    }
+
+    .presentacion {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .presentacion > h3 {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    }
+    
+    .presentacion > p {
+        font-size: 1.5rem;
+    }
+
+    .presentacion > ul > li {
+        font-size: 1.2rem;
+    }
+
+    main {
+        grid-area: main;
+        color: black;
+        background-color: var(--gris-transparente);
+        padding: 1rem;
+    }
+
+    .titulo {
+        display: flex;
+    }
+
+    .indice {
+        margin-right: 0;
+        max-height: 100vh;
+        width: 20px;
+        background-color:var(--fondo-transparente);
+    }
+
+    h1 {
+        margin: 1rem;
+    }
+    
+    .grupo-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+    }
+    
+    .card {
+        margin: 0.5rem;
+        box-shadow: 0 5px 10px;
+        width: 350px;
+        height: auto; 
+    }
+
+    .card > img {
+        width: 350px;
+        height: auto;
+        background-color: transparent;
+    }
+
+    .card > div {
+        text-align: center;
+        padding: 1rem;
+        align-self: center;
+    }
+    .card > div > h3 {
+        margin: 0.5rem;
+    }
+
+    .card > div > a {
+        display: inline-block;
+        width: fit-content;
+        padding: 0.25rem;
+        margin-top: 1rem;
+        background-color:  var(--gris-solido);
+    }
+
+    .card > div > a:hover {
+        background-color: black;
+    }
+
+    .contacto {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        font-size: 20px;
+    }
+
+    .contacto > div {
+        margin-left: 1rem;
+        padding: 1rem;
+    }
+
+    .contacto > div > p {
+        padding: 0.2rem;
+    }
+
+    .redes {
+        display: flex;
+        justify-content: center;
+    }
+
+    .redes > a > svg {
+        width: 80px;
+        height: 80px;
     }
 }

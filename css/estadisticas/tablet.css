@@ -2,8 +2,10 @@
 @media all and (min-width: 451px) and (max-width: 900px){
     body {
         min-height: 100vh;
+        max-width: 100vw;
         background-repeat: no-repeat;
         display: grid;
+        position: relative;
         grid-template: 
             "header" auto
             "main"   1fr
@@ -11,95 +13,81 @@
             / 1fr
         ;
     }
-    
-    .cabecera {
-        background-image: url(../imagenes/policia-nacional.png);
-        height: 100%;
-        width: 100%;
-    }
 
-    header {
-        grid-area: header;
-        background-color: black;
-        display: flex;
-        justify-content: center;
-    }    
-    
     .info-cabecera {
         margin: 0 1rem;
         display: flex;
         align-items: center;
         justify-content: center;
     }
-
+    
     .info-cabecera > img {
         height: 25px;
         width: 30px;
         margin-left: 1rem;
     }
-
+    
     main {
         grid-area: main;
-        background-image: url(../../imagenes/policia-nacional.png);
+        background-image: url(../../imagenes/policia-nacional-movil.png);
         background-repeat: no-repeat;
         background-size: cover;
         display: flex;
         justify-content: center;
         align-items: center;
-        position: relative;
         background-color: var(--gris-oscuro-transparente);
     }    
-
+    
     main > a > svg {
-        position: absolute;
-        width: 50px;
-        height: 50px;
+        position: fixed;
+        width: 40px;
+        height: 40px;
         top: 5%;
         left: 5%;
     }
-
+    
     main > form {
         background-color: var(--fondo-transparente);
         margin: 1rem;
         padding: 1rem;
-        width: 40%;
+        width: 100%;
         height: fit-content;
-        min-width: 25rem;
         border-radius: 0.5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-
+    
     main > form > div > h1 {
         text-align: center;
-        font-size: 4rem;
+        font-size: 2rem;
         margin-bottom: 1rem;
     }
-
+    
+    
     hr {
         border-color: var(--gris-solido-hr);
     }
-
+    
     main > form > div {
         display: flex;
         flex-direction: column;
         justify-content: center;
         margin: 1rem;
     }
-
+    
     main > form > div > p {
         font-size: 1.4rem;
         background-color: transparent;
     }
-
+    
     main > form > div > p, 
     main > form > div > input{
         text-align: center;
         color: white;
         margin: 0.5rem;
     }
-
+    
     main > form > div > input {
         display: block;
         width: 100%;
@@ -111,18 +99,18 @@
         border-radius: 1rem;
         padding: 0.3rem;
     }
-
+    
     main > form > div > select {
         background-color: transparent;
         color: white;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     
     main > form > div > select > option {
         background-color: var(--fondo-transparente);
         text-align: center;
     }
-
+    
     main > form > input[type="submit"] {
         background-color: white;
         color: black;
@@ -132,27 +120,25 @@
         border: none;
         border-radius: 4rem;
     }
-
+    
     a {
         color: var(--azul-claro-enlaces);
     }
-
+    
     .fondo {
         background-color: var(--fondo-transparente);
         border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: 1;
     }
-
+    
     .fondo > * {
         margin: 1rem;
     }
-
+    
     .fondo > h1 {
         font-size: 4rem;
         text-align: center;
-    }
-
-    .grafica {
-        width: 900px; 
-        height: 300px;
     }
 }
