@@ -36,7 +36,11 @@
     <!-- MAQUETACIÓN USUARIO -->
     <link rel="stylesheet" href="../css/login/monitor.css">
     <link rel="stylesheet" href="../css/login/tablet.css">
-    <link rel="stylesheet" href="../css/login/movil.css">
+    <!-- <link rel="stylesheet" href="../css/login/movil.css"> -->
+
+    <!-- MAQUETACIÓN -->
+    <link rel="stylesheet" href="./css/listar_denuncias/monitor.css">
+    <link rel="stylesheet" href="./css/listar_denuncias/movil.css">
 
     <!-- SWEETALERT2 -->
     <link rel="stylesheet" href="../css/sweetalert2/dark.css">
