@@ -1,4 +1,5 @@
-@media all and (max-width: 450px) {
+@media all and (min-width: 451px) and (max-width: 900px){
+
     body {
         min-height: 100%;
         max-width: 100%;
